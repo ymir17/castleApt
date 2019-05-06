@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a8317f-f7ab-4510-a23c-2739609c17dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/aboutus/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aboutus/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aboutus/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aboutus/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aboutus/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aboutus/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/castleApt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contacts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/castleApt/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/aboutus/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/castleApt/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/castleApt/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/castleApt/wsgi.py" afterDir="false" />
@@ -224,12 +245,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556982986611</updated>
       <workItem from="1556982990497" duration="3177000" />
-      <workItem from="1556991081906" duration="6084000" />
+      <workItem from="1556991081906" duration="6680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9261000" />
+    <option name="totallyTimeSpent" value="9857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
