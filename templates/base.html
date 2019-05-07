@@ -7,14 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Castle Apartments</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/dropdown.js' %}"></script>
 </head>
 <body>
     <!-- Insert navbar here -->
+    <div class="navbar">
+        <img src="{% static 'images/CastleAptLogoInverted.svg' %}" id="logo"alt="logo">
+        <div class="drop">
+	        <div class="dropmenupos" onclick="myFunction()">
+		        <div class="dropmenu"></div>
+				<div class="dropmenu"></div>
+				<div class="dropmenu"></div>
+			</div>
+	        <div id="dropdown" class="content">
+		        <a href="#">Sign up</a>
+		        <a href="#">Log in</a>
+		        <a href="#">About us</a>
+		        <a href="#">Realtors</a>
+	    	</div>
+    	</div>
+        </div>
+    </div>
 
     {% block content %}
 
     {% endblock %}
 
     <!-- Insert footer here -->
+    <div class="footer">
+        <div class="upperfooter">
+            <img src="{% static 'images/CastleAptLogo.svg' %}" id="footlogo" alt="logo2">
+            <a href="#">Contact us</a>
+            <a href="#">About us</a>
+            <a href="#">Realtors</a>
+        </div>
+        <div class=lowerfooter>
+            <span id="info"><b>Castle Apartments Inc.</b>  - 186 Fleet Street, London - <a href="mailto:castle@castleapartments.com" target="_top">castle@castleapartments.com</a></span>
+            <span id="copyright">© 2019</span>
+        </div>
+    </div>
 </body>
 </html>
