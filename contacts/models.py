@@ -4,7 +4,7 @@ from signup.models import Accounts
 
 class RealtorImages(models.Model):
     realtImgId = models.AutoField(primary_key=True)
-    realtImgUrl = models.CharField(1024)
+    realtImgUrl = models.CharField(max_length=1024)
 
 
 class Realtors(models.Model):

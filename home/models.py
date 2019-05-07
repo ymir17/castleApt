@@ -8,6 +8,7 @@ class PropImages(models.Model):
 
 
 class Properties(models.Model):
+    added = models.DateField()
     address = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     zipCode = models.IntegerField()
