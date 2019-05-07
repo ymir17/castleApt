@@ -9,6 +9,6 @@ class RealtorImages(models.Model):
 
 class Realtors(models.Model):
     realtId = models.AutoField(primary_key=True)
-    accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE())
+    accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     description = models.CharField(max_length=1024)
-    realtImgId = models.ForeignKey(RealtorImages, on_delete=models.CASCADE())
+    realtImgId = models.ForeignKey(RealtorImages, on_delete=models.CASCADE)
