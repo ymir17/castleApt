@@ -16,7 +16,7 @@
     border-right: none;
 }
 
-.searchicon{
+.searchicon {
     float: right;
     border: 0.2rem solid black;
     background: aqua;
@@ -24,4 +24,7 @@
     border-left: none;
     border-top-right-radius: 3rem;
     border-bottom-right-radius: 3rem;
+    cursor: pointer;
 }
+
+
