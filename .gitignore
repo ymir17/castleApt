@@ -95,4 +95,7 @@ fabric.properties
 # Ignore all local history of files
 .history
 
+__pycache__/
+*.py[cod]
+
 # End of https://www.gitignore.io/api/pycharm,visualstudiocode
