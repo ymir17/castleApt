@@ -2,7 +2,6 @@
 body {
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    background-color: #4F4F4Fpyt;
 }
 .navbar {
     overflow: hidden;
@@ -51,7 +50,8 @@ a {
 .footer {
     position: absolute;
     bottom: 0;
-    width: 100%
+    width: 100%;
+    margin-top: -40px;
 }
 .upperfooter {
     overflow: hidden;
