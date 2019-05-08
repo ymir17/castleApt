@@ -97,5 +97,6 @@ fabric.properties
 
 __pycache__/
 *.py[cod]
+*.pyc
 
 # End of https://www.gitignore.io/api/pycharm,visualstudiocode

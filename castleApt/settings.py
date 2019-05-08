@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'aboutus.apps.AboutusConfig',
     'contacts.apps.ContactsConfig',
     'signup.apps.SignupConfig',
+    'login.apps.LoginConfig',
 ]
 
 MIDDLEWARE = [

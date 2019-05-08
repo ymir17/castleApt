@@ -1,0 +1,22 @@
+.realtorsbox {
+    background-color: rgba(196, 196, 196, 1);
+    border-radius: 15px;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    left: 12.5%;
+    top: 20%;
+}
+.singlerealtor {
+    float: right;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    margin: 10px;
+}
+img {
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
