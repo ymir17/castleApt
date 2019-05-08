@@ -6,23 +6,23 @@
     <div class="realtorsbox">
         <div class="singlerealtor">
             <img src="{% static 'images/user.svg' %}">
-            <h4><a id="popup">Anton</a></h4>
+            <h4>Anton</h4>
         </div>
         <div class="singlerealtor">
             <img src="{% static 'images/user.svg' %}">
-            <h4><a id="popup">Arnar</a></h4>
+            <h4>Arnar</h4>
         </div>
         <div class="singlerealtor">
             <img src="{% static 'images/user.svg' %}">
-            <h4><a id="popup">Atli</a></h4>
+            <h4>Atli</h4>
         </div>
         <div class="singlerealtor">
             <img src="{% static 'images/user.svg' %}">
-            <h4><a id="popup">Sævar</a></h4>
+            <h4>Sævar</h4>
         </div>
         <div class="singlerealtor">
             <img src="{% static 'images/user.svg' %}">
-            <h4><a id="popup">Ýmir</a></h4>
+            <h4>Ýmir</h4>
         </div>
     </div>
     <div id="mypopup" class="modal">
@@ -33,29 +33,32 @@
     </div>
     <script>
         // Get the modal
-        var popup = document.getElementById("mypopup");
+        var pop = document.getElementById("mypopup");
 
         // Get the button that opens the modal
-        var btn = document.getElementById("popup");
+        var btns = document.getElementsByClassName("singlerealtor");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
+        for(var i = 0; i < btns.length; i++) {
+            var btn = btns[i];
+            btn.onclick = function() {
+                pop.style.display = "block";
+            }
 
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                pop.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == pop) {
+                  pop.style.display = "none";
+              }
+            }
+        }
         // When the user clicks the button, open the modal
-        btn.onclick = function() {
-          popup.style.display = "block";
-        }
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            popup.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == popup) {
-              popup.style.display = "none";
-          }
-        }
     </script>
 {% endblock %}
