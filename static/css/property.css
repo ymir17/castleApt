@@ -1,0 +1,20 @@
+.propimg {
+    background-color: rgba(24, 24, 24, 1);
+    height: 20rem;
+    width: 100%;
+}
+
+.img {
+    margin: auto;
+    background-color: gray;
+    width: 50%;
+    height: 100%;
+}
+
+.info {
+    margin: auto;
+    background-color: #4f4f4f;
+    height: 50rem;
+    width: 85%;
+    opacity: 0.5;
+}
