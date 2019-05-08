@@ -4,6 +4,7 @@ from contacts.models import Realtors
 
 class PropImages(models.Model):
     imgId = models.AutoField(primary_key=True)
+    propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     propImgUrl = models.CharField(max_length=1024)
 
 
@@ -15,5 +16,5 @@ class Properties(models.Model):
     rooms = models.IntegerField()
     size = models.FloatField()
     price = models.FloatField()
-    imgId = models.ForeignKey(PropImages, on_delete=models.CASCADE)
+    # imgId = models.ForeignKey(PropImages, on_delete=models.CASCADE)
     realtId = models.ForeignKey(Realtors, on_delete=models.CASCADE)
