@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
+
+
+
+
 
     <div class='searchcontainer'>
-        <div>
-        <input type='text' name='' placeholder='textisnice'>
-        </div>
-
-        <div class="sliders">
-
-
-        </div>
+        <form>
+            <div class='searchfield'>
+                <input type='text' name='' placeholder='Type in address or zip code..'/>
+            </div>
+        </form>
     </div>
 
 {% endblock %}
