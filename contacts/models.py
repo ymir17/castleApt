@@ -3,12 +3,12 @@ from signup.models import Accounts
 
 
 class RealtorImages(models.Model):
-    realtImgId = models.AutoField(primary_key=True)
+    realtImgId = models.AutoField(auto_created=True, primary_key=True)
     realtImgUrl = models.CharField(max_length=1024)
 
 
 class Realtors(models.Model):
-    realtId = models.AutoField(primary_key=True)
+    realtId = models.AutoField(auto_created=True, primary_key=True)
     accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     description = models.CharField(max_length=1024)
     realtImgId = models.ForeignKey(RealtorImages, on_delete=models.CASCADE)

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'signup.apps.SignupConfig',
     'login.apps.LoginConfig',
+    'property.apps.PropertyConfig',
 ]
 
 MIDDLEWARE = [
