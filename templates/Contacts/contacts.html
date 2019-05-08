@@ -1,4 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+    <div class="realtorsbox">
+        <div class="singlerealtor">
+            <img src="{% static 'images/user.svg' %}">
+            <h4>Arnar</h4>
+        </div>
+        <div class="singlerealtor">
+            <img src="{% static 'images/user.svg' %}">
+            <h4>Sævar</h4>
+        </div>
+        <div class="singlerealtor">
+            <img src="{% static 'images/user.svg' %}">
+            <h4>Anton</h4>
+        </div>
+        <div class="singlerealtor">
+            <img src="{% static 'images/user.svg' %}">
+            <h4>Atli</h4>
+        </div>
+        <div class="singlerealtor">
+            <img src="{% static 'images/user.svg' %}">
+            <h4>Ýmir</h4>
+        </div>
+    </div>
 {% endblock %}
