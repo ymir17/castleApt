@@ -1,0 +1,10 @@
+.signup_border {
+    background-color: rgba(196, 196, 196, 1);
+    height: 500px;
+    width: 500px;
+    border: 5px solid #2E4570;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
