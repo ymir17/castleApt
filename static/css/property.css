@@ -61,7 +61,7 @@
 #similar {
     float: right;
     background-color: rgba(145, 0, 0);
-    width: 15rem;
+    width: 16rem;
     margin: 1rem;
     color: white;
     display: flex;
@@ -69,13 +69,17 @@
 }
 
 #thumbnail {
-    margin: 0.5rem;
+    margin: 0 0.5rem 1rem 1rem;
     background-size: cover;
     position: relative;
     background-color: #4f4f4f;
     width: 4rem;
     height: 4rem;
     float: left;
+}
+.similar-info {
+    right: 2rem;
+    background-color: #4f4f4f;
 }
 #listing1 #thumbnail {
     background-image: url("../images/castles/00_01.jpeg");
