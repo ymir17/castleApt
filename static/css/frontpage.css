@@ -1,7 +1,30 @@
 .searchcontainer{
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 40%;
     margin-top: -50px;
     margin-left: -100px;
 }
+
+
+.searchfield{
+    width: 24rem;
+    height: 1.87rem;
+    border-bottom-left-radius: 3rem;
+    border-top-left-radius: 3rem;
+    border: 0.2rem solid black;
+    border-right: none;
+}
+
+.searchicon {
+    float: right;
+    border: 0.2rem solid black;
+    background: crimson;
+    height: 2rem;
+    border-left: none;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    cursor: pointer;
+}
+
+
