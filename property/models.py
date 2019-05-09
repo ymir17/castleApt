@@ -11,6 +11,7 @@ class Properties(models.Model):
     rooms = models.IntegerField()
     size = models.FloatField()
     price = models.FloatField()
+    description = models.CharField(max_length=32)
     realtId = models.ForeignKey(Realtors, on_delete=models.CASCADE)
 
 
