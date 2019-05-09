@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
+
     <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
         <div class="signup_border">
-            <h2>Create your account</h2>
+            <h3>Create your account</h3>
             <form target="_blank" action="/submitEval.php">
                 <input class="inputs" placeholder="First name" type="text" name="firstname" id="first-name"><br>
                 <input class="inputs" placeholder="Last name" type="text" name="lastname" id="last-name"><br>
@@ -14,4 +15,5 @@
                 <input id="button" type="submit" value="Sign up">
             </form>
         </div>
+
 {% endblock %}

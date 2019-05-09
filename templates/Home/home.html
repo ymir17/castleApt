@@ -1,22 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load static %}
+
     <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
-    <!--
-    <div class='searchcontainer'>
-        <form class='searchbar'>
-            <div>
-                <input class='searchfield' type='text' name='search' placeholder='Type in address or zip code..' />
-                <img id='btn'  class='searchicon'  src='{% static 'images/search-icon.svg' %}'>
-            </div>
-        </form>
-    </div>
-    -->
+
     <form target="_blank" action="/submitEval.php">
         <div class="searchcontainer">
             <input class='searchfield' type='text' name='search' placeholder='Type in address or zip code..' />
             <input id="button" type="submit" value="Search">
         </div>
+        <h4>Advanced search...</h4>
     </form>
 
 {% endblock %}
