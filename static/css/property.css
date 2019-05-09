@@ -1,8 +1,33 @@
+.left-arrow {
+    position: absolute;
+    left: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-right: 2rem solid rgba(145, 0, 0, 1);
+    border-bottom: 1rem solid transparent;
+    }
+
 .propimg {
+    position: relative;
     background-color: rgba(24, 24, 24, 1);
     height: 20rem;
     width: 100%;
 }
+
+.right-arrow {
+    position: absolute;
+    left: 75.8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-left: 2rem solid rgba(145, 0, 0, 1);
+    border-bottom: 1rem solid transparent;
+    }
 
 .img {
     margin: auto;
