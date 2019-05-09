@@ -14,7 +14,7 @@ body {
     border-bottom: 0.3125rem solid rgba(145, 0, 0, 1);
     width: 100%;
 }
-.navbar a {
+.drop a {
     float: right;
     display: block;
     color: white;
@@ -23,7 +23,7 @@ body {
     padding: 1.25rem 1.25rem;
     font-size: 1.25rem;
 }
-.navbar a:hover {
+.drop a:hover {
     background-color: rgba(145, 0, 0, 1);
 }
 
@@ -79,7 +79,7 @@ a {
 
 }
 
-.upperfooter a {
+.foot-links a {
     float: right;
     display: block;
     color: rgba(24, 24, 24, 1);
@@ -88,7 +88,7 @@ a {
     padding: 2rem 1.25rem;
     font-size: 1.25rem;
 }
-.upperfooter a:hover {
+.foot-links a:hover {
     color: white;
     background-color: rgba(24, 24, 24, 1);
 }
