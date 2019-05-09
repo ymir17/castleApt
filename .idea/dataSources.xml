@@ -9,5 +9,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/geoztnzo</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="CastleAptDB" uuid="c9945d77-3ba9-484b-98b1-c8ae737eb958">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/geoztnzo</jdbc-url>
+    </data-source>
   </component>
 </project>
