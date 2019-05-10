@@ -63,6 +63,7 @@
     margin-top: 1rem;
     font-size: 1.5rem;
     margin-right: 2rem;
+    margin-left: 1.5rem;
 }
 
 #similar {
@@ -112,7 +113,7 @@
     background-image: url("../images/castles/01_02.jpeg");
 }
 
-h4 {
+.similar-info h4 {
     text-align: center;
     text-decoration: underline;
     color: white;
@@ -143,6 +144,7 @@ h4 {
     font-size: 1.2rem;
 }
 #buy {
+    float: right;
     width: 12rem;
     height: 2.5rem;
     border-radius: 2rem;
@@ -163,8 +165,42 @@ h4 {
 #images img {
     width: 40%;
     height: 40%;
-    margin-bottom: 1rem;
     margin: 1rem;
+}
+
+#realtor {
+    float: right;
+    text-decoration: black;
+    background-color: #2E4570;
+    border: 0.0625rem solid black;
+    border-radius: 0.9375rem;
+    padding: 0.9375rem;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+#realtor h4 {
+    font-size: 1rem;
+}
+
+#realtor #headline {
+    margin: 0;
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+#realtor #name {
+    margin: 0;
+    margin-top: 0.5rem;
+    color: white;
+}
+
+#realtor img {
+    width: 5rem;
+    height: 5rem;
+    align-items: center;
 }
 
 @media screen and (max-width: 900px) {
