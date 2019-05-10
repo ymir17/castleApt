@@ -6,6 +6,7 @@ from signup.models import Accounts
 
 # Create your views here.
 def index(request):
-    realtorimg = {'data': RealtorImages.objects.all().order_by("realtImgUrl")}
-
-    return render(request, 'Contacts/contacts.html', realtorimg)
+    realtorimg = RealtorImages.objects.all().order_by("realtImgUrl")
+    realtors = Accounts.objects.all().order_by("firstName")
+    context = {'data': realtorimg, 'realtors': realtors}
+    return render(request, 'Contacts/contacts.html', context)

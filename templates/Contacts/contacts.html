@@ -4,26 +4,26 @@
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
     <!--<script src="{% static 'js/contactspopup.js' %}"></script>-->
     <div class="realtorsbox">
-
             {% for realtor in data %}
                 <div class="singlerealtor">
-                    <img src="{{ realtor.realtImgUrl }}">
+                    <img src=" {{ realtor.realtImgUrl }}">
+                    <h4>{{ realtor.firstName }} {{ realtor.lastName }}</h4>
                 </div>
-
                 <div id="mypopup" class="modal">
                     <div class="popup-content">
                         <span class="close">&times;</span>
                         <div class="popupleft">
                             <img src="{{ realtor.realtImgUrl }}">
                             <h4>Contact info:</h4>
-                            <p>Email@email.com</p>
-                            <p>5812345</p>
+                            <p>{{ realtor.email }}</p>
+                            <p>{{ realtor.phoneNo }}</p>
                         </div>
-                        <h3>Realtor name</h3>
-                        <p>{{ contact.description }}</p>
+                        <h3>{{ realtor.firstName }} {{ realtor.lastName }}</h3>
+                        <p>{{ realtor.description }}</p>
                     </div>
                 </div>
             {% endfor %}
+
     </div>
     <script>
         // Get the modal
