@@ -33,6 +33,7 @@
     border-top: 1rem solid transparent;
     border-right: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
+    cursor: pointer;
     }
 
 .right-arrow {
@@ -45,6 +46,7 @@
     border-top: 1rem solid transparent;
     border-left: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
+    cursor: pointer;
     }
 
 .info {
@@ -154,6 +156,7 @@
     display: inline;
     margin: 0;
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 #images {
