@@ -9,39 +9,21 @@
                 <div class="singlerealtor">
                     <img src="{{ realtor.realtImgUrl }}">
                 </div>
-            {% endfor %}
-            <!--<img src="{% static 'images/realtors/anton.jpeg' %}">
-            <h4>Anton</h4>-->
 
-        <!--<div class="singlerealtor">
-            <img id="arnar" src="{% static 'images/realtors/arnar.png' %}">
-            <h4>Arnar</h4>
-        </div>
-        <div class="singlerealtor">
-            <img src="{% static 'images/realtors/atli.jpg' %}">
-            <h4>Atli</h4>
-        </div>
-        <div class="singlerealtor">
-            <img src="{% static 'images/realtors/saevar.jpg' %}">
-            <h4>Sævar</h4>
-        </div>
-        <div class="singlerealtor">
-            <img src="{% static 'images/realtors/ymir.JPG' %}">
-            <h4>Ýmir</h4>
-        </div>-->
-    </div>
-    <div id="mypopup" class="modal">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <div class="popupleft">
-                <img src="{% static 'images/realtors/arnar.png' %}">
-                <h4>Contact info:</h4>
-                <p>Email@email.com</p>
-                <p>5812345</p>
-            </div>
-            <h3>Realtor name</h3>
-            <p>{{ contact.description }}</p>
-        </div>
+                <div id="mypopup" class="modal">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <div class="popupleft">
+                            <img src="{{ realtor.realtImgUrl }}">
+                            <h4>Contact info:</h4>
+                            <p>Email@email.com</p>
+                            <p>5812345</p>
+                        </div>
+                        <h3>Realtor name</h3>
+                        <p>{{ contact.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
     </div>
     <script>
         // Get the modal
