@@ -7,5 +7,6 @@ def main():
             + "SET price = " \
             + str(round((uniform(1, 5)), 2) * 1000000) + '\n' \
             + "WHERE description = 'villa' AND "+'"propertyId" = ' + str(i+6) + ";\n\n")
+    f.close()
 
 main()

@@ -7,5 +7,6 @@ def main():
             + "SET rooms = " \
             + str(randint(60, 150)) + '\n' \
             + "WHERE description = 'castle' AND "+'"propertyId" = ' + str(i+1) + ";\n\n")
+    f.close()
 
 main()
