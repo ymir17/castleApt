@@ -95,6 +95,8 @@ fabric.properties
 # Ignore all local history of files
 .history
 
+venv/
+venv/*
 __pycache__/
 __pycache__/*
 *.py[cod]

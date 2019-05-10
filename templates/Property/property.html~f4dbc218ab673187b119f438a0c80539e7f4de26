@@ -16,10 +16,9 @@
             <p id="street">Name of the Street</p>
             <p id="register">The listing was registered on *date*</p>
             <div id="about">
-                <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+                <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis viverra nibh cras pulvinar. Non tellus orci ac auctor augue mauris augue neque gravida. Vulputate mi sit amet mauris commodo quis imperdiet massa. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Sed augue lacus viverra vitae. Netus et malesuada fames ac turpis egestas maecenas pharetra. Eget egestas purus viverra accumsan in nisl nisi scelerisque. Maecenas sed enim ut sem viverra aliquet eget sit. Id eu nisl nunc mi ipsum faucibus vitae aliquet. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis. Duis ultricies lacus sed turpis tincidunt.
+<br><br>
+Urna condimentum mattis pellentesque id. Praesent semper feugiat nibh sed pulvinar. Quam id leo in vitae. Mi quis hendrerit dolor magna eget est lorem. Turpis massa sed elementum tempus egestas sed. Ut porttitor leo a diam sollicitudin tempor id. Cursus in hac habitasse platea. At tempor commodo ullamcorper a lacus vestibulum. Morbi tincidunt ornare massa eget egestas purus. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Elementum nibh tellus molestie nunc non blandit.                </p>
             </div>
         </div>
         <div id="similar">
@@ -70,6 +69,7 @@
                 </div>
             </div>
         </div>
+        <input id="buy" type="submit" value="Buy">
         <div id="additional-info">
             <p>xxx m²</p>
             <p>Built in xxxx</p>
@@ -77,6 +77,17 @@
             <p>xx bathrooms</p>
             <p>xx Bedrooms</p>
             <p>Dungeon Y/N</p>
+            <div id="realtor">
+                <p id="headline">Contact<br>Realtor</p>
+                <img src="{% static 'images/realtors/anton.jpeg' %}" alt="Realtor">
+                <p id="name">Name</p>
+            </div>
+        </div>
+        <div id="images">
+            <img src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_01.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_02.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_03.jpeg' %}" alt="Property Image">
         </div>
     </div>
     <script>
