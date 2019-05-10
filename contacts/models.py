@@ -7,7 +7,9 @@ class RealtorImages(models.Model):
     realtImgUrl = models.CharField(max_length=1024)
 
 
+
 class Realtors(models.Model):
+    #name = models.CharField(max_length=255)
     realtId = models.AutoField(auto_created=True, primary_key=True)
     accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     description = models.CharField(max_length=1024)
