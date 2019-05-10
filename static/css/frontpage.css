@@ -14,8 +14,8 @@
 .searchfield {
     margin-top: 0.7rem;
     margin-bottom: 0.8rem;
-    border-radius: 0.1rem;
-    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 1);
     width: 90%;
     border: none;
     height: 3rem;
@@ -30,6 +30,7 @@
     padding-left: 0.5rem;
 }
 .zipDiv {
+    background-color: white;
     border: 0.1rem solid #2E4570;
     display: inline-block;
     border-radius: 1rem;
@@ -46,6 +47,7 @@
 }
 .dropdownDiv {
     border: 0.1rem solid #2E4570;
+    background-color: white;
     border-radius: 1rem;
     display: inline-block;
     padding: 0.5rem;
