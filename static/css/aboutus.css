@@ -1,14 +1,33 @@
 .head-1{
-    color: red;
+    color: #910000;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .head-2{
     text-align: center;
-    color: mediumorchid;
+    color: #910000;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: #2E4570;
 }
 
 .about-container{
-    background: blanchedalmond;
-    opacity: 0.5;
+    border-radius: 1rem;
+    width: 70%;
+    position: relative;
+    right: 1rem;
+    left: 11rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 0.3rem;
+    border-style: solid;
+    border-color: #2E4570;
+
 }
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+
