@@ -115,7 +115,7 @@
     background-image: url("../images/castles/01_02.jpeg");
 }
 
-.similar-info h4 {
+#similar h4 {
     text-align: center;
     text-decoration: underline;
     color: white;
@@ -169,6 +169,7 @@
     width: 40%;
     height: 40%;
     margin: 1rem;
+    cursor: pointer;
 }
 
 #realtor {
