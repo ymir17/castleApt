@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/property.css' %}">
+    <div class="img-banner">
+        <div class="img">
+            <div class="left-arrow"></div>
+            <img src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+            <div class="right-arrow"></div>
+        </div>
+    </div>
+    <div class="info">
+        <div id="core-info">
+            <p id="price">$XX.XXX.XXX</p>
+            <p id="street">Name of the Street</p>
+            <p id="register">The listing was registered on *date*</p>
+            <div id="about">
+                <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis viverra nibh cras pulvinar. Non tellus orci ac auctor augue mauris augue neque gravida. Vulputate mi sit amet mauris commodo quis imperdiet massa. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Sed augue lacus viverra vitae. Netus et malesuada fames ac turpis egestas maecenas pharetra. Eget egestas purus viverra accumsan in nisl nisi scelerisque. Maecenas sed enim ut sem viverra aliquet eget sit. Id eu nisl nunc mi ipsum faucibus vitae aliquet. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis. Duis ultricies lacus sed turpis tincidunt.
+<br><br>
+Urna condimentum mattis pellentesque id. Praesent semper feugiat nibh sed pulvinar. Quam id leo in vitae. Mi quis hendrerit dolor magna eget est lorem. Turpis massa sed elementum tempus egestas sed. Ut porttitor leo a diam sollicitudin tempor id. Cursus in hac habitasse platea. At tempor commodo ullamcorper a lacus vestibulum. Morbi tincidunt ornare massa eget egestas purus. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Elementum nibh tellus molestie nunc non blandit.                </p>
+            </div>
+        </div>
+        <div id="similar">
+            <h4>Similar Listings:</h4>
+            <div id="listing1">
+                <div id="thumbnail"></div>
+                <div class="similar-info">
+                    <p><b><u>No. Name of the Street</u></b></p>
+                    <p>xxx m²</p>
+                    <p>Built in xxxx</p>
+                    <p>xx Rooms</p>
+                </div>
+            </div>
+            <div id="listing2">
+                <div id="thumbnail"></div>
+                <div class="similar-info">
+                    <p><b><u>No. Name of the Street</u></b></p>
+                    <p>xxx m²</p>
+                    <p>Built in xxxx</p>
+                    <p>xx Rooms</p>
+                </div>
+            </div>
+            <div id="listing3">
+                <div id="thumbnail"></div>
+                <div class="similar-info">
+                    <p><b><u>No. Name of the Street</u></b></p>
+                    <p>xxx m²</p>
+                    <p>Built in xxxx</p>
+                    <p>xx Rooms</p>
+                </div>
+            </div>
+            <div id="listing4">
+                <div id="thumbnail"></div>
+                <div class="similar-info">
+                    <p><b><u>No. Name of the Street</u></b></p>
+                    <p>xxx m²</p>
+                    <p>Built in xxxx</p>
+                    <p>xx Rooms</p>
+                </div>
+            </div>
+            <div id="listing5">
+                <div id="thumbnail"></div>
+                <div class="similar-info">
+                    <p><b><u>No. Name of the Street</u></b></p>
+                    <p>xxx m²</p>
+                    <p>Built in xxxx</p>
+                    <p>xx Rooms</p>
+                </div>
+            </div>
+        </div>
+        <input id="buy" type="submit" value="Buy">
+        <div id="additional-info">
+            <p>xxx m²</p>
+            <p>Built in xxxx</p>
+            <p>xx Rooms</p>
+            <p>xx bathrooms</p>
+            <p>xx Bedrooms</p>
+            <p>Dungeon Y/N</p>
+            <div id="realtor">
+                <p id="headline">Contact<br>Realtor</p>
+                <img src="{% static 'images/realtors/anton.jpeg' %}" alt="Realtor">
+                <p id="name">Name</p>
+            </div>
+        </div>
+        <div id="images">
+            <img src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_01.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_02.jpeg' %}" alt="Property Image">
+            <img src="{% static 'images/castles/00_03.jpeg' %}" alt="Property Image">
+        </div>
+    </div>
+    <script>
+
+
+    </script>
+
+{% endblock %}

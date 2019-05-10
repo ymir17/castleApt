@@ -1,0 +1,227 @@
+
+.img-banner {
+    position: relative;
+    background-color: rgba(24, 24, 24, 0.9);
+    width: 100%;
+    height: 30rem;
+    border-bottom: 0.3125rem solid rgba(46, 69, 112, 0.9);
+}
+
+.img {
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    background-color: #4f4f4f;
+    width: 45rem;
+    height: 100%;
+    max-width: 100%;
+}
+
+.img img {
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.left-arrow {
+    position: absolute;
+    right: 101%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-right: 2rem solid rgba(145, 0, 0, 1);
+    border-bottom: 1rem solid transparent;
+    cursor: pointer;
+    }
+
+.right-arrow {
+    position: absolute;
+    left: 101%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-left: 2rem solid rgba(145, 0, 0, 1);
+    border-bottom: 1rem solid transparent;
+    cursor: pointer;
+    }
+
+.info {
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 85%;
+}
+
+#core-info {
+    float: left;
+    width: 50%;
+}
+
+#additional-info {
+    float: right;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    margin-left: 1.5rem;
+}
+
+#similar {
+    float: right;
+    background-color: rgba(145, 0, 0, 1);
+    width: 16rem;
+    margin: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.9375rem;
+}
+
+#thumbnail {
+    margin: 0 0.5rem 1rem 1rem;
+    background-size: cover;
+    position: relative;
+    background-color: #4f4f4f;
+    width: 4rem;
+    height: 4rem;
+    float: left;
+}
+.similar-info {
+    float: right;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+.similar-info p {
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+}
+#listing1 #thumbnail {
+    background-image: url("../images/castles/00_01.jpeg");
+}
+
+#listing2 #thumbnail {
+    background-image: url("../images/castles/00_02.jpeg");
+}
+
+#listing3 #thumbnail {
+    background-image: url("../images/castles/00_03.jpeg");
+}
+
+#listing4 #thumbnail {
+    background-image: url("../images/castles/01_01.jpeg");
+}
+#listing5 #thumbnail {
+    background-image: url("../images/castles/01_02.jpeg");
+}
+
+#similar h4 {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+#core-info {
+    margin-left: 2rem;
+}
+
+#price {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    margin-top: 1rem;
+}
+
+#street {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#register {
+    margin-top: 0.8rem;
+    font-size: 1.6rem;
+}
+
+#about {
+    font-size: 1.2rem;
+}
+#buy {
+    float: right;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #2E4570;
+    display: inline;
+    margin: 0;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+#images {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#images img {
+    width: 40%;
+    height: 40%;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+#realtor {
+    float: right;
+    text-decoration: black;
+    background-color: #2E4570;
+    border: 0.15rem solid #4f4f4f;
+    border-radius: 0.9375rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#realtor p {
+    font-size: 1rem;
+}
+
+#realtor #headline {
+    margin: 0;
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+#realtor #name {
+    margin: 0;
+    margin-top: 0.5rem;
+    color: white;
+}
+
+#realtor img {
+    width: 5rem;
+    height: 5rem;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .img-banner {
+        height: 50vw;
+    }
+    .img {
+        background-color: transparent;
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+    }
+    .left-arrow {
+        right: 90%;
+    }
+
+    .right-arrow {
+        left: 90%;
+    }
+}

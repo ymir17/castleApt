@@ -1,0 +1,43 @@
+.searchcontainer {
+    width: 31rem;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+.searchfield {
+    margin: auto;
+    border: none;
+    height: 3rem;
+    width: 25rem;
+    font-size: 16px;
+    padding-left: 1rem;
+
+}
+::placeholder {
+    padding-left: 0.5rem;
+}
+.button {
+    background-color: #2E4570;
+    margin: auto;
+    border: none;
+    height: 3.125rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: -0.3rem;
+}
+#advsearch {
+    background-color: #2E4570;
+    width: 7rem;
+    border: none;
+    padding: 0.2rem;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+}
