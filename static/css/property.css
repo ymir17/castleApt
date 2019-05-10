@@ -172,15 +172,14 @@
     float: right;
     text-decoration: black;
     background-color: #2E4570;
-    border: 0.0625rem solid black;
+    border: 0.15rem solid #4f4f4f;
     border-radius: 0.9375rem;
-    padding: 0.9375rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
     text-align: center;
-    margin: auto;
     cursor: pointer;
 }
 
-#realtor h4 {
+#realtor p {
     font-size: 1rem;
 }
 
