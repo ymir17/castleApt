@@ -2,7 +2,6 @@
 {% block content %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
-    {#<script src="{% static 'js/contactspopup.js' %}"></script>#}
     <div class="realtorsBox">
         {% for realtor in realtors %}
             <div id="realtor{{ realtor.accountId_id }}" class="singleRealtor">
@@ -45,15 +44,7 @@
         {% endfor %}
     </div>
     <script>
-        document.body.addEventListener("click", function(e) {
-            console.log(e.target.parentElement.parentElement);
-            if (e.target.id.indexOf("myPopup") >= 0) {
-                popUp(e.target, "none");
-            }
-            else if (e.target.className == "close") {
-                popUp(e.target.parentElement.parentElement, "none");
-            }
-        });
+        // Opens a pop-up window with more details about clicked realtor
         document.body.addEventListener("click", function (e) {
             if (e.target.id.indexOf('realtor') >= 0) {
                 popUp(e.target, "block");
@@ -63,54 +54,21 @@
             }
         });
 
-            {#console.log('e.target.id: ' + e.target.id);#}
-            {#var id = e.target.id;#}
-            {#console.log(id.indexOf('realtor'));#}
-            {#console.log('e.target.parentElement.id: ' + e.target.parentElement.id);#}
-
-        {#for (var i=0;i<containers.length;i++) {#}
-        {#    containers[i].addEventListener("click", function (e){#}
-        {#        console.log(e.target);#}
-        {#    });#}
-        {# } #}
+        // closes popup window
+        document.body.addEventListener("click", function(e) {
+            if (e.target.id.indexOf("myPopup") >= 0) {
+                popUp(e.target, "none");
+            }
+            else if (e.target.className == "close") {
+                popUp(e.target.parentElement.parentElement, "none");
+            }
+        });
 
         function popUp(element, displayStyle) {
-            {#console.log(element);#}
             var container = document.getElementById('myPopup'+element.id.slice(-2));
             container.style.display = displayStyle;
 
         }
-
-        // Get the modal
-        {#var pop = document.getElementById("myPopup");#}
-        {#console.log(pop);#}
-        {##}
-        {#// Get the button that opens the modal#}
-        {#var btns = document.getElementsByClassName("singleRealtor");#}
-        {#console.log(btns);#}
-        {##}
-        {#// Get the <span> element that closes the modal#}
-        {#var span = document.getElementsByClassName("close")[0];#}
-        {##}
-        {#for(let i = 0; i < btns.length; i++) {#}
-        {#    var btn = btns[i];#}
-        {#    btn.onclick = function() {#}
-        {#        pop.style.display = "block";#}
-        {#    }#}
-        {##}
-        {#    // When the user clicks on <span> (x), close the modal#}
-        {#    span.onclick = function() {#}
-        {#        pop.style.display = "none";#}
-        {#    }#}
-        {##}
-        {#    // When the user clicks anywhere outside of the modal, close it#}
-        {#    window.onclick = function(event) {#}
-        {#      if (event.target == pop) {#}
-        {#          pop.style.display = "none";#}
-        {#      }#}
-        {#    }#}
-        {#  #}
-        {#// When the user clicks the button, open the modal#}
 
     </script>
 {% endblock %}
