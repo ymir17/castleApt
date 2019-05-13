@@ -3,10 +3,9 @@ from contacts.models import Realtors, RealtorImages
 from signup.models import Accounts
 
 
-
-# Create your views here.
 def index(request):
-    realtorimg = RealtorImages.objects.all().order_by("realtImgUrl")
-    realtors = Accounts.objects.all().order_by("firstName")
-    context = {'data': realtorimg, 'realtors': realtors}
+    realtorImg = RealtorImages.objects.all().order_by("realtImgUrl")
+    account = Accounts.objects.all().order_by("firstName")
+    realtor = Realtors.objects.all()
+    context = {'accounts': account, 'realtorImgs': realtorImg, 'realtors': realtor}
     return render(request, 'Contacts/contacts.html', context)
