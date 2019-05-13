@@ -3,27 +3,59 @@
     {% load static %}
 
     <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
-
+    <img src="{% static 'images/slogan.svg' %}" id="slogan"alt="slogan">
     <form target="_blank" action="/submitEval.php">
         <div class="searchcontainer">
             <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>
-
             <div class="zipDiv">
+                <label class="filter-labels">ZipCode</label>
                 <div class="checkboxZip">
-                <input type="checkbox" name="109" value="109">109 Reykjavík<br>
-                <input type="checkbox" name="220" value="220">220 Hafnarfjörður<br>
-                <input type="checkbox" name="531" value="531">531 Hvammstangi<br>
+                <!--<input type="checkbox" name="109" value="109">109 Reykjavík
+                <input type="checkbox" name="220" value="220">220 Hafnarfjörður
+                <input type="checkbox" name="531" value="531">531 Hvammstangi
                 <input type="checkbox" name="740" value="740">740 Neskaupstaður
-                </div>
-                <div class="checkboxZip">
-                <input type="checkbox" name="112" value="112">112 Reykjavík<br>
-                <input type="checkbox" name="311" value="311">311 Borgarnes<br>
-                <input type="checkbox" name="670" value="670">670 Kópasker<br>
-                <input type="checkbox" name="870" value="870">870 Vík<br>
+                <input type="checkbox" name="112" value="112">112 Reykjavík
+                <input type="checkbox" name="311" value="311">311 Borgarnes
+                <input type="checkbox" name="670" value="670">670 Kópasker
+                <input type="checkbox" name="870" value="870">870 Vík-->
+                    <label class="container">109 Reykjavík
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">220 Hafnarfjörður
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">531 Hvammstangi
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">740 Neskaupstaður
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">112 Reykjavík
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">311 Borgarnes
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">670 Kópasker
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">870 Vík
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
             </div>
-            <div class="dropdownDiv">
-                <p>Price &euro;</p>
+            <div class="dropdown-container">
+                <div class="dropdownDiv">
+                <label class="filter-labels">Price</label>
+                <div class="select-container">
                 <select name="fromprice" class="alldropdowns">
                     <option value="#">From</option>
                     <option value="1">1m &euro;</option>
@@ -52,9 +84,11 @@
                     <option value="45">45m &euro;</option>
                     <option value="50">50m &euro;</option>
                 </select>
-            </div>
+                    </div>
+                </div>
             <div class="dropdownDiv">
-                <p>Fm&sup2;</p>
+                <label class="filter-labels">Fm&sup2;</label>
+                <div class="select-container">
                 <select name="fromfm" class="alldropdowns">
                     <option value="#">From</option>
                     <option value="40">40 Fm&sup2;</option>
@@ -87,9 +121,11 @@
                     <option value="800">800 Fm&sup2;</option>
                     <option value="1000">1000 Fm&sup2;</option>
                 </select>
+                </div>
             </div>
             <div class="dropdownDiv">
-                <p>Rooms</p>
+                <label class="filter-labels">Rooms</label>
+                <div class="select-container">
                 <select name="fromrooms" class="alldropdowns">
                     <option value="#">From</option>
                     <option value="1">1</option>
@@ -122,20 +158,32 @@
                     <option value="100">100</option>
                     <option value="150">150</option>
                 </select>
+                </div>
             </div>
             <div class="dropdownDiv">
-                <p>Type</p>
+                <label class="filter-labels">Type</label>
+                <div class="select-container">
                 <div id="checkboxtype">
-                    <input type="checkbox" name="castle" value="Castle" id="castlebox">
+                    <!--<input type="checkbox" name="castle" value="Castle" id="castlebox">
                     <label class="mark" for="castlebox">Castle</label><br>
                     <input type="checkbox" name="villa" value="Villa" id="villabox">
                     <label class="mark" for="villabox">Villa</label><br>
                     <input type="checkbox" name="cabin" value="Cabin" id="cabinbox">
-                    <label class="mark" for="cabinbox">Cabin</label><br>
+                    <label class="mark" for="cabinbox">Cabin</label><br> -->
+                    <label class="container">Castle
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label><label class="container">Villa
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label><label class="container">Cabin
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
-            </div><br>
-
-
+                </div>
+            </div>
+            </div>
 
             <input class="button" type="submit" value="Search">
         </div>
