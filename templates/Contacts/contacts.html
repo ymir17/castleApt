@@ -2,10 +2,10 @@
 {% block content %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
-    <!--<script src="{% static 'js/contactspopup.js' %}"></script>-->
-    <div class="realtorsbox">
-            {% for realtor in realtors %}
-                <div class="singlerealtor">
+    {#<script src="{% static 'js/contactspopup.js' %}"></script>#}
+    <div class="realtorsBox">
+        {% for realtor in realtors %}
+            <div id="realtor{{ realtor.accountId_id }}" class="singleRealtor">
                 {% for image in realtorImgs %}
                     {% if image.realtImgId == realtor.realtImgId_id %}
                         <img src="{{ image.realtImgUrl }}">
@@ -16,58 +16,101 @@
                         <h4>{{ account.firstName }} {{ account.lastName }}</h4>
                     {% endif %}
                 {% endfor %}
-                </div>
-                <div id="mypopup" class="modal">
-                    <div class="popup-content">
-                        <span class="close">&times;</span>
-                        <div class="popupleft">
-                            {% for image in realtorImgs %}
-                                {% if image.realtImgId == realtor.realtImgId_id %}
-                                    <img src="{{ image.realtImgUrl }}">
-                                {% endif %}
-                            {% endfor %}
-                            <h4>Contact info:</h4>
-                            <p>{{ realtor.description }}</p>
-                            {% for account in accounts %}
-                                {% if account.accountId == realtor.accountId_id %}
-                                    <span>{{ account.email }}</span><br>
-                                    <span>{{ account.phoneNo }}</span>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
+            </div>
+            <div id="myPopup{{ realtor.accountId_id }}" class="modal">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <div class="popupLeft">
+                    {% for account in accounts %}
+                        {% if account.accountId == realtor.accountId_id %}
+                            <h4>{{ account.firstName }} {{ account.lastName }}</h4>
+                        {% endif %}
+                    {% endfor %}
+                        {% for image in realtorImgs %}
+                            {% if image.realtImgId == realtor.realtImgId_id %}
+                                <img src="{{ image.realtImgUrl }}">
+                            {% endif %}
+                        {% endfor %}
+                        <h4>Contact info:</h4>
+                        <p>{{ realtor.description }}</p>
+                        {% for account in accounts %}
+                            {% if account.accountId == realtor.accountId_id %}
+                                <span>{{ account.email }} - </span>
+                                <span>{{ account.phoneNo }}</span>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
-            {% endfor %}
-
+            </div>
+        {% endfor %}
     </div>
     <script>
-        // Get the modal
-        var pop = document.getElementById("mypopup");
-
-        // Get the button that opens the modal
-        var btns = document.getElementsByClassName("singlerealtor");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        for(var i = 0; i < btns.length; i++) {
-            var btn = btns[i];
-            btn.onclick = function() {
-                pop.style.display = "block";
+        document.body.addEventListener("click", function(e) {
+            console.log(e.target.parentElement.parentElement);
+            if (e.target.id.indexOf("myPopup") >= 0) {
+                popUp(e.target, "none");
             }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                pop.style.display = "none";
+            else if (e.target.className == "close") {
+                popUp(e.target.parentElement.parentElement, "none");
             }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-              if (event.target == pop) {
-                  pop.style.display = "none";
-              }
+        });
+        document.body.addEventListener("click", function (e) {
+            if (e.target.id.indexOf('realtor') >= 0) {
+                popUp(e.target, "block");
             }
+            else if (e.target.parentElement.id.indexOf('realtor') >= 0) {
+                popUp(e.target.parentElement, "block");
+            }
+        });
+
+            {#console.log('e.target.id: ' + e.target.id);#}
+            {#var id = e.target.id;#}
+            {#console.log(id.indexOf('realtor'));#}
+            {#console.log('e.target.parentElement.id: ' + e.target.parentElement.id);#}
+
+        {#for (var i=0;i<containers.length;i++) {#}
+        {#    containers[i].addEventListener("click", function (e){#}
+        {#        console.log(e.target);#}
+        {#    });#}
+        {# } #}
+
+        function popUp(element, displayStyle) {
+            {#console.log(element);#}
+            var container = document.getElementById('myPopup'+element.id.slice(-2));
+            container.style.display = displayStyle;
+
         }
-        // When the user clicks the button, open the modal
+
+        // Get the modal
+        {#var pop = document.getElementById("myPopup");#}
+        {#console.log(pop);#}
+        {##}
+        {#// Get the button that opens the modal#}
+        {#var btns = document.getElementsByClassName("singleRealtor");#}
+        {#console.log(btns);#}
+        {##}
+        {#// Get the <span> element that closes the modal#}
+        {#var span = document.getElementsByClassName("close")[0];#}
+        {##}
+        {#for(let i = 0; i < btns.length; i++) {#}
+        {#    var btn = btns[i];#}
+        {#    btn.onclick = function() {#}
+        {#        pop.style.display = "block";#}
+        {#    }#}
+        {##}
+        {#    // When the user clicks on <span> (x), close the modal#}
+        {#    span.onclick = function() {#}
+        {#        pop.style.display = "none";#}
+        {#    }#}
+        {##}
+        {#    // When the user clicks anywhere outside of the modal, close it#}
+        {#    window.onclick = function(event) {#}
+        {#      if (event.target == pop) {#}
+        {#          pop.style.display = "none";#}
+        {#      }#}
+        {#    }#}
+        {#  #}
+        {#// When the user clicks the button, open the modal#}
 
     </script>
 {% endblock %}

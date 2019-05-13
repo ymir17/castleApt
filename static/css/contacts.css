@@ -1,10 +1,10 @@
-.realtorsbox {
+.realtorsBox {
     padding: 0.9375rem;
     position: absolute;
     left: 12.5%;
     top: 20%;
 }
-.singlerealtor {
+.singleRealtor {
     float: left;
     background-color: rgba(255, 255, 255, 0.8);
     border: 0.0625rem solid black;
@@ -14,11 +14,11 @@
     margin: 0.785rem;
     cursor: pointer;
 }
-.singlerealtor:hover {
+.singleRealtor:hover {
     background-color: rgba(255, 255, 255, 0.9);
     border: 0.0625rem solid rgba(145, 0, 0, 1);
 }
-.singlerealtor img {
+.singleRealtor img {
     width: 9.375rem;
     height: 9.375rem;
     align-items: center;
@@ -51,7 +51,7 @@
     height: 9.375rem;
     margin-right: 0.7rem;
 }
-.popupleft {
+.popupLeft {
     float: left;
 }
 .close {
