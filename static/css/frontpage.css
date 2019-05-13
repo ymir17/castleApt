@@ -12,20 +12,22 @@ img {
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.8);
     width: 80%;
-    text-align:center;
     position: relative;
     margin: auto;
 }
 .searchfield {
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
+    margin: auto;
+    display: block;
+    margin-top: 1rem;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 1);
     width: 90%;
-    border: none;
     height: 3rem;
     font-size: 1.3rem;
     padding-left: 1rem;
+    border-top: 0.06rem solid #2E4570;
+    border-left: 0.06rem solid #2E4570;
+    border-right: 0.06rem solid #2E4570;
     border-bottom: 0.2rem solid #2E4570;
 }
 .searchfield:hover {
@@ -40,12 +42,11 @@ img {
     padding-left: 0.5rem;
 }
 .zipDiv {
-    margin: 2rem;
+    margin: 1rem 2rem 2rem 2rem;
     background-color: white;
     border: 0.1rem solid #2E4570;
     display: block;
     border-radius: 1rem;
-    text-align: left;
     padding: 0.3rem;
     float: left;
     overflow-y: scroll;
@@ -164,6 +165,10 @@ img {
     margin-right: auto;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .filter-labels {
     font-size: 1.5rem;
     font-weight: bold;
@@ -175,6 +180,6 @@ img {
 }
 
 .dropdown-container {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 5rem;
 }
