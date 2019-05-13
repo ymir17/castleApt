@@ -1,31 +1,32 @@
 .img-container{
     background-color: #4f4f4f;
     order: 0;
-    flex-basis: 10rem;
+    flex-basis: 22.5rem;
 }
 
 .container-prop{
     margin: auto;
     background-color: rgba(255, 255, 255, 0.8);
-    height: 50rem;
+    height: 100%;
     width: 85%;
 
 }
 
 img {
-    width: 50%;
+    width: 100%;
 }
 
 .listing{
     border-top: solid;
     border-bottom: solid;
     border-color: black;
-    background-color: orange;
     display:flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    height: 15rem;
+    height: 100%;
+    max-height: 30rem;
+    padding: 1rem;
 }
 
 .prop-info{
