@@ -5,6 +5,8 @@ from signup.models import Accounts
 class RealtorImages(models.Model):
     realtImgId = models.AutoField(auto_created=True, primary_key=True)
     realtImgUrl = models.CharField(max_length=1024)
+    def __str__(self):
+        return self.realtImgUrl
 
 
 
