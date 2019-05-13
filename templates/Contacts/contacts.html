@@ -6,24 +6,35 @@
     <div class="realtorsbox">
             {% for realtor in realtors %}
                 <div class="singlerealtor">
-                    <img src=" {{ realtor.realtImgId.realtors_set.get }}">
-                    <h4> {{ realtors.all}} {{ realtor.firstName }} {{ realtor.lastName }}</h4>
+                {% for image in realtorImgs %}
+                    {% if image.realtImgId == realtor.realtImgId_id %}
+                        <img src="{{ image.realtImgUrl }}">
+                    {% endif %}
+                {% endfor %}
+                {% for account in accounts %}
+                    {% if account.accountId == realtor.accountId_id %}
+                        <h4>{{ account.firstName }} {{ account.lastName }}</h4>
+                    {% endif %}
+                {% endfor %}
                 </div>
-{#                <div class="singlerealtor">#}
-{#                    <img src=" {{ realtor.realtImgUrl }}">#}
-{#                    <h4> {{ realtors. }} {{ realtor.firstName }} {{ realtor.lastName }}</h4>#}
-{#                </div> #}
                 <div id="mypopup" class="modal">
                     <div class="popup-content">
                         <span class="close">&times;</span>
                         <div class="popupleft">
-                            <img src="{{ realtor.realtImgUrl }}">
+                            {% for image in realtorImgs %}
+                                {% if image.realtImgId == realtor.realtImgId_id %}
+                                    <img src="{{ image.realtImgUrl }}">
+                                {% endif %}
+                            {% endfor %}
                             <h4>Contact info:</h4>
-                            <p>{{ realtor.email }}</p>
-                            <p>{{ realtor.phoneNo }}</p>
+                            <p>{{ realtor.description }}</p>
+                            {% for account in accounts %}
+                                {% if account.accountId == realtor.accountId_id %}
+                                    <span>{{ account.email }}</span><br>
+                                    <span>{{ account.phoneNo }}</span>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <h3>{{ realtor.firstName }} {{ realtor.lastName }}</h3>
-                        <p>{{ realtor.description }}</p>
                     </div>
                 </div>
             {% endfor %}
