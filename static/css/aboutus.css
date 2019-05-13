@@ -36,5 +36,8 @@ p{
 
 .copyright{
     background:white;
+    width: 50%;
+    border-radius: 1rem;
+    margin: 10px;
 }
 
