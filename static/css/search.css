@@ -1,0 +1,39 @@
+.img-container{
+    background-size: cover;
+    margin: auto;
+    background-color: #4f4f4f;
+    width: 20rem;
+    height: 100%;
+    max-width: 100%;
+    float: left;
+}
+
+.container-prop{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 50rem;
+    width: 85%;
+
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.listing{
+    border-top: solid;
+    border-bottom: solid;
+    border-color: black;
+    margin: auto;
+    background-color: orange;
+    width: 50rem;
+    height: 50rem%;
+    padding: 10rem;
+}
+
+.prop-info{
+    float:right;
+
+}
+
