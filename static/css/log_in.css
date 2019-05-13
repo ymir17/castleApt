@@ -1,12 +1,11 @@
 .container {
     background-color: rgba(255, 255, 255, 0.8);
-    height: 30rem;
+    height: 22.5rem;
     width: 25rem;
     border: 0.3rem solid #2E4570;
     border-radius: 1rem;
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    margin-top: 8rem;
 }
 h3, h4 {
     text-align: center;
@@ -25,7 +24,7 @@ h3, h4 {
 textarea:focus, input:focus{
     outline: none;
 }
-#button, #sign-up{
+.button, #sign-up{
     width: 10rem;
     height: 2.5rem;
     border-radius: 2rem;
@@ -36,16 +35,13 @@ textarea:focus, input:focus{
     margin: auto;
 }
 
-#sign-up{
-    color: white;
-    width: 15rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    font-size: 1.5rem;
-    background-color: #2E4570;
-    display: block;
-    margin: auto;
-    text-align: center;
+.button:hover {
+    cursor: pointer;
+}
+
+button{
+    width: 15rem !important;
+
 }
 
 
