@@ -6,12 +6,12 @@
         <div class="container">
             <h3>Please enter e-mail and password</h3>
             <form target="_blank" action="/submitEval.php">
-                <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail"><br>
-                <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word"><br>
+                <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail">
+                <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word">
                 <input class="button" type="submit" value="Sign in">
             </form>
             <h4>Don't have an account?</h4>
             <!--<a href="{% url 'signup-index' %}"><div id="sign-up"><p>Create new user</p></div></a>-->
-            <button class="button" onclick=location.href='{% url 'signup-index' %}' type="button">Create new user</button>
+            <button class="button" onclick=location.href="{% url 'signup-index' %}" type="button">Create new user</button>
         </div>
 {% endblock %}

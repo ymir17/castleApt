@@ -1,26 +1,39 @@
 .signup_border {
     background-color: rgba(255, 255, 255, 0.8);
-    height: 30rem;
-    width: 25rem;
+    width: 70%;
     border: 0.3rem solid #2E4570;
     border-radius: 1rem;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 1rem;
 }
 h3 {
     text-align: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 100%;
+}
+
 .inputs {
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    border-bottom: 0.3rem solid #2E4570;
+    background: rgba(255, 255, 255, 1);
+    border-top: 0.06rem solid #2E4570;
+    border-left: 0.06rem solid #2E4570;
+    border-right: 0.06rem solid #2E4570;
+    border-bottom: 0.2rem solid #2E4570;
+    border-radius: 0.5rem;
     height: 2.2rem;
     width: 20rem;
     font-size: 1.3rem;
     padding-left: 1rem;
     display: block;
     margin: auto;
+    margin-bottom: 1rem;
 }
 textarea:focus, input:focus{
     outline: none;
@@ -38,4 +51,29 @@ textarea:focus, input:focus{
 
 #button:hover {
     cursor: pointer;
+}
+
+#signup {
+    height: 5rem;
+    float: right;
+    margin-right: 10%;
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        height: 48rem;
+    }
+    .inputs {
+        margin: auto;
+        margin-bottom: 2rem;
+        margin-top: 0;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inputs {
+        width: 10rem;
+        width: 10rem;
+    }
 }
