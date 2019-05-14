@@ -3,6 +3,30 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/sell.css' %}">
 
+    <div class="signup_border">
+        <h2>Request to sell property</h2>
+        <form target="_blank" action="/submitEval.php">
+            <div class="container">
+                <input class="inputs" placeholder="Size" type="text" name="firstname" id="first-name">
+                <input class="inputs" placeholder="Year built" type="text" name="lastname" id="last-name">
+                <input class="inputs" placeholder="Rooms" type="text" name="email" id="e-mail">
+                <input class="inputs" placeholder="Address" type="text" name="adress" id="adress">
+                <input class="inputs" placeholder="City" type="text" name="city" id="city">
+                <input class="inputs" placeholder="Zip code" type="text" name="zipcode" id="zipcode">
+                <input class="inputs" placeholder="Country" type="text" name="country" id="country">
+                <select name="realtor" id="realtor">
+                    <option value="#">Realtor</option>
+                    <option value="Anton">Anton</option>
+                    <option value="Arnar">Arnar</option>
+                    <option value="Atli">Atli</option>
+                    <option value="Sævar">Sævar</option>
+                    <option value="Ýmir">Ýmir</option>
+                </select>
+            </div>
+            <textarea id="description" name="description" placeholder="Description" ></textarea>
+            <input id="button" type="submit" value="Submit">
 
+        </form>
+    </div>
 
 {% endblock %}
