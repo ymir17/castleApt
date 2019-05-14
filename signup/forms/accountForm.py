@@ -29,7 +29,7 @@ class CreateAccountForm(ModelForm):
 class CreateUserForm(ModelForm):
     class Meta:
         model = Users
-        exclude = ['id', 'accountId', 'accountId_id']
+        exclude = ['id', 'accountId']
         widgets = {
             'address': widgets.TextInput(attrs={'class': 'inputs', 'placeholder': 'Address'}),
             'city': widgets.TextInput(attrs={'class': 'inputs', 'placeholder': 'City'}),

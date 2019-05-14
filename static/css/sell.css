@@ -1,0 +1,120 @@
+.signup_border {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70%;
+    border: 0.3rem solid #2E4570;
+    border-radius: 1rem;
+    margin: 3rem auto 3rem auto;
+    padding-bottom: 1rem;
+}
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 15rem;
+    width: 100%;
+}
+
+.inputs, #description {
+    background: rgba(255, 255, 255, 1);
+    border-top: 0.06rem solid #2E4570;
+    border-left: 0.06rem solid #2E4570;
+    border-right: 0.06rem solid #2E4570;
+    border-bottom: 0.2rem solid #2E4570;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    width: 20rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+#button{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #2E4570;
+    display: block;
+    margin: auto;
+}
+
+#button:hover {
+    cursor: pointer;
+}
+
+#signup {
+    height: 5rem;
+    float: right;
+    margin-right: 10%;
+}
+
+
+#realtor {
+    color: white;
+    background: rgb(87, 0, 0);
+    border-top: 0.06rem solid #2E4570;
+    border-left: 0.06rem solid #2E4570;
+    border-right: 0.06rem solid #2E4570;
+    border-bottom: 0.2rem solid #2E4570;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    width: 21.2rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    display: block;
+    margin: 0.5rem auto 1rem auto;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.alldropdowns:hover {
+    cursor: pointer;
+}
+
+.filter-labels {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#description {
+    height: 9rem;
+    width: 88%;
+    background: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 1rem;
+    resize: vertical;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        height: 37rem;
+    }
+    .inputs {
+        margin: auto;
+        margin-bottom: 2rem;
+        margin-top: 0;
+
+    }
+    #description {
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inputs {
+        width: 10rem;
+    }
+
+    #realtor {
+        width: 10rem;
+    }
+}
