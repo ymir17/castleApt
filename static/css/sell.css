@@ -71,8 +71,7 @@ textarea:focus, input:focus{
     font-size: 1.3rem;
     padding-left: 1rem;
     display: block;
-    margin: auto;
-    margin-bottom: 1rem;
+    margin: 0.5rem auto 1rem auto;
     flex-wrap: wrap;
     text-align: left;
 }
@@ -97,7 +96,7 @@ textarea:focus, input:focus{
 
 @media screen and (max-width: 1050px) {
     .container {
-        height: 48rem;
+        height: 37rem;
     }
     .inputs {
         margin: auto;
@@ -105,11 +104,17 @@ textarea:focus, input:focus{
         margin-top: 0;
 
     }
+    #description {
+        height: 20rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .inputs {
         width: 10rem;
+    }
+
+    #realtor {
         width: 10rem;
     }
 }
