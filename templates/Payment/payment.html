@@ -1,6 +1,33 @@
 {% extends 'base.html' %}
 {% block content%}
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+    <div class="container">
+            <h3>Payment page</h3>
+            <form target="_blank" action="/submitEval.php">
+                <div class='box1'>
+                    <h4>Select creditcard type</h4>
+                    <br>
+                    <input type="radio" name="card" value="Visa"> Visa
+                    <input type="radio" name="card" value="Mastercard"> Mastercard
+                    <input type="radio" name="card" value="American Express"> American Express
+                    <br>
+                    <input class="inputs" placeholder="Name on card" type="text" name="cardname" id="cardname">
+                    <input class="inputs" placeholder="Card number" type="number" name="cardnumber" id="cardnumber">
+                    <input class="inputs" placeholder="Exp. date" type="date" name="Exp-date" id="exp-date">
+                    <input class="inputs" placeholder="CVC" type="number" name="CVC" id="cvc">
+                    <input class="inputs" placeholder="Billing address" type="text" name="address" id="address">
+                </div>
+                <div class='box2'>
+                    <input class="inputs" placeholder="House number" type="number" name="housenumber" id="housenumber">
+                    <input class="inputs" placeholder="City" type="text" name="city" id="city">
+                    <input class="inputs" placeholder="Country" type="text" name="country" id="country">
+                    <input class="inputs" placeholder="Postal Code" type="number" name="postalcode" id="postalcode">
+                    <input class="button" type="submit" value="Sign in">
+                </div>
+            </form>
+        </div>
 
 
 
