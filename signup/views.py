@@ -27,6 +27,7 @@ def index(request):
             pass
     else:
         form = CreateAccountForm()
+        newUser = CreateUserForm()
     return render(request, 'Sign_up/signup.html', {
 
         'form': form, 'form2': newUser
