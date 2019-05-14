@@ -97,8 +97,11 @@ label {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    .signup_border{
+        width: 90%;
+    }
     .inputs {
-        width: 10rem;
+        width: 100%;
     }
 }
