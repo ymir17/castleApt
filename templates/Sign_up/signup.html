@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
         <div class="signup_border">
             <h3>Create your account</h3>
-            <form target="_blank" action="/submitEval.php">
+            <form action="{% url 'createUser' %}" method="POST">
                 <input class="inputs" placeholder="First name" type="text" name="firstname" id="first-name"><br>
                 <input class="inputs" placeholder="Last name" type="text" name="lastname" id="last-name"><br>
                 <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail"><br>

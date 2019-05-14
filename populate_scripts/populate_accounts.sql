@@ -1,13 +1,13 @@
 INSERT INTO signup_accounts ("lastName", "firstName", "phoneNo", email, password)
-VALUES('Gíslason', 'Ýmir Páll', 8237424, 'ymir17@ru.is', 'ymir17');
+VALUES('Gï¿½slason', 'ï¿½mir Pï¿½ll', 8237424, 'ymir17@ru.is', 'ymir17');
 INSERT INTO signup_accounts ("lastName", "firstName", "phoneNo", email, password)
-VALUES('Ingólfsson', 'Sævar', 7707344, 'saevar17@ru.is', 'saevar17');
+VALUES('Ingï¿½lfsson', 'Sï¿½var', 7707344, 'saevar17@ru.is', 'saevar17');
 INSERT INTO signup_accounts ("lastName", "firstName", "phoneNo", email, password)
-VALUES('Jónsson', 'Anton Búi', 8946341, 'anton17@ru.is', 'anton17');
+VALUES('Jï¿½nsson', 'Anton Bï¿½i', 8946341, 'anton17@ru.is', 'anton17');
 INSERT INTO signup_accounts ("lastName", "firstName", "phoneNo", email, password)
 VALUES('Bjarnason', 'Atli Steinn', 8484432, 'atlib17@ru.is', 'atlib17');
 INSERT INTO signup_accounts ("lastName", "firstName", "phoneNo", email, password)
-VALUES('Ólafsson', 'Arnar', 8945831, 'arnaro17@ru.is', 'arnaro17');
+VALUES('ï¿½lafsson', 'Arnar', 8945831, 'arnaro17@ru.is', 'arnaro17');
 
 INSERT INTO contacts_realtorimages ("realtImgUrl")
 VALUES ('static/images/realtors/ymir.JPG"');
@@ -20,13 +20,13 @@ VALUES ('static/images/realtors/atli.jpg');
 INSERT INTO contacts_realtorimages ("realtImgUrl")
 VALUES ('static/images/realtors/arnar.png');
 
-INSERT INTO contacts_realtors ("accountId_id", "description", "realtImgId_id")
+INSERT INTO contacts_realtors (accountId, "description", realtImgId)
 VALUES(1, 'Ymir has a PhD in real estate economics. He has worked for Castle Apartments since he co-founded with his five other coworkers in 1962.', 1);
-INSERT INTO contacts_realtors ("accountId_id", "description", "realtImgId_id")
+INSERT INTO contacts_realtors (accountId, "description", realtImgId)
 VALUES(2, 'Saevar has a master degree in real estate engineering. Since he co-founded Castle Apartments in 1962 he has engineered the very fundamentals of real estates.', 2);
-INSERT INTO contacts_realtors ("accountId_id", "description", "realtImgId_id")
+INSERT INTO contacts_realtors (accountId, "description", realtImgId)
 VALUES(3, 'Anton has both a bachelor degree in business and a master degree in real estate economics. When he co-founded Castle Apartments in 1962 he was nominated as person of the year in Times magazine.', 3);
-INSERT INTO contacts_realtors ("accountId_id", "description", "realtImgId_id")
+INSERT INTO contacts_realtors (accountId, "description", realtImgId)
 VALUES(4, 'Atli has a high school degree. In 1962 he, along with others, co-founded Castle Apartments. He has not accomplished anything since.', 4);
-INSERT INTO contacts_realtors ("accountId_id", "description", "realtImgId_id")
+INSERT INTO contacts_realtors (accountId, "description", realtImgId)
 VALUES(5, 'Arnar has a PhD in real estate science. After he co-founded Castle Apartments in 1962, he backpacked through Asia, tamed lions, teach children english and introduced the people to communism. He returned back to Castle Apartments in 1989.', 5);

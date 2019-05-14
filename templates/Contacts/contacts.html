@@ -4,36 +4,36 @@
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
     <div class="realtorsBox">
         {% for realtor in realtors %}
-            <div id="realtor{{ realtor.accountId_id }}" class="singleRealtor">
+            <div id="realtor{{ realtor.accountId }}" class="singleRealtor">
                 {% for image in realtorImgs %}
-                    {% if image.realtImgId == realtor.realtImgId_id %}
+                    {% if image.realtImgId == realtor.realtImgId %}
                         <img src="{{ image.realtImgUrl }}">
                     {% endif %}
                 {% endfor %}
                 {% for account in accounts %}
-                    {% if account.accountId == realtor.accountId_id %}
+                    {% if account.accountId == realtor.accountId %}
                         <h4>{{ account.firstName }} {{ account.lastName }}</h4>
                     {% endif %}
                 {% endfor %}
             </div>
-            <div id="myPopup{{ realtor.accountId_id }}" class="modal">
+            <div id="myPopup{{ realtor.accountId }}" class="modal">
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <div class="popupLeft">
                     {% for account in accounts %}
-                        {% if account.accountId == realtor.accountId_id %}
+                        {% if account.accountId == realtor.accountId %}
                             <h4>{{ account.firstName }} {{ account.lastName }}</h4>
                         {% endif %}
                     {% endfor %}
                         {% for image in realtorImgs %}
-                            {% if image.realtImgId == realtor.realtImgId_id %}
+                            {% if image.realtImgId == realtor.realtImgId %}
                                 <img src="{{ image.realtImgUrl }}">
                             {% endif %}
                         {% endfor %}
                         <h4>Contact info:</h4>
                         <p>{{ realtor.description }}</p>
                         {% for account in accounts %}
-                            {% if account.accountId == realtor.accountId_id %}
+                            {% if account.accountId == realtor.accountId %}
                                 <span>{{ account.email }} - </span>
                                 <span>{{ account.phoneNo }}</span>
                             {% endif %}
