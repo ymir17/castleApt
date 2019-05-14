@@ -1,10 +1,42 @@
+from random import choice
+from string import ascii_letters
 from django import forms
-from django.forms import ModelForm, forms, widgets
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.forms import ModelForm, widgets
 from signup.models import Accounts, Users
 
 
-class CreateAccountForm(ModelForm):
+class SignUpForm(UserCreationForm):
+    # UserCreationForm has:
+    # username, password, password confirmation
+    last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'class': 'inputs',
+        'placeholder': 'Last Name',
+    }))
+    first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'class': 'inputs',
+        'placeholder': 'First Name',
+    }))
 
+    class Meta:
+        model = User
+        fields = ('last_name', 'first_name', 'email', 'password1', 'password2')
+        widgets = {
+            'email': widgets.EmailInput(attrs={'class': 'inputs', 'placeholder': 'Email'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(SignUpForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget.attrs['class'] = 'inputs'
+        self.fields['password1'].widget.attrs['placeholder'] = 'Password'
+        self.fields['password1'].help_text = None
+        self.fields['password2'].widget.attrs['class'] = 'inputs'
+        self.fields['password2'].widget.attrs['placeholder'] = 'Re-enter Password'
+        self.fields['password2'].help_text = None
+
+
+class CreateAccountForm(ModelForm):
     class Meta:
         model = Accounts
         exclude = ['accountId']
@@ -29,7 +61,7 @@ class CreateAccountForm(ModelForm):
 class CreateUserForm(ModelForm):
     class Meta:
         model = Users
-        exclude = ['id', 'accountId']
+        exclude = ['id', 'accountId', 'user']
         widgets = {
             'address': widgets.TextInput(attrs={'class': 'inputs', 'placeholder': 'Address'}),
             'city': widgets.TextInput(attrs={'class': 'inputs', 'placeholder': 'City'}),
