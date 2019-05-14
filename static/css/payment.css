@@ -5,12 +5,14 @@
     border-radius: 1rem;
     margin-top: 4rem;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    max-height: 60rem;
+    max-height: 120rem;
     width: 80%;
     max-width: 70rem;
-    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    margin:1rem;
 }
 
 .inputs {
@@ -29,17 +31,44 @@
     margin-bottom: 1rem;
 }
 
-.box1{
+.billing-container{
     order:0;
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+}
+
+.prop-info-container{
+    order:1;
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+}
+
+.img-container{
+    flex-basis: 2rem;
+    order:0;
+    height: 100%;
+    width:100%;
+    max-width: 20rem;
+    max-heigt: 20rem;
+
+}
+
+.box1{
     align-self: flex-start;
     text-align: center;
     margin: auto;
 }
 
 .box2{
-    order:1;
     align-self: flex-end;
     margin: auto;
+}
+
+h3{
+    text-align:center;
+
 }
 
 
@@ -65,3 +94,9 @@ button{
     width: 15rem !important;
 
 }
+
+img{
+    width: 100%;
+}
+
+
