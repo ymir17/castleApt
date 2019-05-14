@@ -7,38 +7,10 @@
 {% block content %}
         <div class="signup_border">
             <h3>Create your account</h3>
-<<<<<<< HEAD
-            <form action="{% url 'createUser' %}" method="POST">
-                {% csrf_token %}
-                {{ form }}
-                <!--
-                <input class="inputs" placeholder="First name" type="text" name="firstname" id="first-name"><br>
-                <input class="inputs" placeholder="Last name" type="text" name="lastname" id="last-name"><br>
-                <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail"><br>
-                <input class="inputs" placeholder="Phone number" type="text" name="phonenumber" id="phone-number"><br>
-                <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word"><br>
-                <input class="inputs" placeholder="Re-enter Password" type="password" id="re-password"><br>
-                <form target="_blank" action="/submitEval.php">
-                <div class="container">
-                    <input class="inputs" placeholder="First name" type="text" name="firstname" id="first-name">
-                    <input class="inputs" placeholder="Last name" type="text" name="lastname" id="last-name">
-                    <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail">
-                    <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word">
-                    <input class="inputs" placeholder="Re-enter Password" type="password" id="re-password">
-                    <input class="inputs" placeholder="Phone number" type="text" name="phonenumber" id="phone-number">
-                    <input class="inputs" placeholder="Adress" type="text" name="adress" id="adress">
-                    <input class="inputs" placeholder="City" type="text" name="city" id="city">
-                    <input class="inputs" placeholder="Zip code" type="text" name="zipcode" id="zipcode">
-                    <input class="inputs" placeholder="Country" type="text" name="country" id="country">
-                </div>
-                -->
-=======
-
             <form action="{% url 'signup-index' %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
                 {{ form2}}
->>>>>>> 86b65efda2a86a9f80ea2bf9be255fca9cbbbbb4
                 <input id="button" type="submit" value="Sign up">
             </form>
         </div>
