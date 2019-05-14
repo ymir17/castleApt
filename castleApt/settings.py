@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'property.apps.PropertyConfig',
     'contactus.apps.ContactusConfig',
     'search.apps.SearchConfig',
-    'payment.apps.PaymentConfig'
+    'payment.apps.PaymentConfig',
+    'sell.apps.SellConfig',
+    'editprofile.apps.EditprofileConfig',
+    'paymentreview.apps.PaymentreviewConfig'
 ]
 
 MIDDLEWARE = [
