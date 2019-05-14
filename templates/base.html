@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Castle Apartments</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block stylesheet %} {% endblock %}
     <script src="{% static 'js/dropdown.js' %}"></script>
+    <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
     <!-- Insert navbar here -->
@@ -22,7 +24,7 @@
 				<div class="dropmenu"></div>
 			</div>
 	        <div id="dropdown" class="content">
-                <a href="{% url 'signup-index' %}">Sign up</a>
+                <a href="{% url 'createUser' %}">Sign up</a>
 		        <a href="{% url 'login-index' %}">Log in</a>
 	    	</div>
     	</div>
