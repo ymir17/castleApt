@@ -2,7 +2,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+<<<<<<< HEAD
     # path('', views.index, name='signup-index'),
     # path('<int:id>', views.getUser, name='getUser-index'),
     path('', views.createUser, name='createUser'),
+=======
+    path('', views.index, name='signup-index'),
+    path('<int:id>', views.getUser, name='getUser-index'),
+    #path('create_user', views.createUser, name='createUser'),
+>>>>>>> 86b65efda2a86a9f80ea2bf9be255fca9cbbbbb4
 ]

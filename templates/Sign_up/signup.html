@@ -7,6 +7,7 @@
 {% block content %}
         <div class="signup_border">
             <h3>Create your account</h3>
+<<<<<<< HEAD
             <form action="{% url 'createUser' %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
@@ -31,6 +32,13 @@
                     <input class="inputs" placeholder="Country" type="text" name="country" id="country">
                 </div>
                 -->
+=======
+
+            <form action="{% url 'signup-index' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                {{ form2}}
+>>>>>>> 86b65efda2a86a9f80ea2bf9be255fca9cbbbbb4
                 <input id="button" type="submit" value="Sign up">
             </form>
         </div>
