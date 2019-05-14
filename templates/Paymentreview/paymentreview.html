@@ -4,13 +4,26 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/paymentreview.css' %}">
 
-    <div class='review container'>
+    <div class='review-container'>
+        <h2>Payment review</h2>
         <div class="n-container">
-            <p>sdfsdfsdfsd</p>
-
-            <p>sdfsdfsdfsd</p>
-            <p>sdfsdfsdfsd</p>
-            <p>sdfsdfsdfsd</p>
+            <div id="payinfo">
+                <h4>Payment information</h4>
+                <p>Realtor name: Lorem</p>
+                <p>E-mail: user@email.com</p>
+                <p>Credit card no: XXXX-XXXX-XXXX-1234</p>
+                <p>Total: $9.900.000</p>
+            </div>
+            <div class='prop-info'>
+            <div class='img-container'>
+               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+            </div>
+                <p>13 Painful St, Transylvania, TR 666</p>
+                <p>Registered 30. apr. 2019</p>
+                <p>some text</p>
+                <p>some text</p>
+            </div>
+            <input id="button" type="submit" value="Confirm">
         </div>
     </div>
 
