@@ -22,7 +22,7 @@
                     <div class="popupLeft">
                     {% for account in accounts %}
                         {% if account.accountId == realtor.accountId_id %}
-                            <h4>{{ account.firstName }} {{ account.lastName }}</h4>
+                            <h3>{{ account.firstName }} {{ account.lastName }}</h3>
                         {% endif %}
                     {% endfor %}
                         {% for image in realtorImgs %}
@@ -30,15 +30,18 @@
                                 <img src="{{ image.realtImgUrl }}">
                             {% endif %}
                         {% endfor %}
-                        <h4>Contact info:</h4>
-                        <p>{{ realtor.description }}</p>
                         {% for account in accounts %}
                             {% if account.accountId == realtor.accountId_id %}
-                                <span>{{ account.email }} - </span>
+                                <span>{{ account.email }} <br> </span>
                                 <span>{{ account.phoneNo }}</span>
                             {% endif %}
                         {% endfor %}
-                    </div>
+                        </div>
+                        <h4 style="text-align: center">Contact info</h4>
+                        <p>{{ realtor.description }}</p>
+
+
+
                 </div>
             </div>
         {% endfor %}

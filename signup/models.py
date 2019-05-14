@@ -10,9 +10,6 @@ class Accounts(models.Model):
     password = models.CharField(max_length=255)
 
 
-
-
-
 class Users(models.Model):
     accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
