@@ -38,14 +38,12 @@ textarea:focus, input:focus{
     outline: none;
 }
 
-
-
 label {
     font-size: 1.3rem;
     font-weight: bold;
 }
 #button{
-    width: 20rem;
+    width: 40%;
     height: 2.5rem;
     border-radius: 2rem;
     font-size: 1.5rem;
@@ -53,6 +51,7 @@ label {
     background-color: #2E4570;
     display: block;
     margin: auto;
+    margin-top: 1rem;
 }
 
 #button:hover {
@@ -78,16 +77,12 @@ label {
     cursor: pointer;
 }
 
-::-webkit-input-placeholder {
-    color:black;
+::selection {
+    background: rgba(46, 69, 112, 0.9);
+    color: white;
 }
-
-::-moz-placeholder {
-    color:black;
-}
-
-::placeholder {
-    color:black;
+::-moz-selection {
+    background: rgba(46, 69, 112, 0.9);
 }
 
 @media screen and (max-width: 1050px) {
