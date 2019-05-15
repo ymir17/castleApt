@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 .singleRealtor:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     border: 0.2rem solid rgba(145, 0, 0, 1);
 }
 .singleRealtor img {

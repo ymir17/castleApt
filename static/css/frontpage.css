@@ -14,7 +14,7 @@ img {
     width: 70%;
     max-width: 50rem;
     position: relative;
-    margin: auto;
+    margin: 0 auto;
 }
 .searchfield {
     margin: auto;
@@ -153,14 +153,14 @@ img {
 }
 .button {
     width: 10rem;
-    height: 2.5rem;
+    height: 3rem;
     border-radius: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: white;
     background-color: #2E4570;
     display: block;
     margin-top: -2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
 }
