@@ -1,5 +1,14 @@
 from django.shortcuts import render
+from login.forms.forms import LoginForm
 
-# Create your views here.
+
 def index(request):
-    return render(request, 'Log_in/login.html')
+    if request.method == 'POST':
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = LoginForm()
+    return render(request, 'Log_in/login.html', {
+        'form': form,
+    })

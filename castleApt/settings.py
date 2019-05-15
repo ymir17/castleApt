@@ -43,13 +43,14 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'signup.apps.SignupConfig',
     'login.apps.LoginConfig',
+    'logout.apps.LogoutConfig',
     'property.apps.PropertyConfig',
     'contactus.apps.ContactusConfig',
     'search.apps.SearchConfig',
     'payment.apps.PaymentConfig',
     'sell.apps.SellConfig',
     'editprofile.apps.EditprofileConfig',
-    'paymentreview.apps.PaymentreviewConfig'
+    'paymentreview.apps.PaymentreviewConfig',
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,3 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
-
-# AUTHENTICATION_BACKENDS = (
-#     'castleApt.backends.EmailAuthBackend',
-# )
