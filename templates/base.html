@@ -25,21 +25,18 @@
 			</div>
 	        <div id="dropdown" class="content">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Log out</a>
+                    <a class="links" href="{% url 'logout' %}">Log out</a>
                 {% else %}
-                    <a href="{% url 'signup-index' %}">Sign up</a>
-                    <a href="{% url 'login-index' %}">Log in</a>
+                    <a class="links" href="{% url 'signup-index' %}">Sign up</a>
+                    <a class="links" href="{% url 'login-index' %}">Log in</a>
+                    <a class="links" href="{% url 'contacts-index' %}">Realtors</a>
                 {% endif %}
 	    	</div>
     	</div>
     </div>
-
-
-
     {% block content %}
 
     {% endblock %}
-
     <!-- Insert footer here -->
     <div class="footer">
         <div class="upperfooter">
@@ -48,12 +45,12 @@
             <div class="foot-links">
             <a href="{% url 'contactus-index' %}">Contact us</a>
             <a href="{% url 'aboutus-index' %}">About us</a>
-            <a href="{% url 'contacts-index' %}">Realtors</a>
             </div>
         </div>
         <div class=lowerfooter>
-            <span id="info"><b>Castle Apartments Inc.</b>  - 186 Fleet Street, London - <a href="mailto:castle@castleapartments.com" target="_top">castle@castleapartments.com</a></span>
+            <span id="info"><b>Castle Apartments Inc.</b>  - 186 Fleet Street, London - </span>
             <span id="copyright">© 2019</span>
+            <a id="email" href="mailto:castle@castleapartments.com" target="_top">castle@castleapartments.com</a>
         </div>
     </div>
 </body>

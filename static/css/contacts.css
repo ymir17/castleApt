@@ -1,22 +1,27 @@
 .realtorsBox {
-    padding: 0.9375rem;
-    position: absolute;
-    left: 12.5%;
-    top: 20%;
+    position: relative;
+    margin-top: 2rem;
+    max-width: 50rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .singleRealtor {
-    float: left;
+    display: inline-block;
+    width: 9.4rem;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 0.0625rem solid black;
+    border: 0.2rem solid #2E4570;
     border-radius: 0.9375rem;
-    padding: 0.9375rem;
+    padding: 1.5rem;
+    font-size: 0.9rem;
     text-align: center;
-    margin: 0.785rem;
+    margin: 0.3rem;
     cursor: pointer;
 }
 .singleRealtor:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 0.0625rem solid rgba(145, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border: 0.2rem solid rgba(145, 0, 0, 1);
 }
 .singleRealtor img {
     width: 9.375rem;
@@ -51,6 +56,7 @@
     height: 9.375rem;
     margin-right: 0.7rem;
 }
+
 .popupLeft {
     float: left;
 }

@@ -31,9 +31,10 @@ img {
     display: block;
 }
 
-a {
-  color: #2E4570;
-  text-decoration: none;
+
+#email {
+    color: gray;
+    cursor: pointer;
 }
 
 #logo {
@@ -42,6 +43,7 @@ a {
     width: 20%;
     height: auto;
     margin: 0.8rem 0rem 0rem 4rem;
+    min-width: 8rem;
 }
 .searchbar {
     float: right;
@@ -66,7 +68,7 @@ a {
 #footlogo {
     float: left;
     max-width: 10rem;
-    width: 20%;
+    width: 10rem;
     height: auto;
     margin: 0.8rem 0rem 0.8rem 4rem;
 }
@@ -98,7 +100,7 @@ a {
 }
 
 @media screen and (max-width: 700px) {
-    .navbar a{
+    .links{
         display: none;
     }
     .dropmenupos {
@@ -139,5 +141,11 @@ a {
         top: 0;
         right: 0;
         overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    #footlogo {
+        display: none;
     }
 }

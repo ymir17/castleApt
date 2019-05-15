@@ -2,7 +2,7 @@ import random
 import datetime
 from random import Random, randint
 
-INSERT_VAL = 'INSERT INTO property_properties ("added", "address", "country", "zipCode", "rooms", "size", "price", "description", realtId_id)\n'
+INSERT_VAL = 'INSERT INTO property_properties ("added", "address", "country", "zipCode", "rooms", "size", "price", "description", "realtId_id")\n'
 
 def fileToList(f):
     lst = []

@@ -1,6 +1,6 @@
 # id,propImgUrl, porpertyId_id
 
-LINE = 'INSERT INTO property_propimages ("propImgUrl", propertyId_id)\nVALUES ('
+LINE = 'INSERT INTO property_propimages ("propImgUrl", "propertyId_id")\nVALUES ('
 PATH = 'static/'
 
 def populateCastle(f):
