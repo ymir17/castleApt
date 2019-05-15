@@ -7,10 +7,20 @@
 {% block content %}
         <div class="signup_border">
             <h3>Create your account</h3>
-            <form action="{% url 'signup-index' %}" method="POST">
+            <form class="container" action="{% url 'signup-index' %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                {{ form2}}
+                {% if form.errors %}
+                    {% for error in form.errors %}
+                        {{ error }}
+                    {% endfor %}
+                {% endif %}
+                {{ userForm }}
+                {% if userForm.errors %}
+                    {% for error in userForm.errors %}
+                        {{ error }}
+                    {% endfor %}
+                {% endif %}
                 <input id="button" type="submit" value="Sign up">
             </form>
         </div>

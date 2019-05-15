@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -11,6 +12,7 @@ class Accounts(models.Model):
 
 
 class Users(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     accountId = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)

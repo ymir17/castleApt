@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{% static 'css/payment.css' %}">
 
     <div class="container">
+        <div class='billing-container'>
             <h3>Payment page</h3>
             <form target="_blank" action="/submitEval.php">
                 <div class='box1'>
@@ -24,10 +25,22 @@
                     <input class="inputs" placeholder="City" type="text" name="city" id="city">
                     <input class="inputs" placeholder="Country" type="text" name="country" id="country">
                     <input class="inputs" placeholder="Postal Code" type="number" name="postalcode" id="postalcode">
-                    <input class="button" type="submit" value="Sign in">
+                    <input class="button" type="submit" value="payment">
                 </div>
             </form>
         </div>
+        <div class='prop-info-container'>
+            <div class='img-container'>
+                <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+            </div>
+            <div class='prop-info-container'>
+                <h2>Name of house</h2>
+                <h3>info on house</h3>
+                <p> additional info</p>
+                <p> additional info</p>
+            </div>
+        </div>
+    </div>
 
 
 

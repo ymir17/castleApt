@@ -1,36 +1,47 @@
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import inlineformset_factory
 from django.shortcuts import render, redirect
 from django import forms
-from signup.forms import accountForm
-from signup.forms.accountForm import CreateAccountForm, CreateUserForm
+from signup.forms import forms
+from signup.forms.forms import CreateAccountForm, CreateUserForm, SignUpForm
 from signup.models import Accounts, Users
 
 
-def index(request):
-    # TODO: Try to implement single form to two separate models!
+def signup(request):
     if request.method == 'POST':
-        print(request.method)
-        form = CreateAccountForm(data=request.POST)
+        pass
+    else:
+        pass
+    return render(request, 'Sign_up/signup.html', {
+        'form': UserCreationForm()
+    })
+
+
+def index(request):
+    if request.method == 'POST':
+        form = SignUpForm(data=request.POST)
+        # newAccount = CreateAccountForm(data=request.POST)
         newUser = CreateUserForm(data=request.POST)
-        #if form.is_pw_valid():
-        if form.is_valid():
-            print("VALID ACCOUNT")
-            # form = inlineformset_factory(Accounts, Users, fields=('accountId',))
+        if form.is_valid() and newUser.is_valid():
             form.save()
-            if newUser.is_valid():
-                print("VALID USER")
-                newUser.save()
-            # account = accountForm.save()
-                return redirect('home-index')
+            newUser.save()
+            return redirect('home-index')
+        # if newAccount.is_valid():
+        #     newAccount.save()
+        #     if newUser.is_valid():
+        #         newUser.save()
+        #         return redirect('home-index')
         else:
             print("NOT VALID")
             pass
     else:
-        form = CreateAccountForm()
+        form = SignUpForm()
+        # newAccount = CreateAccountForm()
         newUser = CreateUserForm()
     return render(request, 'Sign_up/signup.html', {
-
-        'form': form, 'form2': newUser
+        'form': form,
+        'userForm': newUser,
+        # 'form': newAccount, 'form2': newUser
     })
-
 
