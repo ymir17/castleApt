@@ -1,37 +1,41 @@
+#cstlogo {
+    margin-left: auto;
+    margin-right: auto;
+}
 .head-1{
     color: #910000;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
-
-.head-2{
+h2{
     text-align: center;
     color: #910000;
     font-family: 'Open Sans', sans-serif;
     text-decoration: underline;
     text-decoration-color: #2E4570;
 }
-
 .about-container{
     border-radius: 1rem;
     width: 70%;
     position: relative;
-    right: 1rem;
-    left: 11rem;
-    background: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.8);
     border: 0.3rem;
     border-style: solid;
     border-color: #2E4570;
-
 }
 box-1{
     width: 50%
 }
-
 p{
     font-family: 'Open Sans', sans-serif;
     position: relative;
-    text-align: center;
+    text-align: justify;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .copyright{
@@ -40,4 +44,8 @@ p{
     border-radius: 1rem;
     margin: 10px;
 }
-
+@media screen and (max-width: 700px) {
+    .about-container {
+        width: 90%;
+    }
+}
