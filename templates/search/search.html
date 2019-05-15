@@ -15,7 +15,7 @@
             </div>
 
 
-            <div class='dd-container'>
+            <div id="" class='dd-container'>
                 <label class="dropdown">
 
                 <div class="dd-button">
@@ -33,47 +33,25 @@
             </label>
             </div>
         </div>
-        {
-        <div class='listing'>
-            <div class='img-container'>
-               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
-
+        {% for property in properties %}
+            <div id="property{{ property.propertyId}}" class='listing'>
+                <div class='img-container'>
+                    {% for propimg in propimgs %}
+                        {% if property.propertyId == propimg.propertyId_id %}
+                            {% ifchanged %}<img class='prop-img' src="{{ propimgs.0.propImgUrl }}" alt="Property Image"> {% endifchanged %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class='prop-info'>
+                    <p>Address: {{ property.address }}</p>
+                    <p>Rooms: {{ property.rooms }}</p>
+                    <p>Size: {{property.size }}</p>
+                    <p>Type: {{property.description}}</p>
+                </div>
             </div>
-            <div class='prop-info'>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-            </div>
-        </div>
+        {% endfor %}
 
-
-        <div class='listing'>
-            <div class='img-container'>
-               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
-
-            </div>
-            <div class='prop-info'>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-            </div>
-        </div>
-
-        <div class='listing'>
-            <div class='img-container'>
-               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
-
-            </div>
-            <div class='prop-info'>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-                <p>some text</p>
-            </div>
-        </div>
-
+        <!--
         <div class='listing'>
             <div class='img-container'>
                <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
@@ -113,6 +91,32 @@
             </div>
         </div>
 
+        <div class='listing'>
+            <div class='img-container'>
+               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+
+            </div>
+            <div class='prop-info'>
+                <p>some text</p>
+                <p>some text</p>
+                <p>some text</p>
+                <p>some text</p>
+            </div>
+        </div>
+
+        <div class='listing'>
+            <div class='img-container'>
+               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+
+            </div>
+            <div class='prop-info'>
+                <p>some text</p>
+                <p>some text</p>
+                <p>some text</p>
+                <p>some text</p>
+            </div>
+        </div>
+        -->
 
     </div>
 
