@@ -25,7 +25,7 @@
 			</div>
 	        <div id="dropdown" class="content">
                 {% if user.is_authenticated %}
-                    <!-- Some menu -->
+                    <a href="{% url 'logout' %}">Log out</a>
                 {% else %}
                     <a href="{% url 'signup-index' %}">Sign up</a>
                     <a href="{% url 'login-index' %}">Log in</a>
