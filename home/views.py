@@ -1,75 +1,15 @@
 from django.shortcuts import render
-
-ZIP_CODES = (
-    '109 Reykjavik',
-    '112 Reykjavik',
-    '220 Hafnafjörður',
-    '311 Borgarnes',
-    '531 Hvammstangi',
-    '670 Kópasker',
-    '740 Neskaupstaður',
-    '870 Vík',
-    '109 Reykjavik',
-    '112 Reykjavik',
-    '220 Hafnafjörður',
-    '311 Borgarnes',
-    '531 Hvammstangi',
-    '670 Kópasker',
-    '740 Neskaupstaður',
-    '870 Vík',
-)
-PRICES = (
-    '1',
-    '2',
-    '5',
-    '10',
-    '15',
-    '20',
-    '30',
-    '40',
-    '50',
-)
-SIZES = (
-    '40',
-    '50',
-    '60',
-    '70',
-    '80',
-    '90',
-    '100',
-    '150',
-    '200',
-    '300',
-    '400',
-    '600',
-    '800',
-    '1000',
-)
-ROOMS = (
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '10',
-    '20',
-    '30',
-    '40',
-    '50',
-    '75',
-    '100',
-    '150',
-)
-TYPES = (
-    'Castle',
-    'Villa',
-    'Cabin',
-)
-
-
-def searchForm():
-    pass
+from search.forms.forms import searchForm
 
 
 def index(request):
-    return render(request, 'Home/home.html')
+    if request.method == 'POST':
+        print('POST')
+        # form = searchForm(data=request.POST)
+        # if form.is_valid():
+        #     pass
+    else:
+        form = searchForm()
+    return render(request, 'Home/home.html', {
+        'form': form
+    })
