@@ -71,10 +71,8 @@ def searchForm():
     pass
 
 
-<<<<<<< HEAD
 
 # Create your views here.
-=======
->>>>>>> b79d98b505b103a5abb169a5a07d236e749e5b6e
+
 def index(request):
     return render(request, 'Home/home.html')

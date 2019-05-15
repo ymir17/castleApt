@@ -19,3 +19,6 @@ class PropImages(models.Model):
     propertyId = models.ForeignKey(Properties, on_delete=models.CASCADE)
     propImgUrl = models.CharField(max_length=1024)
 
+    def __str__(self):
+        return self.propImgUrl
+
