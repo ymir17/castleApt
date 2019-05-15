@@ -17,8 +17,11 @@
             {{ form.searchBar }}
 {#            <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>#}
             <div class="zipDiv">
-                <label class="filter-labels">Zip code</label>
-                {{ form.checkboxZip }}
+{#                {{ form.checkboxZip }}#}
+                {% for field in form.checkboxZip %}
+                    {{ field }}{{ field.subject.label_tag }}
+                {% endfor %}
+{#                <label class="filter-labels">Zip code</label>#}
 {#                <div class="checkboxZip">#}
 {#                    <label class="container">109 Reykjavík#}
 {#                        <input type="checkbox">#}
@@ -58,8 +61,24 @@
                 <div class="dropdownDiv">
                 <label class="filter-labels">Price</label>
                 <div class="select-container">
-                    {{ form.pricesLow }}
-                    {{ form.pricesHigh }}
+                    <select name="pricesLow" class="alldropdowns" id="id_pricesLow">
+                        {% for field in form.pricesLow %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">From</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <select name="pricesHigh" class="alldropdowns" id="id_pricesHigh">
+                        {% for field in form.pricesHigh %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">To</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
 {#                <select name="fromprice" class="alldropdowns">#}
 {#                    <option value="#">From</option>#}
 {#                    <option value="1">1m &euro;</option>#}
@@ -93,8 +112,26 @@
             <div class="dropdownDiv">
                 <label class="filter-labels">Size</label>
                 <div class="select-container">
-                    {{ form.sizesLow }}
-                    {{ form.sizesHigh }}
+{#                    {{ form.sizesLow }}#}
+                    <select name="sizesLow" class="alldropdowns" id="id_sizesLow">
+                        {% for field in form.sizesLow %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">From</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <select name="sizesHigh" class="alldropdowns" id="id_sizesHigh">
+                        {% for field in form.sizesHigh %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">To</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+{#                    {{ form.sizesHigh }}#}
 {#                <select name="fromfm" class="alldropdowns">#}
 {#                    <option value="#">From</option>#}
 {#                    <option value="40">40 Fm&sup2;</option>#}
@@ -132,8 +169,26 @@
             <div class="dropdownDiv">
                 <label class="filter-labels">Rooms</label>
                 <div class="select-container">
-                    {{ form.roomsLow }}
-                    {{ form.roomsHigh }}
+{#                    {{ form.roomsLow }}#}
+{#                    {{ form.roomsHigh }}#}
+                    <select name="roomsLow" class="alldropdowns" id="id_roomsLow">
+                        {% for field in form.roomsLow %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">From</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <select name="roomsHigh" class="alldropdowns" id="id_roomsHigh">
+                        {% for field in form.roomsHigh %}
+                            {% if forloop.first %}
+                                <option value="#" selected="" disabled="">To</option>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </select>
 {#                <select name="fromrooms" class="alldropdowns">#}
 {#                    <option value="#">From</option>#}
 {#                    <option value="1">1</option>#}
@@ -172,7 +227,10 @@
                 <label class="filter-labels">Type</label>
                 <div class="select-container">
                 <div id="checkboxtype">
-                    {{ form.types }}
+{#                    {{ form.types }}#}
+                    {% for field in form.types %}
+                        {{ field }}{{ field.subject.label_tag }}
+                    {% endfor %}
 {#                    <label class="container">Castle#}
 {#                        <input type="checkbox">#}
 {#                        <span class="checkmark"></span>#}
