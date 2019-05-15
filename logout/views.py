@@ -1,7 +1,7 @@
 from django.contrib.auth import logout
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def index(request):
     logout(request)
-    return render(request, 'home/home.html')
+    return redirect('home-index')
