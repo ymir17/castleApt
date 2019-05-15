@@ -26,7 +26,10 @@ input[type=submit] {
     display: block;
     margin: auto;
 }
-
+input[type=submit]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
 textarea:focus, input:focus{
     outline: none;
 }
