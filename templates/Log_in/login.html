@@ -5,7 +5,11 @@
     <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
         <div class="container">
             <h3>Please enter e-mail and password</h3>
-            <form target="_blank" action="/submitEval.php">
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field }}
+                {% endfor %}
                 <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail">
                 <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word">
                 <input class="button" type="submit" value="Sign in">
