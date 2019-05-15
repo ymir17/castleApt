@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from property.models import Properties, PropImages
 
-# Create your views here.
 SORT_BY = (
     'Price Low',
     'Price High',
