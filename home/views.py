@@ -2,6 +2,9 @@ from django.shortcuts import render
 from search.forms.forms import searchForm
 
 
+
+# Create your views here.
+
 def index(request):
     if request.method == 'POST':
         print('POST')
