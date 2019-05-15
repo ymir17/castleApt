@@ -143,6 +143,6 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
 
-AUTHENTICATION_BACKENDS = (
-    'castleApt.backends.EmailAuthBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+#     'castleApt.backends.EmailAuthBackend',
+# )

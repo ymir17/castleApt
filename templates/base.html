@@ -24,8 +24,12 @@
 				<div class="dropmenu"></div>
 			</div>
 	        <div id="dropdown" class="content">
-                <a href="{% url 'signup-index' %}">Sign up</a>
-		        <a href="{% url 'login-index' %}">Log in</a>
+                {% if user.is_authenticated %}
+                    <!-- Some menu -->
+                {% else %}
+                    <a href="{% url 'signup-index' %}">Sign up</a>
+                    <a href="{% url 'login-index' %}">Log in</a>
+                {% endif %}
 	    	</div>
     	</div>
     </div>
