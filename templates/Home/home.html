@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
     <img src="{% static 'images/slogan.svg' %}" id="slogan"alt="slogan">
-    <form target="_blank" action="/submitEval.php">
+    <form target="_blank" action="{% url 'search-index' %}" method="get">
         <div class="searchcontainer">
                 <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>
                 <div class="zipDiv">
