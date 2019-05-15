@@ -21,10 +21,19 @@ def signup(request):
 def index(request):
     if request.method == 'POST':
         form = SignUpForm(data=request.POST)
-        # newAccount = CreateAccountForm(data=request.POST)
+        newAccount = CreateAccountForm()
         newUser = CreateUserForm(data=request.POST)
         if form.is_valid() and newUser.is_valid():
+            newAccount.fields['lastName'] = form.cleaned_data['last_name']
+            newAccount.fields['firstName'] = form.cleaned_data['first_name']
+            newAccount.fields['email'] = form.cleaned_data['email']
+            newAccount.fields['password'] = form.cleaned_data['password1']
+            # print(newAccount.data)
+            # print(form.data)
+            # print(newAccount.is_bound)
+            # if newAccount.is_valid():
             form.save()
+                # newAccount.save()
             newUser.save()
             return redirect('home-index')
         # if newAccount.is_valid():
@@ -45,3 +54,5 @@ def index(request):
         # 'form': newAccount, 'form2': newUser
     })
 
+def randomUserName(form):
+    pass
