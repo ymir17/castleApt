@@ -31,7 +31,7 @@ label, ul {
     border-radius: 0.5rem;
     height: 2.2rem;
     width: 20rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding-left: 1rem;
     display: block;
     margin: auto;
@@ -84,7 +84,6 @@ textarea:focus, input:focus{
 
 @media screen and (max-width: 600px) {
     .inputs {
-        width: 10rem;
-        width: 10rem;
+        width: 76%;
     }
 }
