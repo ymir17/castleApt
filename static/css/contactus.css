@@ -51,3 +51,9 @@ textarea {
     font-family: 'Open Sans', sans-serif;
     border-radius: 1rem;
 }
+
+@media screen and (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+}

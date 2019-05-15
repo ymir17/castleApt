@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
-from django.forms import widgets
+from django.forms import widgets, ModelForm
 
 
-class LoginForm(AuthenticationForm):
+class LoginForm(ModelForm):
     class Meta:
         model = User
         fields = ('email', 'password')
@@ -20,3 +20,4 @@ class LoginForm(AuthenticationForm):
                 'placeholder': 'Password',
             })
         }
+        pass

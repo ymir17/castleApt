@@ -12,7 +12,6 @@
     max-width: 70rem;
     justify-content: space-around;
     align-content: center;
-    margin:1rem;
 }
 
 .inputs {
@@ -23,11 +22,11 @@
     border-bottom: 0.2rem solid #2E4570;
     border-radius: 0.5rem;
     height: 2.2rem;
-    width: 20rem;
+    width: 18rem;
     font-size: 1.3rem;
     padding-left: 1rem;
     display: block;
-    margin: auto;
+    margin: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -35,14 +34,14 @@
     order:0;
     display:flex;
     flex-direction: column;
-    margin:auto;
+    margin:1rem;
 }
 
 .prop-info-container{
     order:1;
     display:flex;
     flex-direction: column;
-    margin:auto;
+    margin:1rem;
 }
 
 .img-container{
@@ -58,12 +57,12 @@
 .box1{
     align-self: flex-start;
     text-align: center;
-    margin: auto;
+    margin-top: 2rem;
 }
 
 .box2{
     align-self: flex-end;
-    margin: auto;
+    margin-bottom: 2rem;
 }
 
 h3{
@@ -84,6 +83,7 @@ textarea:focus, input:focus{
     background-color: #2E4570;
     display: block;
     margin: auto;
+    margin-bottom: 2rem;
 }
 
 .button:hover {
