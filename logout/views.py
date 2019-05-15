@@ -1,5 +1,7 @@
+from django.contrib.auth import logout
 from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'Log_in/login.html')
+    logout(request)
+    return render(request, 'home/home.html')
