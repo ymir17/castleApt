@@ -38,7 +38,7 @@
                 <div class='img-container'>
                     {% for propimg in propimgs %}
                         {% if property.propertyId == propimg.propertyId_id %}
-                            {% ifchanged %}<img class='prop-img' src="{{ propimgs.0.propImgUrl }}" alt="Property Image"> {% endifchanged %}
+                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image">
                         {% endif %}
                     {% endfor %}
                 </div>
