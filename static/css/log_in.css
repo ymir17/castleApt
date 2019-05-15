@@ -1,7 +1,9 @@
 .container {
     background-color: rgba(255, 255, 255, 0.8);
     height: 22.5rem;
-    width: 25rem;
+    width: auto;
+    max-width: 25rem;
+    min-width: 18rem;
     border: 0.3rem solid #2E4570;
     border-radius: 1rem;
     margin: auto;
@@ -18,7 +20,7 @@ h3, h4 {
     border-bottom: 0.2rem solid #2E4570;
     border-radius: 0.5rem;
     height: 2.2rem;
-    width: 20rem;
+    width: 16rem;
     font-size: 1.3rem;
     padding-left: 1rem;
     display: block;
@@ -48,9 +50,12 @@ button{
 
 }
 
+<<<<<<< HEAD
 label {
     display: none;
 }
 
 
 
+=======
+>>>>>>> 787000db1e999771d9b7f4c45d6e5933633eb4f5
