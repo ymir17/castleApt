@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # from django.db import models
 # from contacts.models import Realtors
 #
@@ -18,3 +19,5 @@
 #     id = models.AutoField(primary_key=True)
 #     propImgUrl = models.CharField(max_length=1024)
 #     propertyId = models.ForeignKey(Property, on_delete=models.CASCADE)
+=======
+>>>>>>> ab0703604f718f4ca0d5d79fad468b7f86da8c85
