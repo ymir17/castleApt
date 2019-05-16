@@ -1,12 +1,9 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from property.models import Properties, PropImages
-<<<<<<< HEAD
 from contacts.models import Realtors
 from signup.models import Accounts
-=======
 from search.forms.forms import searchForm
->>>>>>> 55f0b04a78bc3c202203ac2fcc038b4a9fcdfd60
 
 SORT_BY = (
     'Price Low',

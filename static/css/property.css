@@ -33,8 +33,7 @@
     border-top: 1rem solid transparent;
     border-right: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
-    cursor: pointer;
-    }
+}
 .left-arrow:hover {
     border-right: 2rem solid rgba(145, 0, 0, 0.8);
     cursor: pointer;
@@ -49,28 +48,34 @@
     border-top: 1rem solid transparent;
     border-left: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
-    }
+}
 .right-arrow:hover {
     border-left: 2rem solid rgba(145, 0, 0, 0.8);
     cursor: pointer;
 }
+
 .info {
-    margin: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    min-height: 50rem;
     background-color: rgba(255, 255, 255, 0.8);
-    height: 50rem;
-    width: 85%;
+    width: 90%;
 }
 
 #core-info {
     float: left;
-    width: 50%;
+    width: 60.5%;
 }
 
 #additional-info {
-    float: right;
+    float: left;
     margin-top: 2.8rem;
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    width: 16rem;
 }
 
 #similar {
@@ -81,6 +86,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    padding-right: 0.5rem;
 }
 
 #thumbnail {
@@ -149,6 +155,7 @@ h4 {
 
 #about {
     font-size: 1.2rem;
+    text-align: justify;
 }
 .btn {
     width: 10rem;
@@ -162,21 +169,37 @@ h4 {
     margin-bottom: 2rem;
     cursor: pointer;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 995px) {
     .img-banner {
         height: 50vw;
+        width: auto;
     }
     .img {
         background-color: transparent;
         background-repeat:no-repeat;
         background-size:contain;
         background-position:center;
+        width: 75%;
     }
-    .left-arrow {
-        right: 90%;
+    .info {
+        width: 100%;
+        height: 66rem;
     }
-
-    .right-arrow {
-        left: 90%;
+    #core-info {
+        width: 90%;
+    }
+    #additional-info {
+        margin-left: 5rem;
+    }
+    #similar {
+        margin-right: 5rem;
+    }
+}
+@media screen and (max-width: 712px) {
+    #additional-info {
+        width: 100%;
+    }
+    #similar {
+        margin-right: 5rem;
     }
 }
