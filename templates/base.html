@@ -26,6 +26,8 @@
 	        <div id="dropdown" class="content">
                 {% if user.is_authenticated %}
                     <a class="links" href="{% url 'logout' %}">Log out</a>
+                    <a class="links" href="{% url 'editprofile-index' %}">Profile</a>
+                    <a class="links" href="{% url 'contacts-index' %}">Realtors</a>
                 {% else %}
                     <a class="links" href="{% url 'signup-index' %}">Sign up</a>
                     <a class="links" href="{% url 'login-index' %}">Log in</a>
