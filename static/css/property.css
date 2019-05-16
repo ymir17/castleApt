@@ -175,7 +175,6 @@ h4 {
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    min-height: 50rem;
     background-color: rgba(255, 255, 255, 0.8);
     width: 90%;
 }
@@ -183,6 +182,7 @@ h4 {
 .gallery-container {
     display: flex;
     width: 100%;
+    height: auto;
     flex-wrap: wrap;
     justify-content: center;
 }
