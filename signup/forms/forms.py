@@ -3,6 +3,7 @@ from string import ascii_letters
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.db.models import Max
 from django.forms import ModelForm, widgets
 from signup.models import Accounts, Users
 
@@ -76,8 +77,8 @@ class CreateUserForm(ModelForm):
     def save(self, *args, **kwargs):
         accountId = Accounts.objects.latest('accountId').accountId
         account = Accounts.objects.get(accountId=accountId)
-        userName = User.objects.latest('username').username
-        userId = User.objects.get(username=userName).id
+        userMail = User.objects.latest('email').email
+        userId = User.objects.get(email=userMail).id
 
         newUser = Users.objects.create(
             address=self.data['address'],

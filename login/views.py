@@ -8,7 +8,6 @@ def index(request):
     if request.method == 'POST':
         form = LoginForm(data=request.POST)
         if form.is_valid():
-            print(User.objects.get(email=form.cleaned_data['email']).get_username())
             username = User.objects.get(email=form.cleaned_data['email']).get_username()
             user = authenticate(request, username=username, password=form.cleaned_data['password'])
             if user is not None:
