@@ -40,7 +40,7 @@
 
                             <div class="similar-info">
                                 <p><b><u><a href="../property/{{ properties.propertyId }}" style="color: white">{{ properties.address }}</a></u></b></p>
-                                <p>{{ properties.size }} m²</p>
+                                <p>{{ properties.size }} fm²</p>
                                 <p>Built in {{ properties.yearbuilt }}</p>
                                 <p>{{ properties.rooms }} Rooms</p>
                             </div>
@@ -51,10 +51,13 @@
         </div>
         <div id="additional-info">
             <p>built in: {{ property.yearbuilt }}</p>
-            <p>size: {{ property.size }}m²</p>
+            <p>size: {{ property.size }}fm²</p>
             <p>rooms: {{ property.rooms }}</p>
             <p>bathrooms: {{ property.bathrooms }}</p>
+            <form action="/payment/{{ property.propertyId }}" method="GET">
 
+                <input class="btn" id="button" type="submit" value="Buy now">
+            </form>
         </div>
 
     </div>
