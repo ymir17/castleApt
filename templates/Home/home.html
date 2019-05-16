@@ -14,10 +14,15 @@
             {{ form.searchBar }}
 {#            <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>#}
             <div class="zipDiv">
+                <label class="filter-labels">Zip code</label>
 {#                {{ form.checkboxZip }}#}
                 {% for field in form.checkboxZip %}
-                    {{ field }}{{ field.subject.label_tag }}
+                    <label class="container">
+                        {{ field }}
+                    <span class="checkmark"></span>
+                    </label>
                 {% endfor %}
+            </div>
 {#                <label class="filter-labels">Zip code</label>#}
 {#                <div class="checkboxZip">#}
 {#                    <label class="container">109 Reykjavík#}
@@ -53,7 +58,6 @@
 {#                        <span class="checkmark"></span>#}
 {#                    </label>#}
 {#                </div>#}
-            </div>
             <div class="dropdown-container">
                 <div class="dropdownDiv">
                 <label class="filter-labels">Price</label>

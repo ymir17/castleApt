@@ -32,14 +32,18 @@ img {
     margin: auto;
     order: 1;
 }
-
+h2 {
+    float: left;
+    margin:2rem;
+    justify-content: center;
+}
 .result-container{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 100%;
     max-height: 10rem;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .h3-container{
@@ -50,3 +54,20 @@ img {
     order: 1;
 }
 
+select{
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: rgb(248, 248, 248);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+}
+
+select:not{
+    overflow: visible !important;
+}

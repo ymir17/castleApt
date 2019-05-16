@@ -4,17 +4,21 @@
 
     <link rel="stylesheet" href="{% static 'css/property.css' %}">
     <div class="img-banner">
-        <div class="img">
-            <div class="left-arrow"></div>
-            <img src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
-            <div class="right-arrow"></div>
-        </div>
+        {% for image in images %}
+            {% if image.propertyId_id == property.propertyId %}
+                <div class="img slides">
+                    <div class="left-arrow arrow" onclick="plusSlides(-1)"></div>
+                    <img src="{{ image.propImgUrl }}" alt="Property Image">
+                    <div class="right-arrow arrow" onclick="plusSlides(1)"></div>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
     <div class="info">
         <div id="core-info">
-            <p id="price">$XX.XXX.XXX</p>
-            <p id="street">Name of the Street</p>
-            <p id="register">The listing was registered on *date*</p>
+            <p id="price">{{property.price}}&euro;</p>
+            <p id="street">{{property.address}}</p>
+            <p id="register">The listing was registered on {{property.added}}</p>
             <div id="about">
                 <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br>
@@ -71,16 +75,37 @@
             </div>
         </div>
         <div id="additional-info">
-            <p>xxx m²</p>
-            <p>Built in xxxx</p>
-            <p>xx Rooms</p>
+            <p>{{property.size}} m²</p>
+            <p>Built in {{ property.yearbuilt }}</p>
+            <p>{{property.rooms}} Rooms</p>
             <p>xx bathrooms</p>
             <p>xx Bedrooms</p>
-            <p>Dungeon Y/N</p>
         </div>
     </div>
     <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("slides");
+
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+
+          slides[slideIndex-1].style.display = "block";
+        }
 
     </script>
 

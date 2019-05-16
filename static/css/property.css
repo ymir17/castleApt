@@ -3,7 +3,7 @@
     position: relative;
     background-color: rgba(24, 24, 24, 0.9);
     width: 100%;
-    height: 30rem;
+    height: 33rem;
     border-bottom: 0.3125rem solid rgba(46, 69, 112, 0.9);
 }
 
@@ -11,7 +11,6 @@
     background-size: cover;
     position: relative;
     margin: auto;
-    background-color: #4f4f4f;
     width: 45rem;
     height: 100%;
     max-width: 100%;
@@ -21,6 +20,7 @@
     height: 100%;
     position: relative;
     margin: auto;
+    max-width: 45rem;
 }
 
 .left-arrow {
@@ -33,8 +33,12 @@
     border-top: 1rem solid transparent;
     border-right: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
+    cursor: pointer;
     }
-
+.left-arrow:hover {
+    border-right: 2rem solid rgba(145, 0, 0, 0.8);
+    cursor: pointer;
+}
 .right-arrow {
     position: absolute;
     left: 101%;
@@ -46,7 +50,10 @@
     border-left: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
     }
-
+.right-arrow:hover {
+    border-left: 2rem solid rgba(145, 0, 0, 0.8);
+    cursor: pointer;
+}
 .info {
     margin: auto;
     background-color: rgba(255, 255, 255, 0.8);

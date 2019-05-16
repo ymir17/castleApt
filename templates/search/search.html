@@ -10,27 +10,20 @@
     <div class='container-prop'>
     <br>
         <div class='result-container'>
+
             <div class='h3-container'>
-                <h3 class='search-result'> ??? properties found</h3>
+                <h3 class='search-result'>{{properties.count}} properties found</h3>
             </div>
 
 
             <div id="" class='dd-container'>
-                <label class="dropdown">
-
-                <div class="dd-button">
-                    Dropdown
-                </div>
-
-                <input type="checkbox" class="dd-input" id="test">
-
-                <ul class="dd-menu">
-                    <li>Action</li>
-                    <li>Another action</li>
-                    <li>Something else here</li>
-                </ul>
-
-            </label>
+                <form>
+                    <select>
+                        <option value="" disabled selected>Order by</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                    </select>
+                </form>
             </div>
         </div>
         {% for property in properties %}
@@ -38,15 +31,17 @@
                 <div class='img-container'>
                     {% for propimg in propimgs %}
                         {% if property.propertyId == propimg.propertyId_id %}
-                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image">
+                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">
                         {% endif %}
                     {% endfor %}
                 </div>
+                <a href="/property/{{ property.propertyId }}"><h2>{{ property.address }}</h2></a>
                 <div class='prop-info'>
-                    <p>Address: {{ property.address }}</p>
-                    <p>Rooms: {{ property.rooms }}</p>
-                    <p>Size: {{property.size }}</p>
-                    <p>Type: {{property.description}}</p>
+
+                    <p><b>Price:</b> {{ property.price }} &euro;</p>
+                    <p><b>Rooms:</b> {{ property.rooms }}</p>
+                    <p><b>Size:</b> {{property.size }} m&#178;</p>
+                    <p><b>Type:</b> {{property.description}}</p>
                 </div>
             </div>
         {% endfor %}
