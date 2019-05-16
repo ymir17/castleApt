@@ -150,7 +150,6 @@ h4 {
 #about {
     font-size: 1.2rem;
 }
-
 @media screen and (max-width: 900px) {
     .img-banner {
         height: 50vw;
