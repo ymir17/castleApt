@@ -17,21 +17,14 @@
 
 
             <div id="" class='dd-container'>
-                <label class="dropdown">
-
-                <div class="dd-button">
-                    Dropdown
-                </div>
-
-                <input type="checkbox" class="dd-input" id="test">
-
-                <ul class="dd-menu">
-                    <li>Action</li>
-                    <li>Another action</li>
-                    <li>Something else here</li>
-                </ul>
-
-            </label>
+                <form>
+                    <select>
+                        <optgroup label="Books">
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                        </optgroup>
+                    </select>
+                </form>
             </div>
         </div>
         {% for property in properties %}
@@ -46,9 +39,10 @@
                 <h2>{{ property.address }}</h2>
                 <div class='prop-info'>
 
-                    <p>Rooms: {{ property.rooms }}</p>
-                    <p>Size: {{property.size }}</p>
-                    <p>Type: {{property.description}}</p>
+                    <p><b>Price:</b> {{ property.price }} &euro;</p>
+                    <p><b>Rooms:</b> {{ property.rooms }}</p>
+                    <p><b>Size:</b> {{property.size }} m&#178;</p>
+                    <p><b>Type:</b> {{property.description}}</p>
                 </div>
             </div>
         {% endfor %}
