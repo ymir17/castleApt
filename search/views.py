@@ -1,19 +1,15 @@
 from django.db.models import Q, Max, Min
 from django.shortcuts import render, redirect, get_object_or_404
 from property.models import Properties, PropImages
-<<<<<<< HEAD
 from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
-=======
-
 from contacts.models import Realtors
 from signup.models import Accounts
 from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
 
->>>>>>> 0a088b5cb820e5817e619843622ef8d3406a529f
 
 SORT_BY = (
     'Price Low',
@@ -21,7 +17,6 @@ SORT_BY = (
     'Name',
     'Zip Code'
 )
-
 
 def index(request):
     if request.method == 'GET':
@@ -59,7 +54,7 @@ def index(request):
         if q['checkboxZip'] == []:
             properties_checkBox = Properties.objects.all()
         else:
-            properties_checkBox = Properties.objects.filter(Q(zipCode__icontains=q['checkboxZip']))
+            properties_checkBox = Properties.objects.filter(zipCode__in=zips)
 
         if q['priceL'] is None and q['priceH'] is None:
             properties_prices = Properties.objects.all()
@@ -104,7 +99,7 @@ def index(request):
         if q['types'] == []:
             properties_types = Properties.objects.all()
         else:
-            properties_types = Properties.objects.filter(Q(description=q['types']))
+            properties_types = Properties.objects.filter(description__in=q['types'])
 
         properties = properties_searchBar.intersection(
             properties_checkBox,
