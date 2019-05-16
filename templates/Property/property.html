@@ -86,6 +86,17 @@
             {% endfor %}
         </div>
     </div>
+    <div id="gallery">
+        <div class="gallery-container">
+                {% for image in images %}
+                    {% if image.propertyId_id == property.propertyId %}
+                        <div class="gallery-img">
+                            <img src="{{ image.propImgUrl }}" alt="Property Image">
+                            </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </div>
     <!-- TODO: Perhaps add <iframe> for Google Maps here -->
     <script>
         var slideIndex = 1;
