@@ -7,11 +7,8 @@
     Castle Apartments
 {% endblock %}
 {% block content %}
-
-
-
-    <img src="{% static 'images/slogan.svg' %}" id="slogan"alt="slogan">
-    <form target="_blank" action="{% url 'search-index' %}" method="post">
+    <img src="{% static 'images/slogan.svg' %}" id="slogan" alt="slogan">
+    <form action="{% url 'search-index' %}" method="post">
         <div class="searchcontainer">
             {% csrf_token %}
             {{ form.searchBar }}
