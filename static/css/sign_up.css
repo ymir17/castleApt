@@ -22,6 +22,35 @@ label, ul {
     width: 100%;
 }
 
+#errors {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 70%;
+    /*height: 3rem;*/
+    margin: 0 15%;
+    border: 2px solid #910000;
+    border-bottom: 4px solid #910000;
+    border-top: 0;
+    border-radius: 0 0 1rem 1rem;
+    padding: 0.5rem 0 0.5rem;
+    position: absolute;
+    align-content: center;
+
+}
+#errors > strong {
+    margin: 0 0.75rem auto;
+    padding: 1rem 0 1rem;
+    /*text-align: center;*/
+}
+
+.dot {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: #910000;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 0 0.1rem 1rem;
+}
+
 .inputs {
     background: rgba(255, 255, 255, 1);
     border-top: 0.06rem solid #2E4570;

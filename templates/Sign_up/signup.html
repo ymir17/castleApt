@@ -5,12 +5,24 @@
 {% endblock %}
 {% block title %}Signup{% endblock %}
 {% block content %}
+    {% if form.errors %}
+        <div id="errors">
+            {% if form.username.errors %}
+                <span class="dot"></span><strong>Email already exists.</strong><br>
+            {% endif %}
+            {% if form.password2.errors %}
+                <span class="dot"></span><strong>Invalid password.</strong><br>
+            {% endif %}
+        </div>
+    {% endif %}
         <div class="signup_border">
             <h3>Create your account</h3>
             <form class="container" action="{% url 'signup-index' %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
+
                 {{ userForm }}
+
                 <input id="button" type="submit" value="Sign up">
             </form>
         </div>
