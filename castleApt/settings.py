@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'sell.apps.SellConfig',
     'editprofile.apps.EditprofileConfig',
     'paymentreview.apps.PaymentreviewConfig',
-    'django_countries'
+    # 'django_countries'
 ]
 
 MIDDLEWARE = [

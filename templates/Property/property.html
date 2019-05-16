@@ -20,11 +20,47 @@
             <p id="street">{{property.address}}, {{ property.zipCode }}</p>
             <p id="register">The listing was registered on {{property.added}}</p>
             <div id="about">
-                <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+                <p><!--id="info"-->
+                    <b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum. Elit sed vulputate mi sit amet mauris commodo quis. Curabitur gravida
+                    arcu ac tortor dignissim convallis aenean et. Ante metus dictum at tempor commodo ullamcorper
+                    a lacus vestibulum. Massa enim nec dui nunc mattis. Quam adipiscing vitae proin sagittis. Non
+                    odio euismod lacinia at quis. Elementum integer enim neque volutpat ac. Aliquam ut porttitor
+                    leo a diam sollicitudin tempor id. Gravida in fermentum et sollicitudin ac orci. Vulputate eu
+                    scelerisque felis imperdiet proin fermentum. Ultrices vitae auctor eu augue. Sit amet venenatis
+                    urna cursus. Egestas fringilla phasellus faucibus scelerisque.<br><br> Consequat ac felis donec et odio
+                    pellentesque. Ornare lectus sit amet est placerat in egestas erat. Urna neque viverra justo nec
+                    ultrices dui sapien. Facilisis volutpat est velit egestas dui id ornare arcu odio. Turpis egestas
+                    maecenas pharetra convallis posuere morbi leo urna molestie. Nisl nisi scelerisque eu ultrices
+                    vitae auctor eu.
+                </p>
             </div>
+        </div>
+        <div id="additional-info">
+            {% for realtors in realtor %}
+                {% if property.realtId_id == realtors.realtId %}
+                    {% for accounts in account %}
+                        {% if realtors.accountId_id == accounts.accountId %}
+                            <a><p><b>Realtor:</b> {{ accounts.firstName }} {{ accounts.lastName }}</p></a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <p><b>Built in:</b> {{ property.yearbuilt }}</p>
+            <p><b>Size:</b> {{ property.size }} Fm²</p>
+            <p><b>Rooms:</b> {{ property.rooms }}</p>
+            <p><b>Bedrooms:</b> {{ property.bedrooms }}</p>
+            <p><b>Bathrooms:</b> {{ property.bathrooms }}</p>
+
+            <form action="/payment/{{ property.propertyId }}" method="GET">
+
+                <input class="btn" id="button" type="submit" value="Buy now">
+            </form>
         </div>
         <div id="similar">
             <h4>Similar Listings:</h4>
@@ -49,28 +85,17 @@
                 {% endif %}
             {% endfor %}
         </div>
-        <div id="additional-info">
-            {% for realtors in realtor %}
-                {% if property.realtId_id == realtors.realtId %}
-                    {% for accounts in account %}
-                        {% if realtors.accountId_id == accounts.accountId %}
-                            <a><p>Realtor: {{ accounts.firstName }} {{ accounts.lastName }}</p></a>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-            <p>Built in: {{ property.yearbuilt }}</p>
-            <p>Size: {{ property.size }} Fm²</p>
-            <p>Rooms: {{ property.rooms }}</p>
-            <p>Bedrooms: {{ property.bedrooms }}</p>
-            <p>Bathrooms: {{ property.bathrooms }}</p>
-
-            <form action="/payment/{{ property.propertyId }}" method="GET">
-
-                <input class="btn" id="button" type="submit" value="Buy now">
-            </form>
+    </div>
+    <div id="gallery">
+        <div class="gallery-container">
+                {% for image in images %}
+                    {% if image.propertyId_id == property.propertyId %}
+                        <div class="gallery-img">
+                            <img src="{{ image.propImgUrl }}" alt="Property Image">
+                            </div>
+                    {% endif %}
+                {% endfor %}
         </div>
-
     </div>
     <!-- TODO: Perhaps add <iframe> for Google Maps here -->
     <script>
