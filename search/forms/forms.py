@@ -72,7 +72,7 @@ TYPES = [
 
 
 class searchForm(forms.Form):
-    searchBar = forms.CharField(
+    search = forms.CharField(
         required=False,
         widget=forms.TextInput,
     )
@@ -80,30 +80,30 @@ class searchForm(forms.Form):
         required=False,
         widget=forms.CheckboxSelectMultiple,
         choices=ZIP_CODES,
-        label= 'Zip Codes',
+        # auto_id=False,
     )
-    pricesLow = forms.CharField(
+    pricesLow = forms.FloatField(
         required=False,
         widget=forms.Select(choices=PRICES,),
 
     )
-    pricesHigh = forms.CharField(
+    pricesHigh = forms.FloatField(
         required=False,
         widget=forms.Select(choices=PRICES,),
     )
-    sizesLow = forms.CharField(
+    sizesLow = forms.FloatField(
         required=False,
         widget=forms.Select(choices=SIZES,),
     )
-    sizesHigh = forms.CharField(
+    sizesHigh = forms.FloatField(
         required=False,
         widget=forms.Select(choices=SIZES,),
     )
-    roomsLow = forms.CharField(
+    roomsLow = forms.IntegerField(
         required=False,
         widget=forms.Select(choices=ROOMS,),
     )
-    roomsHigh = forms.CharField(
+    roomsHigh = forms.IntegerField(
         required=False,
         widget=forms.Select(choices=ROOMS,),
     )
@@ -115,7 +115,7 @@ class searchForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['searchBar'].widget.attrs.update({
+        self.fields['search'].widget.attrs.update({
             'class': 'searchfield',
             'placeholder': 'Type in address, city or town',
             'name': 'search',
