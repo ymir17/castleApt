@@ -16,7 +16,11 @@ def index(request):
 
 def get_prop_by_id(request, id):
     propimgs = PropImages.objects.all().order_by('propImgUrl')
+    frontimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
+    props = Properties.objects.all()
     return render(request, 'Property/property.html', {
         'property': get_object_or_404(Properties, pk=id),
-        'images': propimgs
+        'images': propimgs,
+        'allprops': props,
+        'frontimg': frontimgs
     })

@@ -13,6 +13,8 @@ class Properties(models.Model):
     price = models.FloatField()
     description = models.CharField(max_length=32)
     realtId = models.ForeignKey(Realtors, on_delete=models.CASCADE)
+    yearbuilt = models.DateField()
+    bathrooms = models.FloatField()
 
 
 class PropImages(models.Model):
