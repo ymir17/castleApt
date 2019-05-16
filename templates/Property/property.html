@@ -28,58 +28,33 @@
         </div>
         <div id="similar">
             <h4>Similar Listings:</h4>
-            <div id="listing1">
-                <div id="thumbnail"></div>
-                <div class="similar-info">
-                    <p><b><u>No. Name of the Street</u></b></p>
-                    <p>xxx m²</p>
-                    <p>Built in xxxx</p>
-                    <p>xx Rooms</p>
-                </div>
-            </div>
-            <div id="listing2">
-                <div id="thumbnail"></div>
-                <div class="similar-info">
-                    <p><b><u>No. Name of the Street</u></b></p>
-                    <p>xxx m²</p>
-                    <p>Built in xxxx</p>
-                    <p>xx Rooms</p>
-                </div>
-            </div>
-            <div id="listing3">
-                <div id="thumbnail"></div>
-                <div class="similar-info">
-                    <p><b><u>No. Name of the Street</u></b></p>
-                    <p>xxx m²</p>
-                    <p>Built in xxxx</p>
-                    <p>xx Rooms</p>
-                </div>
-            </div>
-            <div id="listing4">
-                <div id="thumbnail"></div>
-                <div class="similar-info">
-                    <p><b><u>No. Name of the Street</u></b></p>
-                    <p>xxx m²</p>
-                    <p>Built in xxxx</p>
-                    <p>xx Rooms</p>
-                </div>
-            </div>
-            <div id="listing5">
-                <div id="thumbnail"></div>
-                <div class="similar-info">
-                    <p><b><u>No. Name of the Street</u></b></p>
-                    <p>xxx m²</p>
-                    <p>Built in xxxx</p>
-                    <p>xx Rooms</p>
-                </div>
-            </div>
+            {% for properties in allprops %}
+                {% if properties.description == property.description %}
+                    {% if properties.propertyId != property.propertyId %}
+                        <div id="listing">
+                            {% for propimg in frontimg %}
+                                {% if properties.propertyId == propimg.propertyId_id %}
+                                    <img id="thumbnail" src="{{ propimg.propImgUrl }}">
+                                {% endif %}
+                            {% endfor %}
+
+                            <div class="similar-info">
+                                <p><b><u><a href="../property/{{ properties.propertyId }}" style="color: white">{{ properties.address }}</a></u></b></p>
+                                <p>{{ properties.size }} m²</p>
+                                <p>Built in {{ properties.yearbuilt }}</p>
+                                <p>{{ properties.rooms }} Rooms</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
         <div id="additional-info">
-            <p>{{property.size}} m²</p>
-            <p>Built in {{ property.yearbuilt }}</p>
-            <p>{{property.rooms}} Rooms</p>
-            <p>xx bathrooms</p>
-            <p>xx Bedrooms</p>
+            <p>built in: {{ property.yearbuilt }}</p>
+            <p>size: {{ property.size }}m²</p>
+            <p>rooms: {{ property.rooms }}</p>
+            <p>bathrooms: {{ property.bathrooms }}</p>
+
         </div>
     </div>
     <script>
