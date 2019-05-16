@@ -9,7 +9,6 @@ CARD_TYPE = [
     ('american express', 'American Express')
 ]
 COUNTRIES = [
-    ('US', 'United States'),
     ('AF', 'Afghanistan'),
     ('AL', 'Albania'),
     ('DZ', 'Algeria'),
@@ -226,6 +225,7 @@ COUNTRIES = [
     ('UA', 'Ukraine'),
     ('AE', 'United Arab Emirates'),
     ('UK', 'United Kingdom'),
+    ('US', 'United States'),
     ('UY', 'Uruguay'),
     ('UZ', 'Uzbekistan'),
     ('VU', 'Vanuatu'),

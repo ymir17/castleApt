@@ -35,8 +35,8 @@ def index(request):
         for key in q:
             # print(key + ':')
             # print(q[key])
-            print(key, end=': ')
-            print(type(q[key]))
+            # print(key, end=': ')
+            # print(type(q[key]))
             if key == 'searchBar' and q[key] == '':
                 q[key] = None
             elif type(q[key]) is list:
@@ -51,11 +51,15 @@ def index(request):
         else:
             properties_searchBar = Properties.objects.filter(Q(address__icontains=q['searchBar']) |
                                                              Q(zipCode__icontains=q['searchBar']))
+        # print(properties_searchBar)
         if q['checkboxZip'] == []:
             properties_checkBox = Properties.objects.all()
         else:
-            properties_checkBox = Properties.objects.filter(zipCode__in=zips)
-
+            query = Q()
+            for zip in q['checkboxZip']:
+                query = query | Q(zipCode__istartswith=zip)
+            properties_checkBox = Properties.objects.filter(query)
+        print(properties_checkBox)
         if q['priceL'] is None and q['priceH'] is None:
             properties_prices = Properties.objects.all()
         else:
@@ -67,8 +71,8 @@ def index(request):
                 properties_prices = Properties.objects.filter(Q(price__gte=q['priceL'] * 1000) &
                                                               Q(price__lte=Properties.objects.aggregate(Max('price'))))
             else:
-                properties_prices = Properties.objects.filter(Q(price__gte=(q['priceL']*1000)) &
-                                                              Q(price__lte=(q['priceH'])*1000))
+                properties_prices = Properties.objects.filter(Q(price__gte=(q['priceL'] * 1000)) &
+                                                              Q(price__lte=(q['priceH']) * 1000))
 
         if q['sizeL'] is None and q['sizeH'] is None:
             properties_sizes = Properties.objects.all()
@@ -101,6 +105,7 @@ def index(request):
         else:
             properties_types = Properties.objects.filter(description__in=q['types'])
 
+
         properties = properties_searchBar.intersection(
             properties_checkBox,
             properties_prices,
@@ -108,7 +113,7 @@ def index(request):
             properties_rooms,
             properties_types
         )
-        print(properties)
+        # print(properties)
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
         context = {'properties': properties, 'propimgs': propimgs}
         return render(request, 'search/search.html', context)
