@@ -122,7 +122,7 @@ class searchForm(forms.Form):
             'type': 'text',
         })
         self.fields['checkboxZip'].widget.attrs.update({
-            'class': 'container',
+
         })
         self.fields['pricesLow'].widget.attrs.update({
             'class': 'alldropdowns',

@@ -70,14 +70,14 @@ img {
     user-select: none;
 }
 
-.container input {
+/*.container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
     margin: 0;
-}
+}*/
 
 .checkmark {
     position: absolute;
@@ -89,6 +89,7 @@ img {
     border-radius: 25%;
     border: solid #2E4570 0.06rem;
 }
+
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
