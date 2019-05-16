@@ -5,8 +5,13 @@ from property.models import Properties, PropImages
 from contacts.models import Realtors
 from signup.models import Accounts
 =======
+
+from contacts.models import Realtors
+from signup.models import Accounts
+
+>>>>>>> 7b786a6bbe5b0955ce183180cf56b8fb069f9614
 from search.forms.forms import searchForm
->>>>>>> 55f0b04a78bc3c202203ac2fcc038b4a9fcdfd60
+
 
 SORT_BY = (
     'Price Low',
