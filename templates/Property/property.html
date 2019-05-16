@@ -50,6 +50,15 @@
             {% endfor %}
         </div>
         <div id="additional-info">
+            {% for realtors in realtor %}
+                {% if property.realtId_id == realtors.realtId %}
+                    {% for accounts in account %}
+                        {% if realtors.accountId_id == accounts.accountId %}
+                            <a><p>Realtor: {{ accounts.firstName }} {{ accounts.lastName }}</p></a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
             <p>Built in: {{ property.yearbuilt }}</p>
             <p>Size: {{ property.size }} Fm²</p>
             <p>Rooms: {{ property.rooms }}</p>
