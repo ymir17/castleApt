@@ -10,11 +10,12 @@ class Properties(models.Model):
     zipCode = models.CharField(max_length=255)
     rooms = models.IntegerField()
     size = models.FloatField()
-    price = models.FloatField()
+    price = models.IntegerField()
     description = models.CharField(max_length=32)
     realtId = models.ForeignKey(Realtors, on_delete=models.CASCADE)
     yearbuilt = models.DateField()
     bathrooms = models.FloatField()
+    bedrooms = models.IntegerField()
 
 
 class PropImages(models.Model):

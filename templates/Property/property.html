@@ -17,7 +17,7 @@
     <div class="info">
         <div id="core-info">
             <p id="price">{{property.price}}&euro;</p>
-            <p id="street">{{property.address}}</p>
+            <p id="street">{{property.address}}, {{ property.zipCode }}</p>
             <p id="register">The listing was registered on {{property.added}}</p>
             <div id="about">
                 <p id="info"><b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
@@ -40,7 +40,7 @@
 
                             <div class="similar-info">
                                 <p><b><u><a href="../property/{{ properties.propertyId }}" style="color: white">{{ properties.address }}</a></u></b></p>
-                                <p>{{ properties.size }} fm²</p>
+                                <p>{{ properties.size }} Fm²</p>
                                 <p>Built in {{ properties.yearbuilt }}</p>
                                 <p>{{ properties.rooms }} Rooms</p>
                             </div>
@@ -50,10 +50,12 @@
             {% endfor %}
         </div>
         <div id="additional-info">
-            <p>built in: {{ property.yearbuilt }}</p>
-            <p>size: {{ property.size }}fm²</p>
-            <p>rooms: {{ property.rooms }}</p>
-            <p>bathrooms: {{ property.bathrooms }}</p>
+            <p>Built in: {{ property.yearbuilt }}</p>
+            <p>Size: {{ property.size }} Fm²</p>
+            <p>Rooms: {{ property.rooms }}</p>
+            <p>Bedrooms: {{ property.bedrooms }}</p>
+            <p>Bathrooms: {{ property.bathrooms }}</p>
+
             <form action="/payment/{{ property.propertyId }}" method="GET">
 
                 <input class="btn" id="button" type="submit" value="Buy now">
