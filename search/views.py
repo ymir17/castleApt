@@ -1,15 +1,11 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from property.models import Properties, PropImages
-<<<<<<< HEAD
-from contacts.models import Realtors
-from signup.models import Accounts
-=======
 
 from contacts.models import Realtors
 from signup.models import Accounts
-
->>>>>>> 7b786a6bbe5b0955ce183180cf56b8fb069f9614
+from contacts.models import Realtors
+from signup.models import Accounts
 from search.forms.forms import searchForm
 
 
