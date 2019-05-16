@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Q, Max, Min
 from django.shortcuts import render, redirect, get_object_or_404
 from property.models import Properties, PropImages
 
@@ -6,13 +6,14 @@ from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
 
-
+from contacts.models import Realtors
+from signup.models import Accounts
+from search.forms.forms import searchForm
 from contacts.models import Realtors
 from signup.models import Accounts
 from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
-
 
 
 SORT_BY = (
@@ -21,7 +22,6 @@ SORT_BY = (
     'Name',
     'Zip Code'
 )
-
 
 def index(request):
     if request.method == 'GET':
@@ -36,12 +36,83 @@ def index(request):
             'roomH': request.GET.get('roomsHigh'),
             'types': request.GET.getlist('types')
         }
+
+        for key in q:
+            # print(key + ':')
+            # print(q[key])
+            print(key, end=': ')
+            print(type(q[key]))
+            if key == 'searchBar' and q[key] == '':
+                q[key] = None
+            elif type(q[key]) is list:
+                continue
+            elif q[key] is not None:
+                if q[key].isdigit():
+                    q[key] = int(q[key])
+
         print(q)
-        properties_searchBar = Properties.objects.filter(Q(address__icontains=q['searchBar']) |
-                                               Q(zipCode__icontains=q['searchBar']))
-        properties_checkBox = Properties.objects.filter(Q(zipCode__icontains=q['checkboxZip']))
-        properties_prices = Properties.objects.filter(Q(price__gte=39840000))
-        properties = properties_prices
+        if q['searchBar'] == '':
+            properties_searchBar = Properties.objects.all()
+        else:
+            properties_searchBar = Properties.objects.filter(Q(address__icontains=q['searchBar']) |
+                                                             Q(zipCode__icontains=q['searchBar']))
+        if q['checkboxZip'] == []:
+            properties_checkBox = Properties.objects.all()
+        else:
+            properties_checkBox = Properties.objects.filter(zipCode__in=zips)
+
+        if q['priceL'] is None and q['priceH'] is None:
+            properties_prices = Properties.objects.all()
+        else:
+            if q['priceL'] is None:
+                # print(Properties.objects.aggregate(Min('price')))
+                properties_prices = Properties.objects.filter(Q(price__gte=Properties.objects.aggregate(Min('price'))) &
+                                                              Q(price__lte=(q['priceH']) * 1000))
+            elif q['priceH'] is None:
+                properties_prices = Properties.objects.filter(Q(price__gte=q['priceL'] * 1000) &
+                                                              Q(price__lte=Properties.objects.aggregate(Max('price'))))
+            else:
+                properties_prices = Properties.objects.filter(Q(price__gte=(q['priceL']*1000)) &
+                                                              Q(price__lte=(q['priceH'])*1000))
+
+        if q['sizeL'] is None and q['sizeH'] is None:
+            properties_sizes = Properties.objects.all()
+        else:
+            if q['sizeL'] is None:
+                properties_sizes = Properties.objects.filter(Q(size__gte=Properties.objects.aggregate(Min('size'))) &
+                                                             Q(size__lte=q['sizeH']))
+            elif q['sizeH'] is None:
+                properties_sizes = Properties.objects.filter(Q(size__gte=q['sizeL']) &
+                                                             Q(size__gte=Properties.objects.aggregate(Max('size'))))
+            else:
+                properties_sizes = Properties.objects.filter(Q(size__gte=q['sizeL']) &
+                                                             Q(size__lte=q['sizeH']))
+
+        if q['roomL'] is None and q['roomH'] is None:
+            properties_rooms = Properties.objects.all()
+        else:
+            if q['roomL'] is None:
+                properties_rooms = Properties.objects.filter(Q(rooms__gte=Properties.objects.aggregate(Min('rooms'))) &
+                                                             Q(rooms__lte=q['roomH']))
+            elif q['roomH'] is None:
+                properties_rooms = Properties.objects.filter(Q(rooms__gte=q['roomL']) &
+                                                             Q(rooms__lte=Properties.objects.aggregate(Max('rooms'))))
+            else:
+                properties_rooms = Properties.objects.filter(Q(rooms__gte=q['roomL']) &
+                                                             Q(rooms_lte=q['roomH']))
+
+        if q['types'] == []:
+            properties_types = Properties.objects.all()
+        else:
+            properties_types = Properties.objects.filter(description__in=q['types'])
+
+        properties = properties_searchBar.intersection(
+            properties_checkBox,
+            properties_prices,
+            properties_sizes,
+            properties_rooms,
+            properties_types
+        )
         print(properties)
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
         context = {'properties': properties, 'propimgs': propimgs}
