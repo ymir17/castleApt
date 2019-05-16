@@ -6,16 +6,16 @@
 {% block title %}
     Castle Apartments
 {% endblock %}
+<!-- TODO: Remove all comments before assigning in! -->
 {% block content %}
     <img src="{% static 'images/slogan.svg' %}" id="slogan" alt="slogan">
-    <form action="{% url 'search-index' %}" method="post">
+    <form action="{% url 'search-index' %}" method="GET">
         <div class="searchcontainer">
-            {% csrf_token %}
-            {{ form.searchBar }}
+{#            {% csrf_token %}#}
+            {{ form.search }}
 {#            <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>#}
             <div class="zipDiv">
                 <label class="filter-labels">Zip code</label>
-{#                {{ form.checkboxZip }}#}
                 {% for field in form.checkboxZip %}
                     <label class="container">
                         {{ field }}
@@ -113,7 +113,6 @@
             <div class="dropdownDiv">
                 <label class="filter-labels">Size</label>
                 <div class="select-container">
-{#                    {{ form.sizesLow }}#}
                     <select name="sizesLow" class="alldropdowns" id="id_sizesLow">
                         {% for field in form.sizesLow %}
                             {% if forloop.first %}
@@ -132,7 +131,6 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-{#                    {{ form.sizesHigh }}#}
 {#                <select name="fromfm" class="alldropdowns">#}
 {#                    <option value="#">From</option>#}
 {#                    <option value="40">40 Fm&sup2;</option>#}
@@ -170,8 +168,6 @@
             <div class="dropdownDiv">
                 <label class="filter-labels">Rooms</label>
                 <div class="select-container">
-{#                    {{ form.roomsLow }}#}
-{#                    {{ form.roomsHigh }}#}
                     <select name="roomsLow" class="alldropdowns" id="id_roomsLow">
                         {% for field in form.roomsLow %}
                             {% if forloop.first %}
@@ -228,7 +224,6 @@
                 <label class="filter-labels">Type</label>
                 <div class="select-container">
                 <div id="checkboxtype">
-{#                    {{ form.types }}#}
                     {% for field in form.types %}
                         {{ field }}{{ field.subject.label_tag }}
                     {% endfor %}
