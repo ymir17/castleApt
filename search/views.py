@@ -1,6 +1,11 @@
 from django.db.models import Q, Max, Min
 from django.shortcuts import render, redirect, get_object_or_404
 from property.models import Properties, PropImages
+
+from contacts.models import Realtors
+from signup.models import Accounts
+from search.forms.forms import searchForm
+
 from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
