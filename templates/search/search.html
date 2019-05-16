@@ -10,8 +10,9 @@
     <div class='container-prop'>
     <br>
         <div class='result-container'>
+
             <div class='h3-container'>
-                <h3 class='search-result'> ??? properties found</h3>
+                <h3 class='search-result'> properties found</h3>
             </div>
 
 
@@ -38,12 +39,13 @@
                 <div class='img-container'>
                     {% for propimg in propimgs %}
                         {% if property.propertyId == propimg.propertyId_id %}
-                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image">
+                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">
                         {% endif %}
                     {% endfor %}
                 </div>
+                <h2>{{ property.address }}</h2>
                 <div class='prop-info'>
-                    <p>Address: {{ property.address }}</p>
+
                     <p>Rooms: {{ property.rooms }}</p>
                     <p>Size: {{property.size }}</p>
                     <p>Type: {{property.description}}</p>

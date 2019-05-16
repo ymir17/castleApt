@@ -32,7 +32,9 @@ img {
     margin: auto;
     order: 1;
 }
-
+h2 {
+    float: left;
+}
 .result-container{
     display:flex;
     flex-direction: row;
