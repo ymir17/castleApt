@@ -15,7 +15,7 @@ def index(request):
     return render(request, 'search/search.html', context)
 
 def get_prop_by_id(request, id):
-    propimgs = PropImages.objects.all()
+    propimgs = PropImages.objects.all().order_by('propImgUrl')
     return render(request, 'Property/property.html', {
         'property': get_object_or_404(Properties, pk=id),
         'images': propimgs
