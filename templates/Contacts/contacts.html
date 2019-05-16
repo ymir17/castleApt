@@ -15,6 +15,7 @@
                         <h4>{{ account.firstName }} {{ account.lastName }}</h4>
                     {% endif %}
                 {% endfor %}
+                <h5>Realtor info</h5>
             </div>
             <div id="myPopup{{ realtor.accountId_id }}" class="modal">
                 <div class="popup-content">
@@ -22,7 +23,7 @@
                     <div class="popupLeft">
                     {% for account in accounts %}
                         {% if account.accountId == realtor.accountId_id %}
-                            <h3>{{ account.firstName }} {{ account.lastName }}</h3>
+                            <h3 class="htags">{{ account.firstName }} {{ account.lastName }}</h3>
                         {% endif %}
                     {% endfor %}
                         {% for image in realtorImgs %}
@@ -32,16 +33,15 @@
                         {% endfor %}
                         {% for account in accounts %}
                             {% if account.accountId == realtor.accountId_id %}
-                                <span>{{ account.email }} <br> </span>
-                                <span>{{ account.phoneNo }}</span>
+                                <div class="emailphone">
+                                    <a class="email" href="mailto:{{ account.email }}" target="_top">{{ account.email }}</a>
+                                    <br><br><span class="phone">+354 - {{ account.phoneNo }}</span>
+                                </div>
                             {% endif %}
                         {% endfor %}
                         </div>
-                        <h4 style="text-align: center">Contact info</h4>
-                        <p>{{ realtor.description }}</p>
-
-
-
+                        <h3 class="htags">Information</h3 >
+                        <p class="realdes">{{ realtor.description }}</p>
                 </div>
             </div>
         {% endfor %}
