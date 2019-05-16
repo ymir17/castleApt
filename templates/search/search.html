@@ -2,6 +2,7 @@
 
 {% block content %}
     {% load static %}
+    {% load order %}
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
 
     <div class='searchbar'>
@@ -16,13 +17,7 @@
             </div>
 
             <div id="" class='dd-container'>
-                <form>
-                    <select>
-                        <option value="" disabled selected>Order by</option>
-                        <option value="html">Address</option>
-                        <option value="css">Zip Code</option>
-                    </select>
-                </form>
+                {{ form.orderBy }}
             </div>
         </div>
         {% for property in properties %}

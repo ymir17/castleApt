@@ -6,14 +6,7 @@ from contacts.models import Realtors
 from signup.models import Accounts
 from search.forms.forms import searchForm
 
-from contacts.models import Realtors
-from signup.models import Accounts
-from search.forms.forms import searchForm
-from contacts.models import Realtors
-from signup.models import Accounts
-from contacts.models import Realtors
-from signup.models import Accounts
-from search.forms.forms import searchForm
+
 
 
 SORT_BY = (
@@ -120,7 +113,7 @@ def index(request):
         )
         # print(properties)
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
-        context = {'properties': properties, 'propimgs': propimgs}
+        context = {'properties': properties, 'propimgs': propimgs, 'form': searchForm(data=request.GET)}
         return render(request, 'search/search.html', context)
     return redirect('home-index')
 
