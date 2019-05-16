@@ -30,7 +30,9 @@
                 <div class='img-container'>
                     {% for propimg in propimgs %}
                         {% if property.propertyId == propimg.propertyId_id %}
-                            <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">
+                            <div style="width: 100%; height: 100%; background-image: url({{ propimg.propImgUrl }}); background-size: cover; background-position: 50%;">
+{#                                <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">#}
+                            </div>
                         {% endif %}
                     {% endfor %}
                 </div>

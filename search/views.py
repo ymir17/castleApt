@@ -103,7 +103,7 @@ def index(request):
                                                              Q(rooms__lte=Properties.objects.aggregate(Max('rooms'))))
             else:
                 properties_rooms = Properties.objects.filter(Q(rooms__gte=q['roomL']) &
-                                                             Q(rooms_lte=q['roomH']))
+                                                             Q(rooms__lte=q['roomH']))
 
         if q['types'] == []:
             properties_types = Properties.objects.all()

@@ -1,7 +1,10 @@
 .img-container{
     background-color: #4f4f4f;
     order: 0;
-    flex-basis: 22.5rem;
+    /*flex-basis: 22.5rem;*/
+    width: 40%;
+    height: auto;
+
 }
 
 .container-prop{
