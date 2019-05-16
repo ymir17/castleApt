@@ -41,7 +41,12 @@
                 </p>
             </div>
         </div>
-        <div id="additional-info">
+        <div id="container">
+            <div id="additional-info">
+            <form action="/payment/{{ property.propertyId }}" method="GET">
+
+                <input class="btn" id="button" type="submit" value="Buy now">
+            </form>
             {% for realtors in realtor %}
                 {% if property.realtId_id == realtors.realtId %}
                     {% for accounts in account %}
@@ -56,13 +61,8 @@
             <p><b>Rooms:</b> {{ property.rooms }}</p>
             <p><b>Bedrooms:</b> {{ property.bedrooms }}</p>
             <p><b>Bathrooms:</b> {{ property.bathrooms }}</p>
-
-            <form action="/payment/{{ property.propertyId }}" method="GET">
-
-                <input class="btn" id="button" type="submit" value="Buy now">
-            </form>
         </div>
-        <div id="similar">
+            <div id="similar">
             <h4>Similar Listings:</h4>
             {% for properties in allprops %}
                 {% if properties.description == property.description %}
@@ -84,6 +84,7 @@
                     {% endif %}
                 {% endif %}
             {% endfor %}
+        </div>
         </div>
     </div>
     <div id="gallery">
