@@ -9,19 +9,31 @@
         <div class="n-container">
             <div id="payinfo">
                 <h4>Payment information</h4>
-                <p>Realtor name: Lorem</p>
-                <p>E-mail: user@email.com</p>
-                <p>Credit card no: XXXX-XXXX-XXXX-1234</p>
-                <p>Total: $9.900.000</p>
+            {% for realtor in realtors %}
+                {% if property.realtId_id == realtor.realtId %}
+                    {% for account in accounts %}
+                        {% if realtor.accountId_id == account.accountId %}
+                            <p>Realtor name: {{ account.firstName }} {{ account.lastName }}</p>
+                            <p>E-mail: {{ account.email }}</p>
+                            <p>Credit card no: XXXX-XXXX-XXXX-1234</p>
+                            <p>Total: &euro;{{ property.price }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+
             </div>
             <div class='prop-info'>
             <div class='img-container'>
-               <img class='prop-img' src="{% static 'images/castles/00_00.jpeg' %}" alt="Property Image">
+                {% for image in images %}
+                    {% if image.propertyId_id == property.propertyId %}
+                        <img class='prop-img' src="{{ image.propImgUrl }}" alt="Property Image">
+                    {% endif %}
+                {% endfor %}
             </div>
-                <p>13 Painful St, Transylvania, TR 666</p>
-                <p>Registered 30. apr. 2019</p>
-                <p>some text</p>
-                <p>some text</p>
+                <p>{{ property.address }}, {{ property.description }}</p>
+                <p>Registered {{ property.added }}</p>
+                <p>year built: {{ property.yearbuilt }}</p>
             </div>
             <input id="button" type="submit" value="Confirm">
         </div>

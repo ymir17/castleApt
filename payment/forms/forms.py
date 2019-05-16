@@ -23,7 +23,7 @@ class PaymentForm(forms.Form):
         required=True,
         widget=forms.TextInput,
     )
-    expDate = forms.CharField(
+    expDate = forms.DateField(
         required=True,
         widget=forms.DateInput,
     )
