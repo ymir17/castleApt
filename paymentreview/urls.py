@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
+from payment import views
 
 urlpatterns = [
-    path('', views.index, name='paymentreview-index'),
+    path('<int:id>', views.paymentReview, name='paymentreview-index'),
 ]
