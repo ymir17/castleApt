@@ -10,14 +10,6 @@ ZIP_CODES = [
     ('670', '670 Kópasker'),
     ('740', '740 Neskaupstaður'),
     ('870', '870 Vík'),
-    ('109', '109 Reykjavik'),
-    ('112', '112 Reykjavik'),
-    ('220', '220 Hafnafjörður'),
-    ('311', '311 Borgarnes'),
-    ('531', '531 Hvammstangi'),
-    ('670', '670 Kópasker'),
-    ('740', '740 Neskaupstaður'),
-    ('870', '870 Vík'),
 ]
 PRICES = [
     ('#', ''),

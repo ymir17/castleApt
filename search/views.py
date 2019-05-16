@@ -51,7 +51,7 @@ def index(request):
                     q[key] = int(q[key])
 
         print(q)
-        if q['searchBar'] == '':
+        if q['searchBar'] == None:
             properties_searchBar = Properties.objects.all()
         else:
             properties_searchBar = Properties.objects.filter(Q(address__icontains=q['searchBar']) |
