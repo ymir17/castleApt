@@ -4,7 +4,8 @@ from property.models import Properties, PropImages
 
 from contacts.models import Realtors
 from signup.models import Accounts
-
+from contacts.models import Realtors
+from signup.models import Accounts
 from search.forms.forms import searchForm
 
 

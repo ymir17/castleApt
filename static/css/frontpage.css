@@ -46,15 +46,35 @@ img {
 .zipDiv {
     margin: 1rem 2rem 2rem 2rem;
     background-color: white;
-    border: 0.1rem solid #2E4570;
+    border: 0.06rem solid #2E4570;
     display: block;
-    border-radius: 1rem;
-    padding: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
     float: left;
     overflow-y: scroll;
     height: 17rem;
     width: 15rem;
     padding-top: 0.7rem;
+}
+
+.zipDiv::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(46, 57, 102, 0.52);
+	border-radius: 1rem;
+	background-color: #F5F5F5;
+}
+
+.zipDiv::-webkit-scrollbar
+{
+	width: 0.5rem;
+	background-color: rgba(245, 245, 245, 0);
+}
+
+.zipDiv::-webkit-scrollbar-thumb
+{
+	border-radius: 1rem;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #2E4570;
 }
 
 .zipDiv label {
@@ -77,7 +97,6 @@ input[type='checkbox'] {
     background:white;
     border-radius:0.2rem;
     border:0.1rem solid #000000;
-    margin: 0;
 }
 input[type='checkbox']:checked {
     background: #2E4570;
