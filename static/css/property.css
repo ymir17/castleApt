@@ -33,8 +33,12 @@
     border-top: 1rem solid transparent;
     border-right: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
+    cursor: pointer;
     }
-
+.left-arrow:hover {
+    border-right: 2rem solid rgba(145, 0, 0, 0.8);
+    cursor: pointer;
+}
 .right-arrow {
     position: absolute;
     left: 101%;
@@ -46,7 +50,10 @@
     border-left: 2rem solid rgba(145, 0, 0, 1);
     border-bottom: 1rem solid transparent;
     }
-
+.right-arrow:hover {
+    border-left: 2rem solid rgba(145, 0, 0, 0.8);
+    cursor: pointer;
+}
 .info {
     margin: auto;
     background-color: rgba(255, 255, 255, 0.8);
