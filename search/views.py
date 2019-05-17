@@ -4,7 +4,7 @@ from property.models import Properties, PropImages
 
 from contacts.models import Realtors
 from signup.models import Accounts
-from search.forms.forms import searchForm, orderBy
+from search.forms.forms import searchForm, orderByForm
 
 SORT_BY = (
     'Price Low',
@@ -110,7 +110,7 @@ def index(request):
         )
         # print(properties)
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
-        context = {'properties': properties, 'propimgs': propimgs, 'form': orderBy(data=request.GET)}
+        context = {'properties': properties, 'propimgs': propimgs, 'form': orderByForm(data=request.GET)}
         return render(request, 'search/search.html', context)
     return redirect('home-index')
 
