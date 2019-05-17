@@ -47,8 +47,11 @@
         <div id="container">
             <div id="additional-info">
             <form action="/payment/{{ property.propertyId }}" method="GET">
-
-                <input class="btn" id="button" type="submit" value="Buy now">
+                {% if user.is_authenticated %}
+                    <input class="btn" id="button" type="submit" value="Buy now">
+                {% else %}
+                    <a class="btn" id="button" style="text-align: center; text-decoration: none" href="{% url 'login-index' %}">Buy Now</a>
+                {% endif %}
             </form>
             <div id="realtor">
                 {% for realtors in realtor %}

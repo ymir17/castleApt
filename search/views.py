@@ -14,6 +14,7 @@ SORT_BY = (
 )
 
 def index(request):
+    # TODO: Fix bug where 'anyL' is None and 'anyH' is some value.
     if request.method == 'GET':
         q = {
             'searchBar': request.GET.get('search'),
@@ -102,7 +103,7 @@ def index(request):
             properties_sizes,
             properties_rooms,
             properties_types
-        )
+        ).filter(isSold=False)
 
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
 

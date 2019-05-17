@@ -345,3 +345,4 @@ class PaymentForm(forms.Form):
             'type': 'number',
         })
 
+

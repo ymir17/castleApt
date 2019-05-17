@@ -28,9 +28,19 @@ def userInfo(id):
     return q
 
 def paymentReview(request, id):
+    form = dict(PaymentForm(data=request.GET).data),
+    # print(form[0]['cardTypes'][0])
+    customer = {
+        'name': form[0]['nameOnCard'][0],
+        'bAddress': form[0]['bAddress'][0],
+        'zip': form[0]['zipCode'][0],
+        'cardNumber': form[0]['cardNumber'][0],
+    }
     return render(request, 'Paymentreview/paymentreview.html', {
+        'form': customer,
         'property': get_object_or_404(Properties, pk=id),
         'images': PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id"),
         'realtors': Realtors.objects.all(),
-        'accounts': Accounts.objects.all()
+        'accounts': Accounts.objects.all(),
+        # 'customer': request.user
     })
