@@ -46,7 +46,6 @@
                     {% if form.bAddress %}
                         <input id="{{ form.bAddress.id_for_label }}" class="inputs" name="{{ form.bAddress.html_name }}" placeholder="Billing Address" type="text" value="{{ userInfo.address }}">
                     {% endif %}
-                    {{ form.houseNumber }}
                     {% if form.city%}
                         <input id="{{ form.city.id_for_label }}" class="inputs" name="{{ form.city.html_name }}" placeholder="City" type="text" value="{{ userInfo.city }}">
                     {% endif %}

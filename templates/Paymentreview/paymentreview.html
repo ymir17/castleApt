@@ -5,6 +5,7 @@
 {% endblock %}
 {% block title %} Search {% endblock %}
 {% block content %}
+{#    <form method="POST" action="{% url 'confirm' %}">#}
     <div class='review-container'>
         <h2>Payment review</h2>
         <div class="n-container">
@@ -17,9 +18,9 @@
                             <p><b>Realtor name: </b>{{ account.firstName }} {{ account.lastName }}</p>
                             <p><b>E-mail: </b>{{ account.email }}</p>
                             <h4 style="text-align: center;">Buyer's Info</h4>
-                            <p><b>Name: </b>{{ forms.name }}</p>
-                            <p><b>Billing address: </b>{{ forms.bAddress }}, {{ forms.zipCode }}</p>
-                            <p><b>Credit card no: </b>{{ forms.cardNumber }}</p>
+                            <p><b>Name: </b>{{ form.name }}</p>
+                            <p><b>Billing address: </b>{{ form.bAddress }}, {{ form.zip }}</p>
+                            <p><b>Credit card no: </b>xxxx-xxxx-xxxx-{{ form.cardNumber }}</p>
                             <p><b>Total: </b>&euro;{{ property.price }}</p>
                         {% endif %}
                     {% endfor %}
@@ -41,5 +42,5 @@
             <input id="button" type="submit" value="Confirm">
         </div>
     </div>
-
+    </form>
 {% endblock %}
