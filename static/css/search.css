@@ -1,8 +1,8 @@
 .img-container{
     background-color: #4f4f4f;
     order: 0;
-    width: 22rem;
-    height: 13rem;
+    width: 25%;
+    height: auto;
 }
 
 .container-prop{
