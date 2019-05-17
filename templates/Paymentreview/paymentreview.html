@@ -16,10 +16,10 @@
                         {% if realtor.accountId_id == account.accountId %}
                             <p><b>Realtor name: </b>{{ account.firstName }} {{ account.lastName }}</p>
                             <p><b>E-mail: </b>{{ account.email }}</p>
-                            <h4 style="text-align: center;">Buyer info</h4>
-                            <p><b>Name: </b>buyer name</p>
-                            <p><b>Billing address: </b>address + zip </p>
-                            <p><b>Credit card no: </b>XXXX-XXXX-XXXX-1234</p>
+                            <h4 style="text-align: center;">Buyer's Info</h4>
+                            <p><b>Name: </b>{{ forms.name }}</p>
+                            <p><b>Billing address: </b>{{ forms.bAddress }}, {{ forms.zipCode }}</p>
+                            <p><b>Credit card no: </b>{{ forms.cardNumber }}</p>
                             <p><b>Total: </b>&euro;{{ property.price }}</p>
                         {% endif %}
                     {% endfor %}
