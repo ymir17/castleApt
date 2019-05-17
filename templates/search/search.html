@@ -5,19 +5,20 @@
 {% endblock %}
 {% block title %}Search - {% endblock %}
 {% block content %}
-{#    <form method="GET" id="order-form" title="order-by" action="" >#}
-        <div class='searchbar'></div>
-        <div class='container-prop'>
-        <br>
-            <div class='result-container'>
-                <div class='h3-container'>
-                    <h3 class='search-result'>{{properties.count}} properties found</h3>
-                </div>
-{#                <div id="" class='dd-container'>#}
-{#                    {{ form.orderBy }}#}
-{#                </div>#}
-{#                <input type="submit" value="{% url   %}">#}
+    <div class='searchbar'></div>
+    <div class='container-prop'>
+    <br>
+        <div class='result-container'>
+            <div class='h3-container'>
+                <h3 class='search-result'>{{properties.count}} properties found</h3>
             </div>
+
+            <div id="" class='dd-container'>
+                <select name="">
+
+                </select>
+            </div>
+        </div>
             {% for property in properties %}
                 <div id="property{{ property.propertyId}}" class='listing'>
                     <div class='img-container'>
@@ -39,5 +40,4 @@
                 </div>
             {% endfor %}
         </div>
-{#    </form>#}
 {% endblock %}
