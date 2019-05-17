@@ -19,7 +19,7 @@
                 <h2>{{ property.address }}</h2>
                 <h3>{{ property.zipCode }}</h3>
                 <p><b>Price: </b>&euro;{{ property.price }}</p>
-                <p><b>Type: </b>{{ property.description }}</p>
+                <p><b>Type: </b>{{ property.description.capitalize }}</p>
             </div>
         </div>
         <div class='billing-container'>
@@ -32,18 +32,38 @@
                         {{ field }} {{ field.subject.label_tag }}
                     {% endfor %}
                     <br><br>
-                    {{ form.nameOnCard }}
+                    {% if form.nameOnCard %}
+{#                       {{ form.nameOnCard }}#}
+                        <input id="{{ form.nameOnCard.id_for_label }}" class="inputs" name="{{ form.nameOnCard.html_name }}" placeholder="Full Name" type="text" value="{{ user.first_name }} {{ user.last_name }}">
+                    {% endif %}
+
                     {{ form.cardNumber }}
                     {{ form.expDate }}
                     {{ form.cvc }}
                 </div>
                 <div class='box2'>
                     <h3>Billing info</h3>
-                    {{ form.bAddress }}
-                    {{ form.houseNumber }}
-                    {{ form.city }}
-                    {{ form.country}}
-                    {{ form.zipCode }}
+                    {% if form.bAddress %}
+                        <input id="{{ form.bAddress.id_for_label }}" class="inputs" name="{{ form.bAddress.html_name }}" placeholder="Billing Address" type="text" value="{{ userInfo.address }}">
+                    {% endif %}
+                    {% if form.city%}
+                        <input id="{{ form.city.id_for_label }}" class="inputs" name="{{ form.city.html_name }}" placeholder="City" type="text" value="{{ userInfo.city }}">
+                    {% endif %}
+                    {% if form.country %}
+                        <select id="{{ form.country.id_for_label }}" class="inputs" name="country">
+                            {% for value, country in countries %}
+                                <option value="{{ value }}" {% if country == userInfo.country %} selected {% endif %}>{{ country }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                    {% if form.zipCode %}
+                        <input id="{{ form.zipCode.id_for_label }}" class="inputs" name="{{ form.zipCode.html_name }}" placeholder="Postal Code" type="number" value="{{ userInfo.zip }}">
+                    {% endif %}
+{#                    {{ form.bAddress }}#}
+{#                    {{ form.houseNumber }}#}
+{#                    {{ form.city }}#}
+{#                    {{ form.country}}#}
+{#                    {{ form.zipCode }}#}
                 </div>
                 <input class="button" type="submit" value="Confirm">
             </form>
