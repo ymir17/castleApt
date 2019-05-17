@@ -3,58 +3,18 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/frontpage.css' %}">
 {% endblock %}
-{% block title %}
-    Castle Apartments
-{% endblock %}
-<!-- TODO: Remove all comments before assigning in! -->
+{% block title %}Home -{% endblock %}
 {% block content %}
     <img src="{% static 'images/slogan.svg' %}" id="slogan" alt="slogan">
     <form action="{% url 'search-index' %}" method="GET">
         <div class="searchcontainer">
-{#            {% csrf_token %}#}
             {{ form.search }}
-{#            <input class='searchfield' type='text' name='search' placeholder='Address, town, city or zip code'><br>#}
             <div class="zipDiv">
                 <label class="filter-labels">Zip code</label>
                 {% for field in form.checkboxZip %}
                        {{ field }}
                 {% endfor %}
             </div>
-{#                <label class="filter-labels">Zip code</label>#}
-{#                <div class="checkboxZip">#}
-{#                    <label class="container">109 Reykjavík#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">112 Reykjavík#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">220 Hafnarfjörður#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">311 Borgarnes#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">531 Hvammstangi#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">670 Kópasker#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">740 Neskaupstaður#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">870 Vík#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                </div>#}
             <div class="dropdown-container">
                 <div class="dropdownDiv">
                 <label class="filter-labels">Price</label>
@@ -77,34 +37,6 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-{#                <select name="fromprice" class="alldropdowns">#}
-{#                    <option value="#">From</option>#}
-{#                    <option value="1">1m &euro;</option>#}
-{#                    <option value="5">5m &euro;</option>#}
-{#                    <option value="10">10m &euro;</option>#}
-{#                    <option value="15">15m &euro;</option>#}
-{#                    <option value="20">20m &euro;</option>#}
-{#                    <option value="25">25m &euro;</option>#}
-{#                    <option value="30">30m &euro;</option>#}
-{#                    <option value="35">35m &euro;</option>#}
-{#                    <option value="40">40m &euro;</option>#}
-{#                    <option value="45">45m &euro;</option>#}
-{#                    <option value="50">50m &euro;</option>#}
-{#                </select>#}
-{#                <select name="toprice" class="alldropdowns">#}
-{#                    <option value="#">To</option>#}
-{#                    <option value="1">1m &euro;</option>#}
-{#                    <option value="5">5m &euro;</option>#}
-{#                    <option value="10">10m &euro;</option>#}
-{#                    <option value="15">15m &euro;</option>#}
-{#                    <option value="20">20m &euro;</option>#}
-{#                    <option value="25">25m &euro;</option>#}
-{#                    <option value="30">30m &euro;</option>#}
-{#                    <option value="35">35m &euro;</option>#}
-{#                    <option value="40">40m &euro;</option>#}
-{#                    <option value="45">45m &euro;</option>#}
-{#                    <option value="50">50m &euro;</option>#}
-{#                </select>#}
                     </div>
                 </div>
             <div class="dropdownDiv">
@@ -128,38 +60,6 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-{#                <select name="fromfm" class="alldropdowns">#}
-{#                    <option value="#">From</option>#}
-{#                    <option value="40">40 Fm&sup2;</option>#}
-{#                    <option value="50">50 Fm&sup2;</option>#}
-{#                    <option value="60">60 Fm&sup2;</option>#}
-{#                    <option value="70">70 Fm&sup2;</option>#}
-{#                    <option value="80">80 Fm&sup2;</option>#}
-{#                    <option value="90">90 Fm&sup2;</option>#}
-{#                    <option value="100">100 Fm&sup2;</option>#}
-{#                    <option value="150">150 Fm&sup2;</option>#}
-{#                    <option value="200">200 Fm&sup2;</option>#}
-{#                    <option value="400">400 Fm&sup2;</option>#}
-{#                    <option value="600">600 Fm&sup2;</option>#}
-{#                    <option value="800">800 Fm&sup2;</option>#}
-{#                    <option value="1000">1000 Fm&sup2;</option>#}
-{#                </select>#}
-{#                <select name="tofm" class="alldropdowns">#}
-{#                    <option value="#">To</option>#}
-{#                    <option value="40">40 Fm&sup2;</option>#}
-{#                    <option value="50">50 Fm&sup2;</option>#}
-{#                    <option value="60">60 Fm&sup2;</option>#}
-{#                    <option value="70">70 Fm&sup2;</option>#}
-{#                    <option value="80">80 Fm&sup2;</option>#}
-{#                    <option value="90">90 Fm&sup2;</option>#}
-{#                    <option value="100">100 Fm&sup2;</option>#}
-{#                    <option value="150">150 Fm&sup2;</option>#}
-{#                    <option value="200">200 Fm&sup2;</option>#}
-{#                    <option value="400">400 Fm&sup2;</option>#}
-{#                    <option value="600">600 Fm&sup2;</option>#}
-{#                    <option value="800">800 Fm&sup2;</option>#}
-{#                    <option value="1000">1000 Fm&sup2;</option>#}
-{#                </select>#}
                 </div>
             </div>
             <div class="dropdownDiv">
@@ -183,38 +83,6 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-{#                <select name="fromrooms" class="alldropdowns">#}
-{#                    <option value="#">From</option>#}
-{#                    <option value="1">1</option>#}
-{#                    <option value="2">2</option>#}
-{#                    <option value="3">3</option>#}
-{#                    <option value="4">4</option>#}
-{#                    <option value="5">5</option>#}
-{#                    <option value="10">10</option>#}
-{#                    <option value="20">20</option>#}
-{#                    <option value="30">30</option>#}
-{#                    <option value="40">40</option>#}
-{#                    <option value="60">60</option>#}
-{#                    <option value="80">80</option>#}
-{#                    <option value="100">100</option>#}
-{#                    <option value="150">150</option>#}
-{#                </select>#}
-{#                <select name="torooms" class="alldropdowns">#}
-{#                    <option value="#">To</option>#}
-{#                    <option value="1">1</option>#}
-{#                    <option value="2">2</option>#}
-{#                    <option value="3">3</option>#}
-{#                    <option value="4">4</option>#}
-{#                    <option value="5">5</option>#}
-{#                    <option value="10">10</option>#}
-{#                    <option value="20">20</option>#}
-{#                    <option value="30">30</option>#}
-{#                    <option value="40">40</option>#}
-{#                    <option value="60">60</option>#}
-{#                    <option value="80">80</option>#}
-{#                    <option value="100">100</option>#}
-{#                    <option value="150">150</option>#}
-{#                </select>#}
                 </div>
             </div>
             <div class="dropdownDiv">
@@ -224,18 +92,6 @@
                     {% for field in form.types %}
                         {{ field }}{{ field.subject.label_tag }}
                     {% endfor %}
-{#                    <label class="container">Castle#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">Villa#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
-{#                    <label class="container">Cabin#}
-{#                        <input type="checkbox">#}
-{#                        <span class="checkmark"></span>#}
-{#                    </label>#}
                 </div>
                 </div>
             </div>
