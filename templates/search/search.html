@@ -24,17 +24,19 @@
                     <div class='img-container'>
                         {% for propimg in propimgs %}
                             {% if property.propertyId == propimg.propertyId_id %}
-                                <div style="width: 100%; height: 100%; background-image: url({{ propimg.propImgUrl }}); background-size: cover; background-position: 50%;">
+                                <div id="propimg" style="background-image: url({{ propimg.propImgUrl }});">
     {#                                <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">#}
                                 </div>
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <a href="/property/{{ property.propertyId }}"><h2>{{ property.address }}</h2></a>
+                    <div id="proplocation">
+                        <a href="/property/{{ property.propertyId }}"><h2>{{ property.address }}</h2><br><p id="zip">{{ property.zipCode }}</p></a>
+                    </div>
                     <div class='prop-info'>
                         <p><b>Price:</b> &euro;{{ property.price }}</p>
                         <p><b>Rooms:</b> {{ property.rooms }}</p>
-                        <p><b>Size:</b> {{property.size }} m&#178;</p>
+                        <p><b>Size:</b> {{property.size }} Fm&#178;</p>
                         <p><b>Type:</b> {{property.description}}</p>
                     </div>
                 </div>

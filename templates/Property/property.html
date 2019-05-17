@@ -2,6 +2,7 @@
 {% load static %}
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/property.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
 {% endblock %}
 {% block title %}{{ property.address }} -{% endblock %}
 {% block content %}
@@ -49,15 +50,44 @@
 
                 <input class="btn" id="button" type="submit" value="Buy now">
             </form>
-            {% for realtors in realtor %}
-                {% if property.realtId_id == realtors.realtId %}
-                    {% for accounts in account %}
-                        {% if realtors.accountId_id == accounts.accountId %}
-                            <a><p><b>Realtor:</b> {{ accounts.firstName }} {{ accounts.lastName }}</p></a>
+            <div id="realtor">
+                {% for realtors in realtor %}
+                    {% if property.realtId_id == realtors.realtId %}
+                        {% for accounts in account %}
+                            {% if realtors.accountId_id == accounts.accountId %}
+                                <a><p><b>Realtor:</b> {{ accounts.firstName }} {{ accounts.lastName }}</p></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                <div id="myPopup{{ realtor.accountId_id }}" class="modal">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <div class="popupLeft">
+                    {% for account in accounts %}
+                        {% if account.accountId == realtor.accountId_id %}
+                            <h3 class="htags">{{ account.firstName }} {{ account.lastName }}</h3>
                         {% endif %}
                     {% endfor %}
-                {% endif %}
-            {% endfor %}
+                        {% for image in realtorImgs %}
+                            {% if image.realtImgId == realtor.realtImgId_id %}
+                                <img src="{{ image.realtImgUrl }}">
+                            {% endif %}
+                        {% endfor %}
+                        {% for account in accounts %}
+                            {% if account.accountId == realtor.accountId_id %}
+                                <div class="emailphone">
+                                    <a class="email" href="mailto:{{ account.email }}" target="_top">{{ account.email }}</a>
+                                    <br><br><span class="phone">+354 - {{ account.phoneNo }}</span>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <h3 class="htags">Information</h3 >
+                        <p class="realdes">{{ realtor.description }}</p>
+                </div>
+            </div>
+            </div>
             <p><b>Built in:</b> {{ property.yearbuilt }}</p>
             <p><b>Size:</b> {{ property.size }} Fm²</p>
             <p><b>Rooms:</b> {{ property.rooms }}</p>
@@ -126,6 +156,31 @@
           slides[slideIndex-1].style.display = "block";
         }
 
+        // Opens a pop-up window with more details about clicked realtor
+        document.body.addEventListener("click", function (e) {
+            if (e.target.id.indexOf('realtor') >= 0) {
+                popUp(e.target, "block");
+            }
+            else if (e.target.parentElement.id.indexOf('realtor') >= 0) {
+                popUp(e.target.parentElement, "block");
+            }
+        });
+
+        // closes popup window
+        document.body.addEventListener("click", function(e) {
+            if (e.target.id.indexOf("myPopup") >= 0) {
+                popUp(e.target, "none");
+            }
+            else if (e.target.className == "close") {
+                popUp(e.target.parentElement.parentElement, "none");
+            }
+        });
+
+        function popUp(element, displayStyle) {
+            var container = document.getElementById('myPopup'+element.id.slice(-2));
+            container.style.display = displayStyle;
+
+        }
     </script>
 
 {% endblock %}
