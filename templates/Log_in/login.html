@@ -5,10 +5,15 @@
 {% endblock %}
 {% block title %} Login -{% endblock %}
 {% block content %}
+    {% if login_error %}
+        <div class="errors">
+            <span class="dot"></span><strong>{{ login_error }}</strong>
+        </div>
+    {% endif %}
         <div class="container">
             <h3>Please enter e-mail and password</h3>
             <form method="POST">
-                {% csrf_token %}
+            {% csrf_token %}
                 {{ form }}
 {#                <input class="inputs" placeholder="E-mail" type="text" name="email" id="e-mail">#}
 {#                <input class="inputs" placeholder="Password" type="password" name="password" id="pass-word">#}
