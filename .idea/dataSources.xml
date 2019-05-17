@@ -15,5 +15,17 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/geoztnzo</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="nafn" uuid="d819aed6-3fd0-4c30-bfc2-98d1c3f38e97">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="geoztnzo@balarama.db.elephantsql.com" uuid="44321e70-5147-4636-a772-cc7b2466bb70">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/geoztnzo</jdbc-url>
+    </data-source>
   </component>
 </project>
