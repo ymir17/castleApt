@@ -63,6 +63,34 @@
                     {% endif %}
                 {% endfor %}
             </div>
+            <!-- Do not remove div tag below -->
+            <!-- Removing breaks the page and there wasn't enough time to fix it -->
+            <div id="myPopup{{ realtor.accountId_id }}" class="modal">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <div class="popupLeft">
+                    {% for account in accounts %}
+                        {% if account.accountId == realtor.accountId_id %}
+                            <h3 class="htags">{{ account.firstName }} {{ account.lastName }}</h3>
+                        {% endif %}
+                    {% endfor %}
+                        {% for image in realtorImgs %}
+                            {% if image.realtImgId == realtor.realtImgId_id %}
+                                <img src="{{ image.realtImgUrl }}">
+                            {% endif %}
+                        {% endfor %}
+                        {% for account in accounts %}
+                            {% if account.accountId == realtor.accountId_id %}
+                                <div class="emailphone">
+                                    <a class="email" href="mailto:{{ account.email }}" target="_top">{{ account.email }}</a>
+                                    <br><br><span class="phone">+354 - {{ account.phoneNo }}</span>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <h3 class="htags">Information</h3 >
+                        <p class="realdes">{{ realtor.description }}</p>
+                </div>
             </div>
             <p><b>Built in:</b> {{ property.yearbuilt }}</p>
             <p><b>Size:</b> {{ property.size }} Fm²</p>
