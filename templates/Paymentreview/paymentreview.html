@@ -9,20 +9,22 @@
         <h2>Payment review</h2>
         <div class="n-container">
             <div id="payinfo">
-                <h4>Payment information</h4>
+                <h4 style="text-align: center;">Payment information</h4>
             {% for realtor in realtors %}
                 {% if property.realtId_id == realtor.realtId %}
                     {% for account in accounts %}
                         {% if realtor.accountId_id == account.accountId %}
-                            <p>Realtor name: {{ account.firstName }} {{ account.lastName }}</p>
-                            <p>E-mail: {{ account.email }}</p>
-                            <p>Credit card no: XXXX-XXXX-XXXX-1234</p>
-                            <p>Total: &euro;{{ property.price }}</p>
+                            <p><b>Realtor name: </b>{{ account.firstName }} {{ account.lastName }}</p>
+                            <p><b>E-mail: </b>{{ account.email }}</p>
+                            <h4 style="text-align: center;">Buyer info</h4>
+                            <p><b>Name: </b>buyer name</p>
+                            <p><b>Billing address: </b>address + zip </p>
+                            <p><b>Credit card no: </b>XXXX-XXXX-XXXX-1234</p>
+                            <p><b>Total: </b>&euro;{{ property.price }}</p>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
             {% endfor %}
-
             </div>
             <div class='prop-info'>
             <div class='img-container'>
@@ -32,9 +34,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
-                <p>{{ property.address }}, {{ property.zipCode }}</p>
+                <p><b>{{ property.address }}, {{ property.zipCode }}</b></p>
                 <p>Registered {{ property.added }}</p>
-                <p>year built: {{ property.yearbuilt }}</p>
+                <p>Year built: {{ property.yearbuilt }}</p>
             </div>
             <input id="button" type="submit" value="Confirm">
         </div>
