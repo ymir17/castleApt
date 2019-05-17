@@ -35,10 +35,8 @@
                     </div>
                     <br><br>
                     {% if form.nameOnCard %}
-{#                       {{ form.nameOnCard }}#}
                         <input id="{{ form.nameOnCard.id_for_label }}" class="inputs" name="{{ form.nameOnCard.html_name }}" placeholder="Full Name" type="text" value="{{ user.first_name }} {{ user.last_name }}">
                     {% endif %}
-
                     {{ form.cardNumber }}
                     {{ form.expDate }}
                     {{ form.cvc }}
@@ -48,6 +46,7 @@
                     {% if form.bAddress %}
                         <input id="{{ form.bAddress.id_for_label }}" class="inputs" name="{{ form.bAddress.html_name }}" placeholder="Billing Address" type="text" value="{{ userInfo.address }}">
                     {% endif %}
+                    {{ form.houseNumber }}
                     {% if form.city%}
                         <input id="{{ form.city.id_for_label }}" class="inputs" name="{{ form.city.html_name }}" placeholder="City" type="text" value="{{ userInfo.city }}">
                     {% endif %}
@@ -61,17 +60,9 @@
                     {% if form.zipCode %}
                         <input id="{{ form.zipCode.id_for_label }}" class="inputs" name="{{ form.zipCode.html_name }}" placeholder="Postal Code" type="number" value="{{ userInfo.zip }}">
                     {% endif %}
-{#                    {{ form.bAddress }}#}
-{#                    {{ form.houseNumber }}#}
-{#                    {{ form.city }}#}
-{#                    {{ form.country}}#}
-{#                    {{ form.zipCode }}#}
                 </div>
                 <input class="button" type="submit" value="Confirm">
             </form>
         </div>
     </div>
-
-
-
 {% endblock %}
