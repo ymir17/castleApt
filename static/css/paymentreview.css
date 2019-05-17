@@ -23,10 +23,10 @@ h2 {
 .img-container{
     border: 0.3rem solid #2E4570;
     border-radius: 1rem;
-    width: 100%;
+    width: 55%;
     background-color: #4f4f4f;
     order: 0;
-    height: 100%;
+    height: 55%;
     overflow:hidden;
 }
 
@@ -34,6 +34,10 @@ h2 {
 .prop-info {
     width: 80%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
 }
 
 .prop-img{
