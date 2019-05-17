@@ -3,15 +3,13 @@
     height: 80%;
     border: 0.3rem solid #2E4570;
     border-radius: 1rem;
-    margin-top: 4rem;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     max-height: 120rem;
-    width: 80%;
+    width: 85%;
+    min-width: 21rem;
     max-width: 70rem;
-    justify-content: space-around;
-    align-content: center;
 }
 
 .inputs {
@@ -22,59 +20,58 @@
     border-bottom: 0.2rem solid #2E4570;
     border-radius: 0.5rem;
     height: 2.2rem;
-    width: 18rem;
-    font-size: 1.3rem;
-    padding-left: 1rem;
-    display: block;
-    margin: 2rem;
+    width: 80%;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
-.billing-container{
-    order:0;
-    display:flex;
-    flex-direction: column;
-    margin:1rem;
-}
-
 .prop-info-container{
+    margin-left: auto;
+    margin-right: auto;
     order:1;
-    display:flex;
-    flex-direction: column;
-    margin:1rem;
+    min-height: 13.5rem;
+    width: 70%;
+    min-width: 34rem;
 }
 
 .img-container{
-    flex-basis: 2rem;
+    float: left;
     order:0;
     height: 100%;
     width:100%;
     max-width: 20rem;
-    max-heigt: 20rem;
-
 }
-
-.box1{
-    align-self: flex-start;
+#propinfo {
+    padding-top: 1rem;
     text-align: center;
-    margin-top: 2rem;
 }
 
-.box2{
-    align-self: flex-end;
-    margin-bottom: 2rem;
+
+.billing-container{
+    text-align: center;
+    width: 100%;
+}
+.box1 {
+    display: inline-block;
+    width: 45%;
+    min-width: 20rem;
+    text-align: center;
 }
 
-h3{
+.box2 {
+    display: inline-block;
+    width: 45%;
+    min-width: 20rem;
+    text-align: center;
+}
+
+h2 {
     text-align:center;
-
 }
-
-
-textarea:focus, input:focus{
+textarea:focus, input:focus {
     outline: none;
 }
-.button, #sign-up{
+.button, #sign-up {
     width: 10rem;
     height: 2.5rem;
     border-radius: 2rem;
@@ -90,13 +87,19 @@ textarea:focus, input:focus{
     cursor: pointer;
 }
 
-button{
+button {
     width: 15rem !important;
-
 }
 
-img{
+img {
     width: 100%;
 }
-
-
+@media only screen and (max-width: 650px) {
+    .prop-info-container{
+        width: 20.1rem;
+        min-width: 20rem;
+    }
+    .img-container{
+        margin-bottom: 0.5rem;
+    }
+}
