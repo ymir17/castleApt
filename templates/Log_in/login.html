@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% load static %}
-
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
+{% endblock %}
+{% block title %} Login -{% endblock %}
+{% block content %}
         <div class="container">
             <h3>Please enter e-mail and password</h3>
             <form method="POST">

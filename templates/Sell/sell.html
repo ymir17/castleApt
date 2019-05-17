@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% load static %}
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/sell.css' %}">
-
+{% endblock %}
+{% block title %} Sell -{% endblock %}
+{% block content %}
     <div class="signup_border">
         <h2>Request to sell property</h2>
         <form target="_blank" action="/submitEval.php">

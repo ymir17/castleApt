@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% load static %}
-
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/editprofile.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+{% block title %} Edit Profile -{% endblock %}
+{% block content %}
         <div class="signup_border">
             <h2>Your account</h2>
             <form target="_blank" action="/submitEval.php">
