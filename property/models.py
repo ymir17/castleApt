@@ -16,6 +16,7 @@ class Properties(models.Model):
     yearbuilt = models.DateField(null=True)
     bathrooms = models.FloatField(null=True)
     bedrooms = models.IntegerField(null=True)
+    isSold = models.BooleanField(default=False)
 
 
 class PropImages(models.Model):

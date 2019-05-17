@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 # from django_countries import countries
 # from django_countries.fields import CountryField
+from signup.models import Users
 
 CARD_TYPE = [
     ('visa', 'Visa'),
@@ -284,6 +285,7 @@ class PaymentForm(forms.Form):
         required=True,
         widget=forms.TextInput,
     )
+    UsersCountry = Users.objects.all()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -342,4 +344,5 @@ class PaymentForm(forms.Form):
             'name': 'postalcode',
             'type': 'number',
         })
+
 
