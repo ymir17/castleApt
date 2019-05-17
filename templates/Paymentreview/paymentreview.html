@@ -39,7 +39,10 @@
                 <p>Registered {{ property.added }}</p>
                 <p>Year built: {{ property.yearbuilt }}</p>
             </div>
-            <input id="button" type="submit" value="Confirm">
+            <form action="{% url 'home-index' %}">
+                <input id="button" type="submit" value="Confirm">
+            </form>
+
         </div>
     </div>
     </form>

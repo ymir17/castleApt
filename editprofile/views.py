@@ -18,6 +18,8 @@ def profile(request):
         form.actual_user = request.user
         editprofile = editProfileForm(data=request.POST)
         if form.is_valid():
+            firstName = form.cleaned_data['firstName']
+            upd = Accounts.objects.filter(id=current.id).update(first_name = firstName, last_name = lastname, email = email)
             form.save()
             editprofile.save()
             return HttpResponseRedirect(reverse('update_profile_success'))
