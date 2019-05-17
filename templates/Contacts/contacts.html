@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'css/search.css' %}">
-{% endblock %}
-{% block title %} Search {% endblock %}
-{% block content %}
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+{% endblock %}
+{% block title %} Realtors -{% endblock %}
+{% block content %}
     <div class="realtorsBox">
         {% for realtor in realtors %}
             <div id="realtor{{ realtor.accountId_id }}" class="singleRealtor">

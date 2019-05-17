@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% load static %}
-
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/property.css' %}">
+{% endblock %}
+{% block title %}{{ property.address }} -{% endblock %}
+{% block content %}
     <div class="img-banner">
         {% for image in images %}
             {% if image.propertyId_id == property.propertyId %}

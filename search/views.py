@@ -28,10 +28,6 @@ def index(request):
         }
 
         for key in q:
-            # print(key + ':')
-            # print(q[key])
-            # print(key, end=': ')
-            # print(type(q[key]))
             if key == 'searchBar' and q[key] == '':
                 q[key] = None
             elif type(q[key]) is list:
@@ -40,13 +36,12 @@ def index(request):
                 if q[key].isdigit():
                     q[key] = int(q[key])
 
-        print(q)
         if q['searchBar'] == None:
             properties_searchBar = Properties.objects.all()
         else:
             properties_searchBar = Properties.objects.filter(Q(address__icontains=q['searchBar']) |
                                                              Q(zipCode__icontains=q['searchBar']))
-        # print(properties_searchBar)
+
         if q['checkboxZip'] == []:
             properties_checkBox = Properties.objects.all()
         else:
@@ -54,7 +49,7 @@ def index(request):
             for zip in q['checkboxZip']:
                 query = query | Q(zipCode__istartswith=zip)
             properties_checkBox = Properties.objects.filter(query)
-        print(properties_checkBox)
+
         if q['priceL'] is None and q['priceH'] is None:
             properties_prices = Properties.objects.all()
         else:
@@ -108,7 +103,7 @@ def index(request):
             properties_rooms,
             properties_types
         )
-        # print(properties)
+
         propimgs = PropImages.objects.filter(propImgUrl__contains='_00').order_by("propertyId_id")
         context = {'properties': properties, 'propimgs': propimgs, 'form': orderBy(data=request.GET)}
         return render(request, 'search/search.html', context)
@@ -132,4 +127,4 @@ def get_prop_by_id(request, id):
 
 
 def orderBy(request):
-    pass
+    print(request.GET)

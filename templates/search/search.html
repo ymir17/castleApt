@@ -6,46 +6,39 @@
 {% block title %}Search - {% endblock %}
 {% block content %}
     {% load order %}
-
-
-    <div class='searchbar'>
-    </div>
-
-    <div class='container-prop'>
-    <br>
-        <div class='result-container'>
-
-            <div class='h3-container'>
-                <h3 class='search-result'>{{properties.count}} properties found</h3>
+    <form method="GET" id="order-form" title="order-by" action="{% url 'search-order' %}" >
+        <div class='searchbar'></div>
+        <div class='container-prop'>
+        <br>
+            <div class='result-container'>
+                <div class='h3-container'>
+                    <h3 class='search-result'>{{properties.count}} properties found</h3>
+                </div>
+                <div id="" class='dd-container'>
+                    {{ form.orderBy }}
+                </div>
+                <input type="submit" value="Sort">
             </div>
-
-            <div id="" class='dd-container'>
-                {{ form.orderBy }}
-            </div>
+            {% for property in properties %}
+                <div id="property{{ property.propertyId}}" class='listing'>
+                    <div class='img-container'>
+                        {% for propimg in propimgs %}
+                            {% if property.propertyId == propimg.propertyId_id %}
+                                <div style="width: 100%; height: 100%; background-image: url({{ propimg.propImgUrl }}); background-size: cover; background-position: 50%;">
+    {#                                <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">#}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <a href="/property/{{ property.propertyId }}"><h2>{{ property.address }}</h2></a>
+                    <div class='prop-info'>
+                        <p><b>Price:</b> &euro;{{ property.price }}</p>
+                        <p><b>Rooms:</b> {{ property.rooms }}</p>
+                        <p><b>Size:</b> {{property.size }} m&#178;</p>
+                        <p><b>Type:</b> {{property.description}}</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        {% for property in properties %}
-            <div id="property{{ property.propertyId}}" class='listing'>
-                <div class='img-container'>
-                    {% for propimg in propimgs %}
-                        {% if property.propertyId == propimg.propertyId_id %}
-                            <div style="width: 100%; height: 100%; background-image: url({{ propimg.propImgUrl }}); background-size: cover; background-position: 50%;">
-{#                                <img class='prop-img' src="{{ propimg.propImgUrl }}" alt="Property Image" width="150px" height="200px">#}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <a href="/property/{{ property.propertyId }}"><h2>{{ property.address }}</h2></a>
-                <div class='prop-info'>
-
-                    <p><b>Price:</b> {{ property.price }} &euro;</p>
-                    <p><b>Rooms:</b> {{ property.rooms }}</p>
-                    <p><b>Size:</b> {{property.size }} m&#178;</p>
-                    <p><b>Type:</b> {{property.description}}</p>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-
-
-
+    </form>
 {% endblock %}

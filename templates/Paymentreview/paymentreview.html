@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-
-{% block content %}
-    {% load static %}
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/paymentreview.css' %}">
-
+{% endblock %}
+{% block title %} Search {% endblock %}
+{% block content %}
     <div class='review-container'>
         <h2>Payment review</h2>
         <div class="n-container">
