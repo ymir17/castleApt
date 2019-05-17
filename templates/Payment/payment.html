@@ -6,31 +6,7 @@
 {% block title %} Payment -{% endblock %}
 {% block content%}
     <div class="container">
-        <div class='billing-container'>
-            <h3>Payment page</h3>
-            <form target="_blank" action="../paymentreview/{{ property.propertyId }}">
-                <div class='box1'>
-                    <h4>Select creditcard type</h4>
-                    <br>
-                    {% for field in form.cardTypes %}
-                        {{ field }} {{ field.subject.label_tag }}
-                    {% endfor %}
-                    <br>
-                    {{ form.nameOnCard }}
-                    {{ form.cardNumber }}
-                    {{ form.expDate }}
-                    {{ form.cvc }}
-                    {{ form.bAddress }}
-                </div>
-                <div class='box2'>
-                    {{ form.houseNumber }}
-                    {{ form.city }}
-                    {{ form.country}}
-                    {{ form.zipCode }}
-                    <input class="button" type="submit" value="Confirm">
-                </div>
-            </form>
-        </div>
+        <h2>Payment page</h2>
         <div class='prop-info-container'>
             <div class='img-container'>
                 {% for image in images %}
@@ -39,12 +15,37 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <div class='prop-info-container'>
-                <h2>{{ property.address }}, {{ property.zipCode }}</h2>
-                <h3></h3>
-                <p> Price: &euro;{{ property.price }}</p>
-                <p> Type: {{ property.description }}</p>
+            <div id="propinfo">
+                <h2>{{ property.address }}</h2>
+                <h3>{{ property.zipCode }}</h3>
+                <p><b>Price: </b>&euro;{{ property.price }}</p>
+                <p><b>Type: </b>{{ property.description }}</p>
             </div>
+        </div>
+        <div class='billing-container'>
+            <form target="_blank" action="../paymentreview/{{ property.propertyId }}">
+                <div class='box1'>
+                    <h3>Creditcard info</h3>
+                    <br>
+                    {% for field in form.cardTypes %}
+                        {{ field }} {{ field.subject.label_tag }}
+                    {% endfor %}
+                    <br><br>
+                    {{ form.nameOnCard }}
+                    {{ form.cardNumber }}
+                    {{ form.expDate }}
+                    {{ form.cvc }}
+                </div>
+                <div class='box2'>
+                    <h3>Billing info</h3>
+                    {{ form.bAddress }}
+                    {{ form.houseNumber }}
+                    {{ form.city }}
+                    {{ form.country}}
+                    {{ form.zipCode }}
+                </div>
+                <input class="button" type="submit" value="Confirm">
+            </form>
         </div>
     </div>
 
