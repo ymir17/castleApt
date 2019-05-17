@@ -8,9 +8,9 @@
     <div class="container">
         <div class='billing-container'>
             <h3>Payment page</h3>
-            <form target="_blank" action="../paymentreview/{{ property.propertyId }}">
+            <form method="POST" action="../paymentreview/{{ property.propertyId }}">
                 <div class='box1'>
-                    <h4>Select creditcard type</h4>
+                    <h4>Select Credit Card Type</h4>
                     <br>
                     {% for field in form.cardTypes %}
                         {{ field }} {{ field.subject.label_tag }}
