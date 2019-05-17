@@ -6,7 +6,6 @@
 {% block title %}Search - {% endblock %}
 {% block content %}
     {% load order %}
-<<<<<<< HEAD
 
 
     <div class='searchbar'>
@@ -36,7 +35,6 @@
                             </div>
                         {% endif %}
                     {% endfor %}
-=======
 {#    <form method="GET" id="order-form" title="order-by" action="{% url 'search-order' %}" >#}
         <div class='searchbar'></div>
         <div class='container-prop'>
@@ -44,7 +42,6 @@
             <div class='result-container'>
                 <div class='h3-container'>
                     <h3 class='search-result'>{{properties.count}} properties found</h3>
->>>>>>> 24bb168b16a574902d66e7679baa6df6064ac0ac
                 </div>
                 <div id="" class='dd-container'>
                     {{ form.orderBy }}
