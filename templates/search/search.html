@@ -6,7 +6,7 @@
 {% block title %}Search - {% endblock %}
 {% block content %}
     {% load order %}
-    <form method="GET" id="order-form" title="order-by" action="{% url 'search-order' %}" >
+{#    <form method="GET" id="order-form" title="order-by" action="{% url 'search-order' %}" >#}
         <div class='searchbar'></div>
         <div class='container-prop'>
         <br>
@@ -17,7 +17,7 @@
                 <div id="" class='dd-container'>
                     {{ form.orderBy }}
                 </div>
-                <input type="submit" value="Sort">
+{#                <input type="submit" value="Sort">#}
             </div>
             {% for property in properties %}
                 <div id="property{{ property.propertyId}}" class='listing'>
@@ -40,5 +40,5 @@
                 </div>
             {% endfor %}
         </div>
-    </form>
+{#    </form>#}
 {% endblock %}

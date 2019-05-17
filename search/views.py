@@ -127,4 +127,4 @@ def get_prop_by_id(request, id):
 
 
 def orderBy(request):
-    print(request.GET)
+    print(request)
