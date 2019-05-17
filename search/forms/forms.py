@@ -1,5 +1,6 @@
 from django import forms
 from django.forms import ModelForm
+from search.choices import *
 
 ZIP_CODES = [
     ('109', '109 Reykjavik'),
@@ -61,12 +62,7 @@ TYPES = [
     ('villa', 'Villa'),
     ('cabin', 'Cabin'),
 ]
-ORDER_BY = [
-    ('address', 'Address'),
-    ('price', 'Price'),
-    ('size', 'Size'),
-    ('rooms', 'Rooms'),
-]
+
 
 class searchForm(forms.Form):
     search = forms.CharField(
@@ -145,11 +141,8 @@ class searchForm(forms.Form):
         })
 
 
-class orderBy(forms.Form):
-    orderBy = forms.ChoiceField(
-        required=False,
-        choices=ORDER_BY,
-    )
+class orderByForm(forms.Form):
+    orderby = forms.ChoiceField(choices=ORDER_BY, label="", initial='', widget=forms.Select(), required=True)
 
     # def __init__(self, *args, **kwargs):
     #     super().__init__(*args, **kwargs)
