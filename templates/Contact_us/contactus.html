@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% load static %}
-
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/contactus.css' %}">
+{% endblock %}
+{% block title %}Contact Us - {% endblock %}
+{% block content %}
     <div class="container">
     <h2>Contact us</h2>
   <form action="action_page.php">

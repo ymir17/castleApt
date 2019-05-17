@@ -77,8 +77,7 @@ class CreateUserForm(ModelForm):
     def save(self, *args, **kwargs):
         accountId = Accounts.objects.latest('accountId').accountId
         account = Accounts.objects.get(accountId=accountId)
-        userMail = User.objects.latest('email').email
-        userId = User.objects.get(email=userMail).id
+        userId = User.objects.latest('id').id
 
         newUser = Users.objects.create(
             address=self.data['address'],

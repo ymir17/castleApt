@@ -64,7 +64,8 @@ TYPES = [
 ORDER_BY = [
     ('address', 'Address'),
     ('price', 'Price'),
-
+    ('size', 'Size'),
+    ('rooms', 'Rooms'),
 ]
 
 class searchForm(forms.Form):
@@ -108,10 +109,7 @@ class searchForm(forms.Form):
         widget=forms.CheckboxSelectMultiple,
         choices=TYPES,
     )
-    orderBy = forms.ChoiceField(
-        required=False,
-        choices=ORDER_BY,
-    )
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -145,6 +143,16 @@ class searchForm(forms.Form):
         self.fields['types'].widget.attrs.update({
             'class': 'container',
         })
-        self.fields['orderBy'].widget.attrs.update({
-            'class': 'dd-container',
-        })
+
+
+class orderBy(forms.Form):
+    orderBy = forms.ChoiceField(
+        required=False,
+        choices=ORDER_BY,
+    )
+
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['orderBy'].widget.attrs.update({
+    #         'class': 'dd-container',
+    #     })

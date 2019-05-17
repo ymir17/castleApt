@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-
-{% block content %}
-    {% load static %}
-    {% load order %}
+{% load static %}
+{% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+{% block title %}Search - {% endblock %}
+{% block content %}
+    {% load order %}
+
 
     <div class='searchbar'>
     </div>

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from login.forms.forms import LoginForm
 
-
+# TODO: except UserDoesNotExists
 def index(request):
     if request.method == 'POST':
         form = LoginForm(data=request.POST)
