@@ -2,7 +2,7 @@
 {% load static %}
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/property.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+
 {% endblock %}
 {% block title %}{{ property.address }} -{% endblock %}
 {% block content %}
@@ -124,13 +124,12 @@
                 {% for image in images %}
                     {% if image.propertyId_id == property.propertyId %}
                         <div class="gallery-img">
-                            <img onclick="openModal();currentSlide2({{ forloop.counter }})" src="{{ image.propImgUrl }}" alt="Property Image">
+                            <img onclick="openModal();currentSlide2('{{ image.propImgUrl }}')" src="{{ image.propImgUrl }}" alt="Property Image" class="">
                         </div>
                     {% endif %}
                 {% endfor %}
         </div>
     </div>
-
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content">
@@ -188,50 +187,19 @@
         }
 
         function currentSlide2(n) {
-          showSlides2(slideIndex = n);
+            var index = parseInt(n[n.length-6])+1;
+            showSlides2(slideIndex = index);
         }
 
         function showSlides2(n) {
           var i;
           var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("demo");
-          var captionText = document.getElementById("caption");
           if (n > slides.length) {slideIndex = 1}
           if (n < 1) {slideIndex = slides.length}
           for (i = 0; i < slides.length; i++) {
               slides[i].style.display = "none";
           }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
           slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-        }
-
-        // Opens a pop-up window with more details about clicked realtor
-        document.body.addEventListener("click", function (e) {
-            if (e.target.id.indexOf('realtor') >= 0) {
-                popUp(e.target, "block");
-            }
-            else if (e.target.parentElement.id.indexOf('realtor') >= 0) {
-                popUp(e.target.parentElement, "block");
-            }
-        });
-
-        // closes popup window
-        document.body.addEventListener("click", function(e) {
-            if (e.target.id.indexOf("myPopup") >= 0) {
-                popUp(e.target, "none");
-            }
-            else if (e.target.className == "close") {
-                popUp(e.target.parentElement.parentElement, "none");
-            }
-        });
-
-        function popUp(element, displayStyle) {
-            var container = document.getElementById('myPopup'+element.id.slice(-2));
-            container.style.display = displayStyle;
-
         }
 
     </script>
