@@ -3,5 +3,5 @@ from . import views
 from editprofile.views import UpdateProfile
 
 urlpatterns = [
-    path('', views.index, name='editprofile-index'),
+    path('', views.profile, name='editprofile-index'),
 ]

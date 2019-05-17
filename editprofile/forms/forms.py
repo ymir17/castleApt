@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from editprofile.views import *
 from django.contrib.auth.models import User
+from login.forms.forms import LoginForm
 
 class editProfileForm(forms.Form):
     first_name = forms.CharField(
@@ -138,7 +139,7 @@ class UpdateProfile(forms.ModelForm):
         return email
 
     def save(self, commit=True):
-        user = super(RegistrationForm, self).save(commit=False)
+        user = super(LoginForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
 
         if commit:
