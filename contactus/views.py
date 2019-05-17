@@ -11,7 +11,7 @@ def index(request):
         phoneNo = form.fields['phoneNo']
         message = form.fields['message']
         subject = 'Subject: Contact Us'
-        send_mail(subject, message, email, ['contact.castleapt@gmail.com'])
+        send_mail(subject, str(message), email, ['contact.castleapt@gmail.com'])
         return redirect('home-index')
     else:
         form = MailForm()
