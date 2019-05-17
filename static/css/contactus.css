@@ -1,5 +1,5 @@
 
-input[type=text], textarea {
+.inputs, textarea {
     background: rgba(255, 255, 255, 1);
     border-top: 0.06rem solid #2E4570;
     border-left: 0.06rem solid #2E4570;
